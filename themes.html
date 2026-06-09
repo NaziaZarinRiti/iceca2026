@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
@@ -15,9 +16,6 @@
       --green-deep: #023c2c;
       --green-dark: #046444;
       --green-main: #009b63;
-      --green-bright: #18c987;
-      --green-soft: #c8f6dd;
-      --green-pale: #e7fff1;
       --green-card: #f0fff6;
       --gold: #f4b63f;
       --gold-dark: #d99b24;
@@ -60,28 +58,9 @@
       margin: 0 auto;
     }
 
-    .top-bar {
-      background: linear-gradient(135deg, var(--green-deep), var(--green-dark) 60%, var(--green-main));
-      color: var(--white);
-      font-size: 14px;
-    }
-
-    .top-bar .container {
-      padding: 10px 0;
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+    .logo-area {
       background: rgba(232, 255, 241, 0.96);
-      backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
-      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
     }
 
     .logo-strip {
@@ -117,13 +96,22 @@
       max-height: 140px;
     }
 
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(232, 255, 241, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+    }
+
     .nav-content {
       min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
-      border-top: 1px solid rgba(207, 232, 218, 0.7);
     }
 
     .brand {
@@ -200,70 +188,18 @@
       cursor: pointer;
     }
 
-    .page-hero {
-      background: radial-gradient(circle at top right, #27dc93 0%, transparent 30%), linear-gradient(135deg, var(--green-deep), var(--green-dark) 55%, var(--green-main));
-      color: var(--white);
-      padding: 90px 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .page-hero::after {
-      content: "";
-      position: absolute;
-      right: -120px;
-      bottom: -120px;
-      width: 340px;
-      height: 340px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    .page-hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 860px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 16px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      color: var(--white);
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 24px;
-    }
-
-    .page-hero h2 {
-      font-size: clamp(38px, 6vw, 62px);
-      line-height: 1.08;
-      letter-spacing: -0.04em;
-      font-weight: 700;
-      margin-bottom: 22px;
-    }
-
-    .page-hero p {
-      font-size: 18px;
-      color: #e8fff2;
-      max-width: 760px;
-    }
-
     .section-padding {
       padding: 86px 0;
     }
 
-    .section-title {
+    .page-title {
       text-align: center;
-      max-width: 860px;
-      margin: 0 auto 46px;
+      max-width: 850px;
+      margin: 0 auto 48px;
+      animation: softSlideIn 0.9s ease both;
     }
 
-    .section-title .label {
+    .page-title .label {
       color: var(--green-main);
       text-transform: uppercase;
       font-size: 13px;
@@ -272,244 +208,275 @@
       margin-bottom: 14px;
     }
 
-    .section-title h2 {
-      font-size: clamp(30px, 4vw, 44px);
-      line-height: 1.15;
-      letter-spacing: -0.03em;
+    .page-title h2 {
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
       color: var(--text-dark);
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
-    .section-title p {
+    .page-title p {
       color: var(--text-muted);
-      font-size: 17px;
+      font-size: 18px;
     }
 
-    .main-theme-card {
-      background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.22) 0%, transparent 28%), linear-gradient(135deg, var(--green-deep), var(--green-dark) 55%, var(--green-main));
+    .theme-main-card {
+      position: relative;
+      background: linear-gradient(135deg, var(--green-deep), var(--green-dark) 60%, var(--green-main));
       color: var(--white);
       border-radius: 34px;
-      padding: 42px;
-      box-shadow: 0 22px 55px rgba(0, 155, 99, 0.18);
-      margin-bottom: 34px;
-      text-align: center;
+      padding: 46px;
+      box-shadow: 0 24px 60px rgba(2, 60, 44, 0.18);
+      margin-bottom: 36px;
+      overflow: hidden;
+      animation: softSlideIn 1s ease both;
     }
 
-    .main-theme-card p {
-      color: #d8ffe7;
+    .theme-main-card::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.10);
+      right: -90px;
+      bottom: -120px;
+    }
+
+    .theme-main-card p {
+      color: #d1fae5;
+      font-size: 15px;
       text-transform: uppercase;
       letter-spacing: 0.18em;
-      font-size: 13px;
       font-weight: 700;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
     }
 
-    .main-theme-card h3 {
-      font-size: clamp(28px, 4vw, 44px);
-      line-height: 1.15;
+    .theme-main-card h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      position: relative;
+      z-index: 1;
     }
 
-    .themes-grid {
+    .theme-grid {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 26px;
     }
 
     .theme-card {
-      background: linear-gradient(180deg, #ffffff 0%, var(--green-card) 100%);
-      border: 1px solid var(--border);
-      border-radius: 32px;
-      box-shadow: 0 12px 34px rgba(0, 155, 99, 0.12);
+      position: relative;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(167, 231, 194, 0.85);
+      border-radius: 30px;
+      padding: 34px;
+      box-shadow: 0 18px 45px rgba(2, 60, 44, 0.10);
+      transition: 0.35s ease;
       overflow: hidden;
     }
 
-    .theme-head {
-      display: grid;
-      grid-template-columns: 74px 1fr;
-      gap: 20px;
-      align-items: center;
-      padding: 28px 32px;
-      background: linear-gradient(135deg, #d8ffe7 0%, #95eaba 55%, #35c987 100%);
-      border-bottom: 1px solid var(--border);
+    .theme-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 7px;
+      background: linear-gradient(90deg, var(--green-deep), var(--green-main), var(--gold));
     }
 
-    .theme-number {
+    .theme-card::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: rgba(0, 155, 99, 0.07);
+      right: -55px;
+      bottom: -65px;
+      transition: 0.35s ease;
+    }
+
+    .theme-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 65px rgba(2, 60, 44, 0.18);
+      border-color: var(--green-main);
+    }
+
+    .theme-card:hover::after {
+      transform: scale(1.25);
+      background: rgba(244, 182, 63, 0.13);
+    }
+
+    .theme-icon {
       width: 58px;
       height: 58px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--green-deep), var(--green-main));
-      color: var(--white);
+      border-radius: 18px;
+      background: #d9ffe9;
+      color: var(--green-dark);
       display: grid;
       place-items: center;
-      font-weight: 700;
-      font-size: 18px;
-      box-shadow: 0 10px 22px rgba(0, 155, 99, 0.18);
+      font-size: 24px;
+      margin-bottom: 22px;
+      position: relative;
+      z-index: 1;
     }
 
-    .theme-head h3 {
-      font-size: 25px;
+    .theme-card h3 {
+      font-size: 24px;
       line-height: 1.25;
+      margin-bottom: 18px;
       color: var(--text-dark);
+      position: relative;
+      z-index: 1;
     }
 
-    .topic-list {
-      padding: 28px 34px 34px;
+    .theme-card ul {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px 24px;
-      list-style: none;
-    }
-
-    .topic-list li {
-      color: var(--text-muted);
-      display: grid;
-      grid-template-columns: 18px 1fr;
       gap: 10px;
-      align-items: start;
-      font-size: 15px;
+      padding-left: 18px;
+      color: var(--text-muted);
+      position: relative;
+      z-index: 1;
     }
 
-    .topic-list li::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--green-main);
-      margin-top: 8px;
+    .theme-card li {
+      font-size: 15px;
     }
 
     .schedule-section {
       background: linear-gradient(135deg, #c8f6dd 0%, #8fe8b5 55%, #35c987 100%);
     }
 
-    .schedule-pdf-grid {
+    .schedule-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
     }
 
-    .pdf-card {
-      background: rgba(255, 255, 255, 0.92);
-      border: 1px solid rgba(255, 255, 255, 0.75);
-      border-radius: 32px;
-      padding: 42px 34px;
-      box-shadow: 0 22px 55px rgba(0, 155, 99, 0.16);
-      backdrop-filter: blur(8px);
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-      transition: 0.2s ease;
-    }
-
-    .pdf-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 28px 70px rgba(0, 155, 99, 0.22);
-    }
-
-    .pdf-card h3 {
-      font-size: 30px;
-      color: var(--text-dark);
-      margin-top: 8px;
-    }
-
-    .pdf-card p {
-      color: var(--text-muted);
-      font-size: 16px;
-    }
-
-    .pdf-card span {
-      margin-top: 8px;
-      color: var(--green-main);
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .proceedings-section {
-      background: var(--bg);
-    }
-
+    .schedule-card,
     .proceedings-card {
-      background: linear-gradient(180deg, #ffffff 0%, var(--green-card) 100%);
-      border: 1px solid var(--border);
-      border-radius: 32px;
-      box-shadow: 0 12px 34px rgba(0, 155, 99, 0.12);
-      padding: 42px;
-      max-width: 920px;
-      margin: 0 auto;
-      text-align: center;
+      position: relative;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(167, 231, 194, 0.85);
+      border-radius: 30px;
+      padding: 36px;
+      box-shadow: 0 18px 45px rgba(2, 60, 44, 0.10);
+      transition: 0.35s ease;
+      overflow: hidden;
     }
 
+    .schedule-card::before,
+    .proceedings-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 7px;
+      background: linear-gradient(90deg, var(--green-deep), var(--green-main), var(--gold));
+    }
+
+    .schedule-card:hover,
+    .proceedings-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 28px 65px rgba(2, 60, 44, 0.18);
+    }
+
+    .schedule-card h3,
     .proceedings-card h2 {
-      font-size: clamp(30px, 4vw, 44px);
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      margin-bottom: 18px;
+      font-size: 28px;
+      line-height: 1.2;
+      margin-bottom: 14px;
       color: var(--text-dark);
     }
 
+    .schedule-card p,
     .proceedings-card p {
       color: var(--text-muted);
-      font-size: 17px;
-      max-width: 760px;
-      margin: 0 auto 26px;
+      margin-bottom: 24px;
     }
 
-    .abstract-book-link {
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 14px 24px;
+      gap: 9px;
+      padding: 13px 22px;
       border-radius: 999px;
-      background: linear-gradient(135deg, var(--green-deep), var(--green-main));
-      color: var(--white);
       font-weight: 700;
-      box-shadow: 0 12px 28px rgba(0, 155, 99, 0.22);
+      border: 1px solid transparent;
       transition: 0.2s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
     }
 
-    .abstract-book-link:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 38px rgba(0, 155, 99, 0.28);
-    }
-
-    .brainstorm-section {
-      background: var(--bg);
-    }
-
-    .brainstorm-card {
-      background: linear-gradient(180deg, #ffffff 0%, var(--green-card) 100%);
-      border: 1px solid var(--border);
-      border-radius: 32px;
-      box-shadow: 0 12px 34px rgba(0, 155, 99, 0.12);
-      padding: 38px;
-    }
-
-    .brainstorm-list {
-      columns: 2;
-      column-gap: 42px;
-      list-style: none;
-    }
-
-    .brainstorm-list li {
-      break-inside: avoid;
-      margin-bottom: 12px;
-      color: var(--text-muted);
-      display: grid;
-      grid-template-columns: 18px 1fr;
-      gap: 10px;
-      align-items: start;
-    }
-
-    .brainstorm-list li::before {
+    .btn::after {
       content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--gold);
-      margin-top: 8px;
+      position: absolute;
+      top: 0;
+      left: -90%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+      transform: skewX(-20deg);
+      transition: 0.55s ease;
+    }
+
+    .btn:hover::after {
+      left: 130%;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--green-dark), var(--green-main));
+      color: var(--white);
+      box-shadow: 0 8px 20px rgba(15, 81, 56, 0.18);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--green-deep), var(--green-dark) 60%, var(--green-main));
+      transform: translateY(-2px);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold), #ffcc5c);
+      color: var(--white);
+    }
+
+    .proceedings-section {
+      padding: 0 0 86px;
+      background: linear-gradient(135deg, #c8f6dd 0%, #8fe8b5 55%, #35c987 100%);
+    }
+
+    .reveal-section {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+
+    .reveal-section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes softSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .footer {
@@ -544,7 +511,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        top: 236px;
+        top: 72px;
         background: var(--white);
         border-bottom: 1px solid var(--border);
         flex-direction: column;
@@ -578,22 +545,14 @@
         max-height: 102px;
       }
 
-      .topic-list,
-      .schedule-pdf-grid,
+      .theme-grid,
+      .schedule-grid,
       .footer-grid {
         grid-template-columns: 1fr;
-      }
-
-      .brainstorm-list {
-        columns: 1;
       }
     }
 
     @media (max-width: 640px) {
-      .top-bar .container {
-        font-size: 13px;
-      }
-
       .logo-strip {
         padding: 14px 0 12px;
         gap: 10px;
@@ -622,130 +581,104 @@
       }
 
       .nav-links {
-        top: 202px;
-      }
-
-      .page-hero {
-        padding: 70px 0;
+        top: 72px;
       }
 
       .section-padding {
         padding: 64px 0;
       }
 
-      .main-theme-card,
+      .theme-main-card,
       .theme-card,
       .schedule-card,
-      .proceedings-card,
-      .brainstorm-card {
+      .proceedings-card {
         border-radius: 24px;
-      }
-
-      .main-theme-card,
-      .schedule-card,
-      .proceedings-card,
-      .brainstorm-card {
         padding: 26px;
-      }
-
-      .theme-head {
-        grid-template-columns: 1fr;
-        padding: 26px;
-      }
-
-      .topic-list {
-        padding: 26px;
-      }
-
-      .schedule-pdf-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .pdf-card {
-        padding: 30px 26px;
-        border-radius: 24px;
       }
     }
   </style>
 </head>
+
 <body>
-  <div class="top-bar">
-    <div class="container">
-      <p>Environmental Sciences Program, Asian University for Women</p>
-      <p>ICECA@auw.edu.bd</p>
-    </div>
-  </div>
+  <header>
+    <div class="logo-area">
+      <div class="container logo-strip">
+        <div class="logo-box">
+          <img src="images/auw-logo.png" alt="Asian University for Women Logo" class="logo-img auw-logo">
+        </div>
 
-  <header class="navbar">
-    <div class="container logo-strip">
-      <div class="logo-box">
-        <img src="images/auw-logo.png" alt="Asian University for Women Logo" class="logo-img auw-logo">
-      </div>
-      <div class="logo-box center-logo">
-        <img src="images/program-logo.png" alt="ICECA 2026 Conference Logo" class="logo-img program-logo">
-      </div>
-      <div class="logo-box">
-        <img src="images/gbm-logo.png" alt="Green Bangle Movement Logo" class="logo-img gbm-logo">
+        <div class="logo-box center-logo">
+          <img src="images/program-logo.png" alt="ICECA 2026 Conference Logo" class="logo-img program-logo">
+        </div>
+
+        <div class="logo-box">
+          <img src="images/gbm-logo.png" alt="Green Bangle Movement Logo" class="logo-img gbm-logo">
+        </div>
       </div>
     </div>
 
-    <div class="container nav-content">
-      <a href="index.html" class="brand">
-        <div class="brand-icon image-brand">
-          <img src="images/program-logo.png" alt="ICECA 2026 Logo">
-        </div>
-        <div>
-          <h1>ICECA 2026</h1>
-          <p>Environment & Climate Action</p>
-        </div>
-      </a>
+    <div class="navbar">
+      <div class="container nav-content">
+        <a href="index.html" class="brand">
+          <div class="brand-icon image-brand">
+            <img src="images/program-logo.png" alt="ICECA 2026 Logo">
+          </div>
+          <div>
+            <h1>ICECA 2026</h1>
+            <p>Environment & Climate Action</p>
+          </div>
+        </a>
 
-      <nav class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="travel-stay.html">Travel & Stay</a>
-        <a href="themes.html" class="active">Themes & Schedule</a>
-        <a href="speakers.html">Speakers</a>
-        <a href="committee.html">Committee</a>
-        <a href="contact.html">Contact</a>
-        <a class="old-link" href="https://iceca.auw.edu.bd/" target="_blank">ICECA 2025</a>
-      </nav>
+        <nav class="nav-links" id="navLinks">
+          <a href="index.html">Home</a>
+          <a href="travel-stay.html">Travel & Stay</a>
+          <a href="themes.html" class="active">Themes & Schedule</a>
+          <a href="speakers.html">Speakers</a>
+          <a href="committee.html">Committee</a>
+          <a href="contact.html">Contact</a>
+          <a class="old-link" href="https://iceca.auw.edu.bd/" target="_blank">ICECA 2025</a>
+        </nav>
 
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
     </div>
   </header>
 
   <main>
     <section class="section-padding">
       <div class="container">
-        <div class="main-theme-card">
-          <p>Main Theme</p>
-          <h3>Commoning Our Futures with Climate Justice</h3>
+        <div class="page-title">
+          <h2>Themes & Schedule</h2>
+          <p>
+            ICECA 2026 brings together diverse conversations on climate justice, gender, culture, health, finance, ecosystems, technology, and sustainable futures.
+          </p>
         </div>
 
-        <div class="themes-grid">
+        <div class="theme-main-card">
+          <p>Main Theme</p>
+          <h2>Commoning Our Futures with Climate Justice</h2>
+        </div>
+
+        <div class="theme-grid reveal-section">
           <article class="theme-card">
-            <div class="theme-head">
-              <div class="theme-number">1</div>
-              <h3>Roots & Resonance: Culture, Education, and Intergenerational Power</h3>
-            </div>
-            <ul class="topic-list">
+            <div class="theme-icon"><i class="fa-solid fa-seedling"></i></div>
+            <h3>Roots & Resonance: Culture, Education, and Intergenerational Power</h3>
+            <ul>
               <li>Ecofeminism as praxis: linking patriarchy and ecological destruction</li>
               <li>Cultural resilience, language loss, and climate change in Indigenous and coastal communities</li>
               <li>Intergenerational transfer of Indigenous and traditional ecological knowledge</li>
               <li>Youth-led climate movements in the Global South</li>
-              <li>Environmental education: curricula, campus activism, community outreach and service learning for SD</li>
+              <li>Environmental education, campus activism, community outreach, and service learning</li>
               <li>Storytelling, oral history, arts, and climate fiction as tools for climate awareness</li>
             </ul>
           </article>
 
           <article class="theme-card">
-            <div class="theme-head">
-              <div class="theme-number">2</div>
-              <h3>Embodied Earth: Health, Bodily Autonomy, and Care</h3>
-            </div>
-            <ul class="topic-list">
+            <div class="theme-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+            <h3>Embodied Earth: Health, Bodily Autonomy, and Care</h3>
+            <ul>
               <li>Climate change and water, sanitation, hygiene, and dignity</li>
               <li>Heat exposure, air pollution, and maternal/reproductive health outcomes</li>
               <li>Gender-based violence after climate disasters</li>
@@ -753,32 +686,28 @@
               <li>One Health and the climate-disease nexus</li>
               <li>Menstrual health management, waste, taboo, and sustainable period products</li>
               <li>Mental health, eco-anxiety, and psycho-social support for the climate-affected</li>
-              <li>The care economy dimension of climate crises: valuing women’s unpaid and unrecognised labour</li>
+              <li>The care economy dimension of climate crises</li>
             </ul>
           </article>
 
           <article class="theme-card">
-            <div class="theme-head">
-              <div class="theme-number">3</div>
-              <h3>Just Transitions in Motion: Finance, Rights, Mobility, and Peace</h3>
-            </div>
-            <ul class="topic-list">
-              <li>Climate finance architectures and (de)coloniality</li>
+            <div class="theme-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+            <h3>Just Transitions in Motion: Finance, Rights, Mobility, and Peace</h3>
+            <ul>
+              <li>Climate finance architectures and decoloniality</li>
               <li>Microfinance, green loans, and climate entrepreneurship</li>
               <li>Philanthropy versus public finance in climate funding</li>
               <li>Climate-induced migration, displacement, and trafficking</li>
               <li>Resource scarcity and environmental peacebuilding</li>
-              <li>Indigenous peoples’ legal recognition and Free, Prior and Informed Consent (FPIC) in conservation</li>
+              <li>Indigenous peoples’ legal recognition and FPIC in conservation</li>
               <li>Legal personhood for nature and the rights of rivers</li>
             </ul>
           </article>
 
           <article class="theme-card">
-            <div class="theme-head">
-              <div class="theme-number">4</div>
-              <h3>Living Waters, Living Lands: Ecosystems, Biodiversity, and Regenerative Livelihoods</h3>
-            </div>
-            <ul class="topic-list">
+            <div class="theme-icon"><i class="fa-solid fa-water"></i></div>
+            <h3>Living Waters, Living Lands: Ecosystems, Biodiversity, and Regenerative Livelihoods</h3>
+            <ul>
               <li>Nature-based Solutions and the Kunming-Montreal Global Biodiversity Framework</li>
               <li>Freshwater ecosystem decline, salinity intrusion, and water livelihoods</li>
               <li>Wildlife corridors and human-wildlife conflict</li>
@@ -788,20 +717,18 @@
           </article>
 
           <article class="theme-card">
-            <div class="theme-head">
-              <div class="theme-number">5</div>
-              <h3>Futures Regenerated: Digital Justice, Circularity, and the Feminist Green Economy</h3>
-            </div>
-            <ul class="topic-list">
+            <div class="theme-icon"><i class="fa-solid fa-microchip"></i></div>
+            <h3>Futures Regenerated: Digital Justice, Circularity, and the Feminist Green Economy</h3>
+            <ul>
               <li>Global Plastics Treaty and informal recycling economies</li>
               <li>Fast fashion, repair culture, and second-hand clothing markets</li>
-              <li>Just energy transition: renewable energy, green hydrogen, coal-phaseout regions, and clean cooking access</li>
+              <li>Just energy transition: renewable energy, green hydrogen, clean cooking access</li>
               <li>Critical minerals extraction, supply chain justice, and labour rights</li>
               <li>Ecopreneurship, eco-tourism, and digital marketplaces in conservation zones</li>
-              <li>Nanotechnology, biotechnology, and green chemistry for affordable pollution solutions and sustainability</li>
-              <li>Decolonising climate data: participatory research, citizen-generated data, and algorithmic justice</li>
+              <li>Nanotechnology, biotechnology, and green chemistry for affordable pollution solutions</li>
+              <li>Decolonising climate data and algorithmic justice</li>
               <li>AI, big data, and geospatial tools for community-based climate risk monitoring</li>
-              <li>Digital environmentalism: platforms, influencers, and the new climate communicators</li>
+              <li>Digital environmentalism and new climate communicators</li>
               <li>Climate disinformation and online violence against environmental defenders</li>
             </ul>
           </article>
@@ -809,66 +736,46 @@
       </div>
     </section>
 
-    <section class="section-padding schedule-section" id="schedule">
+    <section class="section-padding schedule-section reveal-section">
       <div class="container">
-        <div class="section-title">
-          <p class="label">Program Schedule</p>
-          <h2>Two-Day Conference Schedule</h2>
-          <p>The detailed program schedule will be available as two separate PDF files for 7 August and 8 August 2026.</p>
+        <div class="page-title">
+          <p class="label">Conference Schedule</p>
+          <h2>Schedule</h2>
+          <p>The two-day conference schedule will be available below as downloadable PDF files.</p>
         </div>
 
-        <div class="schedule-pdf-grid">
-          <a href="files/schedule-7-august-2026.pdf" target="_blank" class="pdf-card">
+        <div class="schedule-grid">
+          <div class="schedule-card">
             <h3>7 August 2026</h3>
-            <p>View or download the Day 1 conference schedule PDF.</p>
-            <span>Open PDF</span>
-          </a>
+            <p>Day 1 schedule will include opening sessions, keynote talks, oral presentations, poster sessions, and networking events.</p>
+            <div class="btn-row">
+              <a href="files/schedule-7-august-2026.pdf" target="_blank" class="btn btn-primary">View Day 1 Schedule (TBA)</a>
+            </div>
+          </div>
 
-          <a href="files/schedule-8-august-2026.pdf" target="_blank" class="pdf-card">
+          <div class="schedule-card">
             <h3>8 August 2026</h3>
-            <p>View or download the Day 2 conference schedule PDF.</p>
-            <span>Open PDF</span>
-          </a>
+            <p>Day 2 schedule will include thematic sessions, invited talks, closing events, and selected programme activities.</p>
+            <div class="btn-row">
+              <a href="files/schedule-8-august-2026.pdf" target="_blank" class="btn btn-primary">View Day 2 Schedule (TBA)</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section-padding proceedings-section">
+    <section class="proceedings-section reveal-section">
       <div class="container">
         <div class="proceedings-card">
           <h2>Conference Proceedings</h2>
-          <p>All accepted abstracts, oral and poster presentation materials will be compiled into a digital conference proceedings book. Subsequently, proceedings will be published on AUW ICECA’s official website and shared with academic and civil society networks.</p>
-          <a href="files/iceca-2026-abstract-book.pdf" target="_blank" class="abstract-book-link">ICECA 2026 Abstract Book</a>
-        </div>
-      </div>
-    </section>
+          <p>
+            All accepted abstracts, oral and poster presentation materials will be compiled into a digital conference proceedings book.
+            Subsequently, proceedings will be published on AUW ICECA’s official website and shared with academic and civil society networks.
+          </p>
 
-    <section class="section-padding brainstorm-section">
-      <div class="container">
-        <div class="section-title">
-          <p class="label">Additional Discussion Areas</p>
-          <h2>Brainstorm Topics</h2>
-          <p>These areas can be used for panels, special sessions, invited talks, or future call-for-paper expansion.</p>
-        </div>
-
-        <div class="brainstorm-card">
-          <ul class="brainstorm-list">
-            <li>Climate finance and debt relief for climate-vulnerable nations</li>
-            <li>Just transition away from fossil fuels, with focus on women workers</li>
-            <li>Loss and Damage operationalisation</li>
-            <li>Nature-based Solutions and biodiversity-climate nexus</li>
-            <li>Climate-induced migration</li>
-            <li>Youth and women-led movements, including Fridays for Future</li>
-            <li>AI for early warning, climate modeling, geospatial data, and digital inclusion for women</li>
-            <li>Food systems transformation, climate-smart agriculture, and women farmers</li>
-            <li>Water crisis, transboundary water governance, and water scarcity</li>
-            <li>Health and climate: heat stress, vector-borne diseases, and mental health</li>
-            <li>Energy transition, renewable energy, green hydrogen, and critical minerals</li>
-            <li>Circular economy, waste management, and plastic pollution treaty</li>
-            <li>Ocean and coastal resilience: mangroves and blue carbon</li>
-            <li>Climate education and ecofeminist pedagogies</li>
-            <li>Accountability, climate litigation, and rights of nature</li>
-          </ul>
+          <div class="btn-row">
+            <a href="files/iceca-2026-abstract-book.pdf" target="_blank" class="btn btn-gold">ICECA 2026 Abstract Book (Coming soon) </a>
+          </div>
         </div>
       </div>
     </section>
@@ -880,6 +787,7 @@
         <h2>ICECA 2026</h2>
         <p>2nd International Conference on Environment and Climate Action 2026.</p>
       </div>
+
       <div>
         <h3>Quick Links</h3>
         <div class="footer-links">
@@ -888,6 +796,7 @@
           <a href="index.html#submission">Submission</a>
         </div>
       </div>
+
       <div>
         <h3>Contact</h3>
         <p><i class="fa-regular fa-envelope"></i> ICECA@auw.edu.bd</p>
@@ -908,6 +817,22 @@
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
       });
+    });
+
+    const revealSections = document.querySelectorAll('.reveal-section');
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, {
+      threshold: 0.14
+    });
+
+    revealSections.forEach((section) => {
+      sectionObserver.observe(section);
     });
   </script>
 </body>
