@@ -334,6 +334,28 @@
       font-size: 17px;
     }
 
+    .map-actions {
+      margin-bottom: 20px;
+    }
+
+    .map-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, var(--green-deep), var(--green-main));
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 999px;
+      transition: 0.2s ease;
+      box-shadow: 0 6px 16px rgba(0, 155, 99, 0.15);
+    }
+
+    .map-btn:hover {
+      transform: translateY(-2px);
+    }
+
     .map-frame {
       width: 100%;
       height: 430px;
@@ -478,7 +500,29 @@
         padding: 26px;
       }
 
-      .map-frame {
+      .map-actions {
+      margin-bottom: 20px;
+    }
+
+    .map-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, var(--green-deep), var(--green-main));
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 999px;
+      transition: 0.2s ease;
+      box-shadow: 0 6px 16px rgba(0, 155, 99, 0.15);
+    }
+
+    .map-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .map-frame {
         height: 320px;
         border-radius: 18px;
       }
@@ -582,17 +626,21 @@
     <section class="map-section reveal-section">
       <div class="container">
         <div class="map-card">
-          <h2>Suggested Hotel Area</h2>
-          <p>
-            The map below shows the suggested Hotel Agrabad area in Chattogram for participant convenience.
-          </p>
+          <h2>Conference Venue</h2>
+          <p>Sonapahar Farmhouse Resort, Rangunia, Chattogram, Bangladesh.</p>
+
+          <div class="map-actions">
+            <a href="https://maps.app.goo.gl/HDCcoXVr5QjUnNdW9" target="_blank" class="map-btn">
+              Open Location in Google Maps
+            </a>
+          </div>
 
           <iframe
             class="map-frame"
             loading="lazy"
             allowfullscreen
             referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=Hotel%20Agrabad%20Chattogram&output=embed">
+            src="https://www.google.com/maps?q=Sonapahar%20Farmhouse%20Resort%20Rangunia%20Chattogram%20Bangladesh&output=embed">
           </iframe>
         </div>
       </div>
