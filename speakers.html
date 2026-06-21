@@ -214,21 +214,75 @@
       padding: 86px 0;
     }
 
-    .speaker-announce-card {
-      position: relative;
-      max-width: 960px;
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.92);
-      border: 1px solid rgba(167, 231, 194, 0.85);
-      border-radius: 34px;
-      padding: 58px 46px;
-      box-shadow: 0 18px 45px rgba(2, 60, 44, 0.10);
+    .page-title {
       text-align: center;
-      overflow: hidden;
-      animation: softSlideIn 0.9s ease both, gentleFloat 5s ease-in-out infinite;
+      max-width: 850px;
+      margin: 0 auto 54px;
+      animation: softSlideIn 0.9s ease both;
     }
 
-    .speaker-announce-card::before {
+    .page-title .label {
+      color: var(--green-main);
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .page-title h2 {
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      color: var(--text-dark);
+      margin-bottom: 18px;
+    }
+
+    .page-title p {
+      color: var(--text-muted);
+      font-size: 18px;
+    }
+
+    .category-block {
+      margin-bottom: 72px;
+    }
+
+    .category-title {
+      border-left: 6px solid var(--green-main);
+      padding: 8px 0 8px 20px;
+      margin-bottom: 30px;
+    }
+
+    .category-title h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--text-dark);
+    }
+
+    .speaker-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+
+    .speaker-grid.one-card {
+      grid-template-columns: minmax(280px, 470px);
+    }
+
+    .speaker-card {
+      position: relative;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(167, 231, 194, 0.85);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 18px 45px rgba(2, 60, 44, 0.10);
+      transition: 0.35s ease;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .speaker-card::before {
       content: "";
       position: absolute;
       inset: 0 0 auto 0;
@@ -238,124 +292,96 @@
       animation: borderMove 4s linear infinite;
     }
 
-    .speaker-announce-card::after {
+    .speaker-card::after {
       content: "";
       position: absolute;
-      width: 220px;
-      height: 220px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
-      background: rgba(0, 155, 99, 0.06);
-      right: -85px;
-      bottom: -110px;
+      background: rgba(0, 155, 99, 0.07);
+      right: -55px;
+      bottom: -65px;
       transition: 0.35s ease;
     }
 
-    .speaker-announce-card:hover::after {
-      transform: scale(1.18);
-      background: rgba(244, 182, 63, 0.12);
-    }
-
-    .speaker-announce-card .label {
-      color: var(--green-main);
-      text-transform: uppercase;
-      font-size: 13px;
-      letter-spacing: 0.18em;
-      font-weight: 700;
-      margin-bottom: 14px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .speaker-announce-card h2 {
-      font-size: clamp(36px, 5vw, 56px);
-      line-height: 1.1;
-      letter-spacing: -0.04em;
-      color: var(--text-dark);
-      margin-bottom: 18px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .speaker-announce-card p {
-      color: var(--text-muted);
-      font-size: 18px;
-      max-width: 760px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .speaker-category-grid {
-      margin-top: 38px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .speaker-category {
-      background: linear-gradient(180deg, #ffffff 0%, var(--green-card) 100%);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 28px 20px;
-      transition: 0.3s ease;
-      min-height: 150px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      opacity: 0;
-      transform: translateY(18px);
-      animation: cardRise 0.65s ease forwards;
-    }
-
-    .speaker-category:nth-child(1) {
-      animation-delay: 0.25s;
-    }
-
-    .speaker-category:nth-child(2) {
-      animation-delay: 0.4s;
-    }
-
-    .speaker-category:nth-child(3) {
-      animation-delay: 0.55s;
-    }
-
-    .speaker-category:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 36px rgba(0, 155, 99, 0.14);
+    .speaker-card:hover {
+      transform: translateY(-9px) scale(1.01);
+      box-shadow: 0 28px 65px rgba(2, 60, 44, 0.18);
       border-color: var(--green-main);
     }
 
-    .speaker-category h3 {
-      color: var(--text-dark);
-      font-size: 20px;
-      margin-bottom: 8px;
-      line-height: 1.25;
+    .speaker-card:hover::after {
+      transform: scale(1.25);
+      background: rgba(244, 182, 63, 0.12);
     }
 
-    .speaker-category span {
+    .speaker-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 22px;
+      overflow: hidden;
+      border: 4px solid #ffffff;
+      outline: 1px solid var(--border);
+      box-shadow: 0 12px 28px rgba(0, 155, 99, 0.16);
+      background: linear-gradient(135deg, #e9fff2 0%, #b9f2d0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green-dark);
+      font-size: 38px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .speaker-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.35s ease;
+    }
+
+    .speaker-card:hover .speaker-photo img {
+      transform: scale(1.08);
+    }
+
+    .speaker-card h3 {
+      font-size: 22px;
+      line-height: 1.25;
+      margin-bottom: 10px;
+      color: var(--text-dark);
+      letter-spacing: -0.02em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .speaker-role {
       color: var(--green-dark);
       font-weight: 700;
       font-size: 14px;
-    }
-
-    .speaker-note {
-      margin-top: 34px;
-      background: rgba(217, 255, 233, 0.72);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 20px 24px;
+      line-height: 1.55;
+      margin-bottom: 10px;
       position: relative;
       z-index: 1;
-      animation: softSlideIn 1.05s ease both;
     }
 
-    .speaker-note p {
+    .speaker-org {
+      color: var(--text-muted);
       font-size: 15px;
-      color: var(--green-dark);
-      font-weight: 600;
-      max-width: none;
+      line-height: 1.65;
+      position: relative;
+      z-index: 1;
+    }
+
+    .reveal-card {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+
+    .reveal-card.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     @keyframes softSlideIn {
@@ -368,16 +394,6 @@
         transform: translateY(0);
       }
     }
-
-    @keyframes gentleFloat {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-5px);
-      }
-    }
-
     @keyframes borderMove {
       0% {
         background-position: 0% 50%;
@@ -386,14 +402,6 @@
         background-position: 200% 50%;
       }
     }
-
-    @keyframes cardRise {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     .footer {
       background: linear-gradient(135deg, var(--green-deep), var(--green-dark) 60%, var(--green-main));
       color: var(--white);
@@ -460,9 +468,10 @@
         max-height: 102px;
       }
 
-      .speaker-category-grid,
+      .speaker-grid,
+      .speaker-grid.one-card,
       .footer-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
       }
     }
 
@@ -502,18 +511,15 @@
         padding: 64px 0;
       }
 
-      .speaker-announce-card {
+      .speaker-card {
         border-radius: 24px;
-        padding: 42px 26px;
-        animation: softSlideIn 0.9s ease both;
+        padding: 26px;
       }
 
-      .speaker-announce-card p {
-        font-size: 16px;
-      }
-
-      .speaker-category {
-        min-height: 130px;
+      .speaker-grid,
+      .speaker-grid.one-card,
+      .footer-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -569,33 +575,31 @@
   <main>
     <section class="section-padding">
       <div class="container">
-        <div class="speaker-announce-card">
-          <h2>Speakers will be announced soon</h2>
+        <div class="page-title">
+          <h2>Speakers</h2>
           <p>
-            ICECA 2026 will feature distinguished plenary, keynote, and invited speakers from academia,
-            civil society, development organizations, government institutions, and climate action networks.
+            ICECA 2026 will feature distinguished speakers from academia, research, policy, development, and climate action networks.
           </p>
+        </div>
 
-          <div class="speaker-category-grid">
-            <div class="speaker-category">
-              <h3>Plenary Speaker</h3>
-              <span>To be announced</span>
+        <div class="speaker-grid">
+          <article class="speaker-card reveal-card">
+            <div class="speaker-photo">
+              <img src="images/speakers/elizabeth-eklund.jpg" alt="Elizabeth Eklund" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=&quot;fa-solid fa-user&quot;></i>';">
             </div>
+            <h3>Elizabeth Eklund</h3>
+            <div class="speaker-role">Environmental Anthropologist / Political Ecologist</div>
+            <div class="speaker-org">Purdue University, USA</div>
+          </article>
 
-            <div class="speaker-category">
-              <h3>Keynote Speakers</h3>
-              <span>To be announced</span>
+          <article class="speaker-card reveal-card">
+            <div class="speaker-photo">
+              <img src="images/speakers/nandini-rajamani.jpg" alt="Nandini Rajamani" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=&quot;fa-solid fa-user&quot;></i>';">
             </div>
-
-            <div class="speaker-category">
-              <h3>Invited Speakers</h3>
-              <span>To be announced</span>
-            </div>
-          </div>
-
-          <div class="speaker-note">
-            <p>Final speaker details and profiles will be updated after confirmation.</p>
-          </div>
+            <h3>Nandini Rajamani</h3>
+            <div class="speaker-role">Associate Professor, Biology Department</div>
+            <div class="speaker-org">IISER Tirupati, India</div>
+          </article>
         </div>
       </div>
     </section>
@@ -637,6 +641,22 @@
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
       });
+    });
+
+    const revealCards = document.querySelectorAll('.reveal-card');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    revealCards.forEach((card) => {
+      revealObserver.observe(card);
     });
   </script>
 </body>
