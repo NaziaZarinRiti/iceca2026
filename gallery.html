@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | ICECA 2026</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --green-deep: #023c2c;
+      --green-dark: #046444;
+      --green-main: #009b63;
+      --green-card: #f0fff6;
+      --gold: #f4b63f;
+      --gold-dark: #d99b24;
+      --text-dark: #07251c;
+      --text-muted: #49675b;
+      --border: #a7e7c2;
+      --white: #ffffff;
+      --bg: #dffbea;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    .logo-area {
+      background: rgba(232, 255, 241, 0.96);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo-strip {
+      padding: 18px 0 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .logo-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 108px;
+    }
+
+    .logo-img {
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .auw-logo {
+      max-height: 128px;
+    }
+
+    .program-logo {
+      max-height: 156px;
+    }
+
+    .gbm-logo {
+      max-height: 140px;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(232, 255, 241, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+    }
+
+    .nav-content {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      width: 64px;
+      height: 64px;
+      background: transparent;
+      border: none;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      overflow: visible;
+      box-shadow: none;
+    }
+
+    .brand-icon img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+    }
+
+    .brand h1 {
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .brand p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .nav-links a {
+      position: relative;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--green-main);
+    }
+
+    .nav-links a:not(.old-link)::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--green-main);
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:not(.old-link):hover::after,
+    .nav-links a.active:not(.old-link)::after {
+      width: 100%;
+    }
+
+    .old-link {
+      background: linear-gradient(135deg, var(--gold), #ffcc5c);
+      color: var(--white) !important;
+      padding: 10px 16px;
+      border-radius: 999px;
+      transition: 0.2s ease;
+    }
+
+    .old-link:hover {
+      background: var(--gold-dark);
+      transform: translateY(-2px);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+      font-size: 18px;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+
+    .gallery-page {
+      min-height: calc(100vh - 72px);
+      position: relative;
+      overflow: hidden;
+      padding: 58px 0 72px;
+      background:
+        radial-gradient(circle at 10% 14%, rgba(0, 155, 99, 0.10), transparent 30%),
+        radial-gradient(circle at 92% 22%, rgba(244, 182, 63, 0.13), transparent 28%),
+        linear-gradient(135deg, #f4fff8 0%, #dffbea 45%, #c8f6dd 100%);
+    }
+
+    .gallery-page::before {
+      content: "";
+      position: absolute;
+      width: 460px;
+      height: 460px;
+      border-radius: 50%;
+      left: -210px;
+      bottom: -230px;
+      background: rgba(2, 60, 44, 0.08);
+    }
+
+    .gallery-page::after {
+      content: "";
+      position: absolute;
+      width: 390px;
+      height: 390px;
+      border-radius: 50%;
+      right: -160px;
+      top: 150px;
+      background: rgba(255, 255, 255, 0.34);
+    }
+
+    .gallery-title {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 28px;
+    }
+
+    .gallery-title h2 {
+      font-size: clamp(40px, 6vw, 72px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      color: var(--text-dark);
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .gallery-title p {
+      color: var(--text-muted);
+      font-size: 17px;
+    }
+
+    .kinetic-wrap {
+      position: relative;
+      z-index: 2;
+      width: min(1120px, 94vw);
+      height: 620px;
+      margin: 0 auto;
+      border-radius: 38px;
+      background: rgba(255, 255, 255, 0.58);
+      border: 1px solid rgba(167, 231, 194, 0.72);
+      box-shadow: 0 28px 70px rgba(2, 60, 44, 0.13);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .kinetic-heading {
+      position: absolute;
+      left: 52px;
+      top: 38px;
+      z-index: 2;
+      color: rgba(2, 60, 44, 0.18);
+      font-weight: 900;
+      font-size: clamp(42px, 6vw, 74px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      pointer-events: none;
+      transition: opacity 0.8s ease, transform 1.1s cubic-bezier(.2,.85,.2,1);
+    }
+
+    .year-watermark {
+      position: absolute;
+      right: 44px;
+      bottom: 48px;
+      z-index: 2;
+      color: rgba(2, 60, 44, 0.12);
+      font-weight: 900;
+      font-size: clamp(70px, 12vw, 152px);
+      line-height: 0.85;
+      letter-spacing: -0.085em;
+      pointer-events: none;
+      transition: transform 1.2s cubic-bezier(.2,.85,.2,1);
+    }
+
+    .kinetic-stage {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+    }
+
+    .photo-tile {
+      position: absolute;
+      border-radius: 24px;
+      overflow: hidden;
+      background: var(--green-card);
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      box-shadow: 0 18px 42px rgba(2, 60, 44, 0.16);
+      opacity: 0;
+      transform: translate3d(0,0,0) scale(0.6);
+      transition:
+        left 1.1s cubic-bezier(.2,.8,.2,1),
+        top 1.1s cubic-bezier(.2,.8,.2,1),
+        width 1.1s cubic-bezier(.2,.8,.2,1),
+        height 1.1s cubic-bezier(.2,.8,.2,1),
+        transform 1.1s cubic-bezier(.2,.8,.2,1),
+        opacity 0.9s ease,
+        border-radius 1.1s ease,
+        filter 1.1s ease;
+      will-change: left, top, width, height, transform, opacity;
+    }
+
+    .photo-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.04);
+      transition: transform 1.1s ease;
+    }
+
+    .photo-tile.active img {
+      transform: scale(1);
+    }
+
+    .photo-tile.pos-hero {
+      left: 6%;
+      top: 15%;
+      width: 35%;
+      height: 62%;
+      opacity: 1;
+      z-index: 8;
+      transform: rotate(-1.5deg) scale(1);
+      border-radius: 30px;
+      filter: none;
+    }
+
+    .photo-tile.pos-main {
+      left: 46%;
+      top: 20%;
+      width: 29%;
+      height: 50%;
+      opacity: 1;
+      z-index: 7;
+      transform: rotate(1.5deg) scale(1);
+      border-radius: 28px;
+      filter: none;
+    }
+
+    .photo-tile.pos-top-right {
+      left: 77%;
+      top: 10%;
+      width: 15%;
+      height: 22%;
+      opacity: 1;
+      z-index: 6;
+      transform: rotate(4deg) scale(1);
+    }
+
+    .photo-tile.pos-mid-right {
+      left: 80%;
+      top: 37%;
+      width: 14%;
+      height: 22%;
+      opacity: 1;
+      z-index: 6;
+      transform: rotate(-3deg) scale(1);
+    }
+
+    .photo-tile.pos-bottom-right {
+      left: 73%;
+      top: 66%;
+      width: 18%;
+      height: 22%;
+      opacity: 1;
+      z-index: 6;
+      transform: rotate(2deg) scale(1);
+    }
+
+    .photo-tile.pos-bottom-left {
+      left: 18%;
+      top: 77%;
+      width: 16%;
+      height: 18%;
+      opacity: 1;
+      z-index: 6;
+      transform: rotate(3deg) scale(1);
+    }
+
+    .photo-tile.pos-top-small {
+      left: 43%;
+      top: 5%;
+      width: 14%;
+      height: 18%;
+      opacity: 1;
+      z-index: 6;
+      transform: rotate(-4deg) scale(1);
+    }
+
+    .photo-tile.pos-floating {
+      left: 59%;
+      top: 73%;
+      width: 15%;
+      height: 18%;
+      opacity: 1;
+      z-index: 6;
+      transform: rotate(-2deg) scale(1);
+    }
+
+    .photo-tile.pos-fade-left {
+      left: -6%;
+      top: 58%;
+      width: 18%;
+      height: 24%;
+      opacity: 0.20;
+      z-index: 4;
+      transform: rotate(-5deg) scale(0.86);
+      filter: blur(1px);
+    }
+
+    .photo-tile.pos-fade-right {
+      left: 91%;
+      top: 52%;
+      width: 18%;
+      height: 24%;
+      opacity: 0.20;
+      z-index: 4;
+      transform: rotate(5deg) scale(0.86);
+      filter: blur(1px);
+    }
+
+    .photo-tile.hidden {
+      opacity: 0;
+      z-index: 1;
+      transform: scale(0.44) rotate(0deg);
+      filter: blur(2px);
+    }
+.thumb-lineup {
+      position: relative;
+      z-index: 3;
+      width: min(900px, 92vw);
+      margin: 28px auto 0;
+      padding: 18px;
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(167, 231, 194, 0.88);
+      box-shadow: 0 18px 45px rgba(2, 60, 44, 0.10);
+      backdrop-filter: blur(10px);
+    }
+
+    .thumb-track {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 12px;
+      align-items: center;
+    }
+
+    .thumb-item {
+      height: 86px;
+      border-radius: 18px;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--green-card);
+      border: 2px solid transparent;
+      opacity: 0.55;
+      transform: scale(0.92);
+      transition: 0.35s ease;
+      box-shadow: 0 10px 24px rgba(2, 60, 44, 0.10);
+    }
+
+    .thumb-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .thumb-item.prev-thumb,
+    .thumb-item.next-thumb {
+      opacity: 0.82;
+      transform: scale(0.97);
+      border-color: rgba(0, 155, 99, 0.30);
+    }
+
+    .thumb-item.current-thumb {
+      opacity: 1;
+      transform: scale(1.08);
+      border-color: var(--gold);
+      box-shadow: 0 16px 34px rgba(244, 182, 63, 0.26);
+      z-index: 2;
+    }
+
+    .gallery-controls {
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .control-btn {
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: var(--white);
+      color: var(--green-dark);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      font-size: 16px;
+      box-shadow: 0 10px 24px rgba(0, 155, 99, 0.12);
+      transition: 0.2s ease;
+    }
+
+    .control-btn:hover {
+      transform: translateY(-3px);
+      background: var(--green-main);
+      color: var(--white);
+      border-color: var(--green-main);
+    }
+
+    .play-btn {
+      min-width: 106px;
+      height: 44px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--green-deep), var(--green-main));
+      color: var(--white);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      font-weight: 700;
+      box-shadow: 0 12px 28px rgba(0, 155, 99, 0.20);
+      transition: 0.2s ease;
+    }
+
+    .play-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 38px rgba(0, 155, 99, 0.26);
+    }
+
+    .footer {
+      background: linear-gradient(135deg, var(--green-deep), var(--green-dark) 60%, var(--green-main));
+      color: var(--white);
+      padding: 56px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1.2fr;
+      gap: 36px;
+    }
+
+    .footer p,
+    .footer a {
+      color: #d1fae5;
+    }
+
+    .footer h3,
+    .footer h2 {
+      margin-bottom: 14px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 8px;
+    }
+
+    @media (max-width: 1000px) {
+      .nav-links {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 72px;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px 4%;
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .logo-strip {
+        min-height: auto;
+        gap: 16px;
+      }
+
+      .auw-logo {
+        max-height: 96px;
+      }
+
+      .program-logo {
+        max-height: 112px;
+      }
+
+      .gbm-logo {
+        max-height: 102px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .kinetic-wrap {
+        height: 560px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .logo-strip {
+        padding: 14px 0 12px;
+        gap: 10px;
+      }
+
+      .logo-box {
+        min-height: 78px;
+      }
+
+      .auw-logo {
+        max-height: 68px;
+      }
+
+      .program-logo {
+        max-height: 78px;
+      }
+
+      .gbm-logo {
+        max-height: 72px;
+      }
+
+      .brand-icon,
+      .brand-icon img {
+        width: 52px;
+        height: 52px;
+      }
+
+      .nav-links {
+        top: 72px;
+      }
+
+      .gallery-page {
+        padding: 48px 0 62px;
+      }
+
+      .gallery-title h2 {
+        font-size: 44px;
+      }
+
+      .gallery-title p {
+        font-size: 15px;
+      }
+
+      .kinetic-wrap {
+        height: 620px;
+        border-radius: 28px;
+      }
+
+      .kinetic-heading {
+        left: 24px;
+        top: 24px;
+        font-size: 38px;
+      }
+
+      .year-watermark {
+        right: 24px;
+        bottom: 28px;
+      }
+
+      .photo-tile {
+        border-radius: 18px;
+      }
+
+      .photo-tile.pos-hero {
+        left: 8%;
+        top: 16%;
+        width: 84%;
+        height: 40%;
+        border-radius: 24px;
+      }
+
+      .photo-tile.pos-main {
+        left: 9%;
+        top: 60%;
+        width: 40%;
+        height: 22%;
+      }
+
+      .photo-tile.pos-top-right {
+        left: 54%;
+        top: 60%;
+        width: 37%;
+        height: 22%;
+      }
+
+      .photo-tile.pos-mid-right {
+        left: 58%;
+        top: 84%;
+        width: 33%;
+        height: 13%;
+      }
+
+      .photo-tile.pos-bottom-right {
+        left: 8%;
+        top: 84%;
+        width: 43%;
+        height: 13%;
+      }
+
+      .photo-tile.pos-bottom-left,
+      .photo-tile.pos-top-small,
+      .photo-tile.pos-floating,
+      .photo-tile.pos-fade-left,
+      .photo-tile.pos-fade-right {
+        opacity: 0;
+      }
+.thumb-track {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .thumb-item {
+        height: 76px;
+      }
+
+      .thumb-item.extra-thumb {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo-area">
+      <div class="container logo-strip">
+        <div class="logo-box">
+          <img src="images/auw-logo.png" alt="Asian University for Women Logo" class="logo-img auw-logo">
+        </div>
+
+        <div class="logo-box center-logo">
+          <img src="images/program-logo.png" alt="ICECA 2026 Conference Logo" class="logo-img program-logo">
+        </div>
+
+        <div class="logo-box">
+          <img src="images/gbm-logo.png" alt="Green Bangle Movement Logo" class="logo-img gbm-logo">
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar">
+      <div class="container nav-content">
+        <a href="index.html" class="brand">
+          <div class="brand-icon image-brand">
+            <img src="images/program-logo.png" alt="ICECA 2026 Logo">
+          </div>
+          <div>
+            <h1>ICECA 2026</h1>
+            <p>Environment & Climate Action</p>
+          </div>
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+          <a href="index.html">Home</a>
+          <a href="travel-stay.html">Travel & Stay</a>
+          <a href="themes.html">Themes & Schedule</a>
+          <a href="gallery.html" class="active">Gallery</a>
+          <a href="speakers.html">Speakers</a>
+          <a href="committee.html">Committee</a>
+          <a href="contact.html">Contact</a>
+          <a class="old-link" href="https://iceca.auw.edu.bd/" target="_blank">ICECA 2025</a>
+        </nav>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="gallery-page">
+      <div class="container">
+        <div class="gallery-title">
+          <h2>Gallery</h2>
+          <p>Moments from ICECA 2025 conference sessions, field visits, networking, and climate action activities.</p>
+        </div>
+
+        <div class="kinetic-wrap">
+          <div class="kinetic-heading" id="kineticHeading">Conference Opening</div>
+          <div class="year-watermark" id="yearWatermark">2025</div>
+
+          <div class="kinetic-stage" id="kineticStage"></div>
+</div>
+
+        <div class="thumb-lineup">
+          <div class="thumb-track" id="thumbTrack"></div>
+
+          <div class="gallery-controls">
+            <button class="control-btn" id="prevBtn" aria-label="Previous photo">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <button class="play-btn" id="playPauseBtn" aria-label="Pause gallery">
+              <i class="fa-solid fa-pause"></i>
+              Pause
+            </button>
+
+            <button class="control-btn" id="nextBtn" aria-label="Next photo">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <h2>ICECA 2026</h2>
+        <p>2nd International Conference on Environment and Climate Action 2026.</p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <div class="footer-links">
+          <a href="https://iceca.auw.edu.bd/" target="_blank">ICECA 2025</a>
+          <a href="index.html#submission">Registration</a>
+          <a href="index.html#submission">Submission</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <p><i class="fa-regular fa-envelope"></i> ICECA@auw.edu.bd</p>
+        <p>Environmental Sciences Program, Asian University for Women</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+
+    const galleryData = [
+      { src: "images/gallery/gallery-01.jpg", title: "Conference Opening", caption: "A moment from the opening session of the previous ICECA conference." },
+      { src: "images/gallery/gallery-02.jpg", title: "Keynote Session", caption: "Speakers sharing insights on climate action and sustainability." },
+      { src: "images/gallery/gallery-03.jpg", title: "Research Presentation", caption: "Participants presenting research and environmental solutions." },
+      { src: "images/gallery/gallery-04.jpg", title: "Panel Discussion", caption: "Academic and community dialogue on environmental challenges." },
+      { src: "images/gallery/gallery-05.jpg", title: "Audience Engagement", caption: "Students, researchers, and guests attending conference sessions." },
+      { src: "images/gallery/gallery-06.jpg", title: "Poster Session", caption: "Poster presentations highlighting research and innovation." },
+      { src: "images/gallery/gallery-07.jpg", title: "Networking", caption: "Participants connecting and exchanging ideas." },
+      { src: "images/gallery/gallery-08.jpg", title: "Recognition", caption: "Celebrating contribution and participation." },
+      { src: "images/gallery/gallery-09.jpg", title: "Group Photo", caption: "A shared memory with participants and organizers." },
+      { src: "images/gallery/gallery-10.jpg", title: "Technical Session", caption: "Focused discussion on sustainability and environmental issues." },
+      { src: "images/gallery/gallery-11.jpg", title: "Collaboration", caption: "Academic exchange and conference collaboration." },
+      { src: "images/gallery/gallery-12.jpg", title: "Climate Dialogue", caption: "Conversations on climate justice and resilience." },
+      { src: "images/gallery/gallery-13.jpg", title: "Field Visit", caption: "Learning beyond the classroom through field experience." },
+      { src: "images/gallery/gallery-14.jpg", title: "Community Engagement", caption: "Connecting learning with environmental action." },
+      { src: "images/gallery/gallery-15.jpg", title: "Green Leadership", caption: "Women-led leadership and sustainable action." },
+      { src: "images/gallery/gallery-16.jpg", title: "Session Highlights", caption: "Memorable moments from ICECA activities." },
+      { src: "images/gallery/gallery-17.jpg", title: "Student Participation", caption: "Students contributing ideas and research." },
+      { src: "images/gallery/gallery-18.jpg", title: "Conference Collaboration", caption: "Moments of collaboration among participants." },
+      { src: "images/gallery/gallery-19.jpg", title: "Sustainability Conversation", caption: "Focused discussion on future pathways." },
+      { src: "images/gallery/gallery-20.jpg", title: "Research Exchange", caption: "Sharing research outcomes and experiences." },
+      { src: "images/gallery/gallery-21.jpg", title: "Conference Memory", caption: "A visual memory from the ICECA journey." },
+      { src: "images/gallery/gallery-22.jpg", title: "Environmental Action", caption: "Participants engaging with sustainability themes." },
+      { src: "images/gallery/gallery-23.jpg", title: "Learning Together", caption: "An inclusive space for discussion and reflection." },
+      { src: "images/gallery/gallery-24.jpg", title: "Closing Moment", caption: "Celebrating shared outcomes of the conference." },
+      { src: "images/gallery/gallery-25.jpg", title: "ICECA Highlights", caption: "A final highlight from previous ICECA memories." }
+    ];
+
+    const kineticStage = document.getElementById('kineticStage');
+    const thumbTrack = document.getElementById('thumbTrack');
+    const kineticHeading = document.getElementById('kineticHeading');
+    const yearWatermark = document.getElementById('yearWatermark');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+
+    let indexOffset = 0;
+    let isPlaying = true;
+    let galleryTimer;
+    const intervalTime = 2600;
+
+    const positionClasses = [
+      'pos-hero',
+      'pos-main',
+      'pos-top-right',
+      'pos-mid-right',
+      'pos-bottom-right',
+      'pos-bottom-left',
+      'pos-top-small',
+      'pos-floating',
+      'pos-fade-left',
+      'pos-fade-right'
+    ];
+
+    galleryData.forEach((item) => {
+      const tile = document.createElement('div');
+      tile.className = 'photo-tile hidden';
+      tile.innerHTML = `<img src="${item.src}" alt="${item.title}" onerror="this.parentElement.style.display='none';">`;
+      kineticStage.appendChild(tile);
+    });
+
+    const tiles = document.querySelectorAll('.photo-tile');
+
+    function getIndex(index) {
+      return (index + galleryData.length) % galleryData.length;
+    }
+
+    function renderKineticGallery() {
+      tiles.forEach((tile, tileIndex) => {
+        tile.className = 'photo-tile hidden';
+
+        let relativeIndex = tileIndex - indexOffset;
+
+        if (relativeIndex < 0) {
+          relativeIndex += galleryData.length;
+        }
+
+        if (relativeIndex >= 0 && relativeIndex < positionClasses.length) {
+          tile.classList.remove('hidden');
+          tile.classList.add(positionClasses[relativeIndex]);
+
+          if (relativeIndex === 0 || relativeIndex === 1) {
+            tile.classList.add('active');
+          }
+        }
+      });
+
+      const activeItem = galleryData[indexOffset];
+      kineticHeading.textContent = activeItem.title;
+
+      kineticHeading.style.transform = indexOffset % 2 === 0 ? 'translateY(0) rotate(0deg)' : 'translateY(10px) rotate(-1deg)';
+      yearWatermark.style.transform = indexOffset % 2 === 0 ? 'rotate(-2deg) translateY(0)' : 'rotate(1deg) translateY(-10px)';
+
+      renderThumbLineup();
+    }
+
+    function renderThumbLineup() {
+      const lineup = [
+        { index: getIndex(indexOffset - 3), className: "extra-thumb" },
+        { index: getIndex(indexOffset - 2), className: "extra-thumb" },
+        { index: getIndex(indexOffset - 1), className: "prev-thumb" },
+        { index: getIndex(indexOffset), className: "current-thumb" },
+        { index: getIndex(indexOffset + 1), className: "next-thumb" },
+        { index: getIndex(indexOffset + 2), className: "extra-thumb" },
+        { index: getIndex(indexOffset + 3), className: "extra-thumb" }
+      ];
+
+      thumbTrack.innerHTML = "";
+
+      lineup.forEach((item) => {
+        const thumb = document.createElement('div');
+        thumb.className = `thumb-item ${item.className}`;
+        thumb.innerHTML = `<img src="${galleryData[item.index].src}" alt="${galleryData[item.index].title}">`;
+        thumb.addEventListener('click', () => {
+          indexOffset = item.index;
+          renderKineticGallery();
+          restartAutoplay();
+        });
+        thumbTrack.appendChild(thumb);
+      });
+    }
+
+    function nextLayout() {
+      indexOffset = getIndex(indexOffset + 1);
+      renderKineticGallery();
+    }
+
+    function prevLayout() {
+      indexOffset = getIndex(indexOffset - 1);
+      renderKineticGallery();
+    }
+
+    function startAutoplay() {
+      clearInterval(galleryTimer);
+      galleryTimer = setInterval(nextLayout, intervalTime);
+    }
+
+    function stopAutoplay() {
+      clearInterval(galleryTimer);
+    }
+
+    function restartAutoplay() {
+      if (isPlaying) {
+        stopAutoplay();
+        startAutoplay();
+      }
+    }
+
+    prevBtn.addEventListener('click', () => {
+      prevLayout();
+      restartAutoplay();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      nextLayout();
+      restartAutoplay();
+    });
+
+    playPauseBtn.addEventListener('click', () => {
+      isPlaying = !isPlaying;
+
+      if (isPlaying) {
+        playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i> Pause';
+        playPauseBtn.setAttribute('aria-label', 'Pause gallery');
+        startAutoplay();
+      } else {
+        playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i> Play';
+        playPauseBtn.setAttribute('aria-label', 'Play gallery');
+        stopAutoplay();
+      }
+    });
+
+    renderKineticGallery();
+    startAutoplay();
+  </script>
+</body>
+</html>
