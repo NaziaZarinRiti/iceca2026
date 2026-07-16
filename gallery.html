@@ -570,7 +570,7 @@
     .footer {
       background: linear-gradient(135deg, var(--green-deep), var(--green-dark) 60%, var(--green-main));
       color: var(--white);
-      padding: 56px 0;
+      padding: 56px 0 28px;
     }
 
     .footer-grid {
@@ -593,7 +593,17 @@
       display: grid;
       gap: 8px;
     }
-
+    .designer-credit {
+      margin-top: 34px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(209, 250, 229, 0.25);
+      text-align: right;
+      color: rgba(209, 250, 229, 0.78);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+    
     @media (max-width: 1000px) {
       .nav-links {
         position: absolute;
@@ -765,6 +775,10 @@
       .strip-photo:nth-child(n+3) {
         display: none;
       }
+      .designer-credit {
+        text-align: left;
+        font-size: 12px;
+      }
     }
   </style>
 </head>
@@ -870,6 +884,9 @@
         <h3>Contact</h3>
         <p><i class="fa-regular fa-envelope"></i> ICECA@auw.edu.bd</p>
         <p>Environmental Sciences Program, Asian University for Women</p>
+      </div>
+      <div class="container designer-credit">
+        Designed by Nazia Zarin Riti
       </div>
     </div>
   </footer>
