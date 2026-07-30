@@ -785,6 +785,207 @@
       font-weight: 400;
       letter-spacing: 0.02em;
     }
+    .sponsors-section{
+    padding:35px 0 30px;
+
+    background:linear-gradient(
+        180deg,
+        #eefdf5 0%,
+        #e5faee 50%,
+        #eefdf5 100%
+    );
+
+    border-top:1px solid rgba(0,155,99,.08);
+    border-bottom:1px solid rgba(0,155,99,.08);
+
+    overflow:hidden;
+    position:relative;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.section-heading span{
+    display:block;
+    color:var(--green-main);
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    margin-bottom:8px;
+}
+
+.section-heading h2{
+    font-size:38px;
+    font-weight:700;
+    color:var(--text-dark);
+    letter-spacing:-0.02em;
+    margin:0;
+}
+
+.sponsor-slider{
+
+    position:relative;
+    overflow:hidden;
+
+    width:100%;
+
+    padding:14px 0;
+
+    background:rgba(255,255,255,.55);
+
+    border:1px solid rgba(0,155,99,.10);
+
+    border-radius:22px;
+
+    box-shadow:0 8px 24px rgba(2,60,44,.06);
+
+    -webkit-mask-image:linear-gradient(
+        to right,
+        transparent,
+        black 8%,
+        black 92%,
+        transparent
+    );
+
+    mask-image:linear-gradient(
+        to right,
+        transparent,
+        black 8%,
+        black 92%,
+        transparent
+    );
+
+}
+
+.sponsor-track{
+
+    display:flex;
+    align-items:center;
+
+    gap:65px;
+
+    width:max-content;
+
+    will-change:transform;
+
+}
+
+.sponsor-track img{
+
+    height:72px;
+    width:auto;
+    object-fit:contain;
+
+    flex-shrink:0;
+
+    opacity:.92;
+
+    transition:
+        transform .30s ease,
+        opacity .30s ease;
+
+}
+
+.sponsor-track img:hover{
+
+    transform:scale(1.08);
+
+    opacity:1;
+
+}
+
+.sponsor-track{
+
+    display:flex;
+    align-items:center;
+    gap:70px;
+    width:max-content;
+    will-change:transform;
+
+}
+.php-logo{
+    height: 170px !important;
+}
+.care-logo{
+    height: 60px !important;
+}
+.logofinal-logo{
+    height: 65px !important;
+}
+
+/* Tablet */
+
+@media(max-width:768px){
+
+.sponsors-section{
+    padding:28px 0 24px;
+}
+
+.section-heading{
+    margin-bottom:16px;
+}
+
+.section-heading h2{
+    font-size:28px;
+}
+
+.sponsor-slider{
+    padding:10px 0;
+    border-radius:16px;
+}
+
+.sponsor-track{
+    gap:35px;
+}
+
+.sponsor-track img{
+    height:44px;
+}
+
+}
+
+/* Mobile */
+
+@media (max-width: 768px){
+
+    .sponsors-section{
+        padding: 20px 0 18px;
+    }
+
+    .section-heading{
+        margin-bottom: 12px;
+    }
+
+    .section-heading h2{
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
+    .sponsor-slider{
+        padding: 8px 0;
+        border-radius: 12px;
+    }
+
+    .sponsor-track{
+        gap: 24px;
+    }
+
+    .sponsor-track img{
+        height: 36px;
+        max-width: 120px;
+        object-fit: contain;
+    }
+
+}
+.sponsors-section{
+    border-top:1px solid rgba(0,155,99,.10);
+    border-bottom:1px solid rgba(0,155,99,.10);
+}
+
+}
 
     @media (max-width: 1000px) {
       .nav-links {
@@ -1186,6 +1387,57 @@
     </section>
   </main>
 
+  <!--================ Sponsors =================-->
+<section class="sponsors-section">
+    <div class="container">
+
+        <div class="section-heading">
+            <span>Our Partners</span>
+            <h2>Sponsors</h2>
+        </div>
+
+        <div class="sponsor-slider">
+
+            <div class="sponsor-track" id="sponsorTrack">
+
+                <!-- First Set -->
+
+                <img src="images/sponsors/gbm-logo.png" alt="">
+                <img src="images/sponsors/sonapahar.png" alt="">
+                <img src="images/sponsors/ypsa.png" alt="">
+                <img src="images/sponsors/care.png" class="care-logo" alt="">
+                <img src="images/sponsors/change.png" alt="">
+                <img src="images/sponsors/mtb.png" alt="">
+                <img src="images/sponsors/kfl.png" alt="">
+                <img src="images/sponsors/logofinal.png" class="logofinal-logo" alt="">
+                <img src="images/sponsors/ecovalley.png" alt="">
+                <img src="images/sponsors/php.png" class="php-logo" alt="">
+                <img src="images/sponsors/aci.png" alt="">
+                <img src="images/sponsors/savoy.png" alt="">
+
+                <!-- Duplicate for infinite loop -->
+
+                <img src="images/sponsors/gbm-logo.png" alt="">
+                <img src="images/sponsors/sonapahar.png" alt="">
+                <img src="images/sponsors/ypsa.png" alt="">
+                <img src="images/sponsors/care.png" class="care-logo" alt="">
+                <img src="images/sponsors/change.png" alt="">
+                <img src="images/sponsors/mtb.png" alt="">
+                <img src="images/sponsors/kfl.png" alt="">
+                <img src="images/sponsors/logofinal.png" class="logofinal-logo" alt="">
+                <img src="images/sponsors/ecovalley.png" alt="">
+                <img src="images/sponsors/php.png" class="php-logo" alt="">
+                <img src="images/sponsors/aci.png" alt="">
+                <img src="images/sponsors/savoy.png" alt="">
+
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
   <footer class="footer" id="contact">
     <div class="container footer-grid">
       <div>
@@ -1310,6 +1562,32 @@
     revealSections.forEach((section) => {
       sectionObserver.observe(section);
     });
+
+    const track = document.getElementById("sponsorTrack");
+
+    let x = 0;
+
+    const speed = 1.2;   // increase for faster
+
+    function animateSponsors(){
+
+    x -= speed;
+
+    if(Math.abs(x) >= track.scrollWidth/2)
+    {
+
+        x = 0;
+
+    }
+
+    track.style.transform = `translateX(${x}px)`;
+
+    requestAnimationFrame(animateSponsors);
+  }
+
+  animateSponsors();
   </script>
+
+
 </body>
 </html>
