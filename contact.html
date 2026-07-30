@@ -596,9 +596,34 @@
       margin-bottom: 14px;
     }
 
-    .footer-links {
-      display: grid;
-      gap: 8px;
+    .footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    }
+    .footer-links a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    color:#d1fae5;
+
+    transition:.25s ease;
+    }
+
+    .footer-links a i{
+    width:20px;
+    font-size:18px;
+    color:var(--gold);
+    }
+
+    .footer-links a:hover{
+    color:#fff;
+    transform:translateX(4px);
+    }
+
+    .footer-links a:hover i{
+    color:#ffd56a;
     }
     .designer-credit {
       margin-top: 34px;
@@ -914,22 +939,35 @@
         <p>2nd International Conference on Environment and Climate Action 2026.</p>
       </div>
 
-      <div>
-        <h3>Quick Links</h3>
-        <div class="footer-links">
-          <a href="https://iceca.auw.edu.bd/" target="_blank">ICECA 2025</a>
-          <a href="index.html#submission">Registration</a>
-          <a href="index.html#submission">Submission</a>
-        </div>
-      </div>
+     <div>
+  <h3>Follow Us</h3>
+
+  <div class="footer-links">
+
+    <a href="https://www.facebook.com/share/1BgH4tvhsf/" target="_blank">
+      <i class="fa-brands fa-facebook-f"></i>
+      Facebook
+    </a>
+
+    <a href="https://www.instagram.com/auw_iceca?igsh=bG10cjFzdWppeXYz" target="_blank">
+      <i class="fa-brands fa-instagram"></i>
+      Instagram
+    </a>
+
+    <a href="https://iceca.auw.edu.bd/" target="_blank">
+      <i class="fa-solid fa-globe"></i>
+      ICECA 2025
+    </a>
+
+  </div>
+</div>
 
       <div>
         <h3>Contact</h3>
-        <p><i class="fa-regular fa-envelope"></i> ICECA@auw.edu.bd</p>
-        <p>Environmental Sciences Program, Asian University for Women</p>
+        <p><i class="fa-solid fa-envelope"></i> ICECA@auw.edu.bd</p>
+        <p>Asian University for Women</p>
       </div>
     </div>
-    
       <div class="container designer-credit">
         Designed by Nazia Zarin Riti
       </div>
