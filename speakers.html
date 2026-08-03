@@ -394,6 +394,7 @@
         transform: translateY(0);
       }
     }
+
     @keyframes borderMove {
       0% {
         background-position: 0% 50%;
@@ -402,6 +403,7 @@
         background-position: 200% 50%;
       }
     }
+
     .footer {
       background: linear-gradient(135deg, var(--green-deep), var(--green-dark) 60%, var(--green-main));
       color: var(--white);
@@ -424,30 +426,35 @@
       margin-bottom: 14px;
     }
 
-    .footer-links a{
-    display:flex;
-    align-items:center;
-    gap:12px;
-
-    color:#d1fae5;
-
-    transition:.25s ease;
-    }
-    
-    .footer-links a i{
-    width:20px;
-    font-size:18px;
-    color:var(--gold);
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
 
-    .footer-links a:hover{
-    color:#fff;
-    transform:translateX(4px);
+    .footer-links a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #d1fae5;
+      transition: 0.25s ease;
     }
 
-    .footer-links a:hover i{
-    color:#ffd56a;
+    .footer-links a i {
+      width: 20px;
+      font-size: 18px;
+      color: var(--gold);
     }
+
+    .footer-links a:hover {
+      color: #fff;
+      transform: translateX(4px);
+    }
+
+    .footer-links a:hover i {
+      color: #ffd56a;
+    }
+
     .designer-credit {
       margin-top: 34px;
       padding-top: 18px;
@@ -459,6 +466,7 @@
       letter-spacing: 0.02em;
     }
 
+    /* Tablet */
     @media (max-width: 1000px) {
       .nav-links {
         position: absolute;
@@ -499,13 +507,17 @@
       }
 
       .speaker-grid,
-      .speaker-grid.one-card,
-      .footer-grid {
+      .speaker-grid.one-card {
         grid-template-columns: 1fr 1fr;
+      }
+
+      .section-padding {
+        padding: 64px 0;
       }
     }
 
-    @media (max-width: 640px) {
+    /* Mobile */
+    @media (max-width: 768px) {
       .logo-strip {
         padding: 14px 0 12px;
         gap: 10px;
@@ -547,13 +559,99 @@
       }
 
       .speaker-grid,
-      .speaker-grid.one-card,
-      .footer-grid {
+      .speaker-grid.one-card {
         grid-template-columns: 1fr;
       }
+
       .designer-credit {
         text-align: left;
         font-size: 12px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .logo-strip {
+        padding: 12px 0 10px;
+        gap: 8px;
+      }
+
+      .logo-box {
+        min-height: 68px;
+      }
+
+      .auw-logo {
+        max-height: 58px;
+      }
+
+      .program-logo {
+        max-height: 68px;
+      }
+
+      .gbm-logo {
+        max-height: 62px;
+      }
+
+      .brand {
+        gap: 8px;
+      }
+
+      .brand h1 {
+        font-size: 20px;
+      }
+
+      .brand p {
+        font-size: 12px;
+      }
+
+      .nav-content {
+        min-height: 64px;
+      }
+
+      .container {
+        width: min(100%, 95%);
+      }
+
+      .page-title h2 {
+        font-size: 28px;
+      }
+
+      .page-title p {
+        font-size: 16px;
+      }
+
+      .speaker-photo {
+        width: 100px;
+        height: 100px;
+        font-size: 32px;
+      }
+
+      .speaker-card h3 {
+        font-size: 18px;
+      }
+
+      .speaker-role {
+        font-size: 13px;
+      }
+
+      .speaker-org {
+        font-size: 14px;
+      }
+
+      .category-title h2 {
+        font-size: 24px;
+      }
+
+      .footer {
+        padding: 40px 0 20px;
+      }
+
+      .designer-credit {
+        margin-top: 24px;
+        padding-top: 14px;
       }
     }
   </style>
@@ -651,12 +749,12 @@
               <img src="images/speakers/muthukumar-nadar.jpeg" alt="Dr. M.S.A. Muthukumar Nadar" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=&quot;fa-solid fa-user&quot;></i>';">
             </div>
             <h3>M.S.A. Muthukumar Nadar</h3>
-             <div class="speaker-role">Director of  Arirang Biosciences PVR LTD</div>
+            <div class="speaker-role">Director of Arirang Biosciences PVR LTD</div>
             <div class="speaker-role">Associate Professor, Biotechnology Department</div>
             <div class="speaker-org">Karunya University, Tamilnadu, India</div>
           </article>
 
-           <article class="speaker-card reveal-card">
+          <article class="speaker-card reveal-card">
             <div class="speaker-photo">
               <img src="images/speakers/Islam-bez.png" alt="islam" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=&quot;fa-solid fa-user&quot;></i>';">
             </div>
@@ -729,7 +827,6 @@
             <div class="speaker-org">Department of Aquaculture<br>Bangladesh Agricultural University, Bangladesh</div>
           </article>
 
-
           <article class="speaker-card reveal-card">
             <div class="speaker-photo">
               <img src="images/speakers/tasnia.jpg" alt="Dr. M.S.A. Muthukumar Nadar" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=&quot;fa-solid fa-user&quot;></i>';">
@@ -738,8 +835,6 @@
             <div class="speaker-role">Assistant Director</div>
             <div class="speaker-org">Centre for Climate Change and Environmental Research (C3ER)<br>BRAC University, Bangladesh</div>
           </article>
-
-          
         </div>
       </div>
     </section>
