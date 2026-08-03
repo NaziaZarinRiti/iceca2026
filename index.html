@@ -377,7 +377,7 @@
       color: var(--text-muted);
     }
 
-    .section {
+    section {
       scroll-margin-top: 90px;
     }
 
@@ -770,34 +770,33 @@
       margin-bottom: 14px;
     }
 
-    .footer-links{
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-    }
-    .footer-links a{
-    display:flex;
-    align-items:center;
-    gap:12px;
-
-    color:#d1fae5;
-
-    transition:.25s ease;
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
 
-    .footer-links a i{
-    width:20px;
-    font-size:18px;
-    color:var(--gold);
+    .footer-links a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #d1fae5;
+      transition: 0.25s ease;
     }
 
-    .footer-links a:hover{
-    color:#fff;
-    transform:translateX(4px);
+    .footer-links a i {
+      width: 20px;
+      font-size: 18px;
+      color: var(--gold);
     }
 
-    .footer-links a:hover i{
-    color:#ffd56a;
+    .footer-links a:hover {
+      color: #fff;
+      transform: translateX(4px);
+    }
+
+    .footer-links a:hover i {
+      color: #ffd56a;
     }
 
     .designer-credit {
@@ -810,139 +809,104 @@
       font-weight: 400;
       letter-spacing: 0.02em;
     }
-    .sponsors-section{
-    padding:35px 0 30px;
 
-    background:linear-gradient(
+    .sponsors-section {
+      padding: 35px 0 30px;
+      background: linear-gradient(
         180deg,
         #eefdf5 0%,
         #e5faee 50%,
         #eefdf5 100%
-    );
+      );
+      border-top: 1px solid rgba(0, 155, 99, 0.08);
+      border-bottom: 1px solid rgba(0, 155, 99, 0.08);
+      overflow: hidden;
+      position: relative;
+    }
 
-    border-top:1px solid rgba(0,155,99,.08);
-    border-bottom:1px solid rgba(0,155,99,.08);
+    .section-heading {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-    overflow:hidden;
-    position:relative;
-  }
+    .section-heading span {
+      display: block;
+      color: var(--green-main);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
 
-.section-heading{
-    text-align:center;
-    margin-bottom:20px;
-}
+    .section-heading h2 {
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--text-dark);
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
 
-.section-heading span{
-    display:block;
-    color:var(--green-main);
-    font-size:13px;
-    font-weight:700;
-    letter-spacing:.18em;
-    text-transform:uppercase;
-    margin-bottom:8px;
-}
-
-.section-heading h2{
-    font-size:38px;
-    font-weight:700;
-    color:var(--text-dark);
-    letter-spacing:-0.02em;
-    margin:0;
-}
-
-.sponsor-slider{
-
-    position:relative;
-    overflow:hidden;
-
-    width:100%;
-
-    padding:14px 0;
-
-    background:rgba(255,255,255,.55);
-
-    border:1px solid rgba(0,155,99,.10);
-
-    border-radius:22px;
-
-    box-shadow:0 8px 24px rgba(2,60,44,.06);
-
-    -webkit-mask-image:linear-gradient(
+    .sponsor-slider {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      padding: 14px 0;
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(0, 155, 99, 0.10);
+      border-radius: 22px;
+      box-shadow: 0 8px 24px rgba(2, 60, 44, 0.06);
+      -webkit-mask-image: linear-gradient(
         to right,
         transparent,
         black 8%,
         black 92%,
         transparent
-    );
-
-    mask-image:linear-gradient(
+      );
+      mask-image: linear-gradient(
         to right,
         transparent,
         black 8%,
         black 92%,
         transparent
-    );
+      );
+    }
 
-}
+    .sponsor-track {
+      display: flex;
+      align-items: center;
+      gap: 65px;
+      width: max-content;
+      will-change: transform;
+    }
 
-.sponsor-track{
+    .sponsor-track img {
+      height: 72px;
+      width: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+      opacity: 0.92;
+      transition: transform 0.30s ease, opacity 0.30s ease;
+    }
 
-    display:flex;
-    align-items:center;
+    .sponsor-track img:hover {
+      transform: scale(1.08);
+      opacity: 1;
+    }
 
-    gap:65px;
+    .php-logo {
+      height: 170px !important;
+    }
 
-    width:max-content;
+    .care-logo {
+      height: 60px !important;
+    }
 
-    will-change:transform;
+    .logofinal-logo {
+      height: 65px !important;
+    }
 
-}
-
-.sponsor-track img{
-
-    height:72px;
-    width:auto;
-    object-fit:contain;
-
-    flex-shrink:0;
-
-    opacity:.92;
-
-    transition:
-        transform .30s ease,
-        opacity .30s ease;
-
-}
-
-.sponsor-track img:hover{
-
-    transform:scale(1.08);
-
-    opacity:1;
-
-}
-
-.sponsor-track{
-
-    display:flex;
-    align-items:center;
-    gap:70px;
-    width:max-content;
-    will-change:transform;
-
-}
-.php-logo{
-    height: 170px !important;
-}
-.care-logo{
-    height: 60px !important;
-}
-.logofinal-logo{
-    height: 65px !important;
-}
-
-/* Mobile */
-
+    /* Tablet */
     @media (max-width: 1000px) {
       .nav-links {
         position: absolute;
@@ -969,33 +933,22 @@
         display: none;
       }
 
-      .hero-content{
-        grid-template-columns:1fr;
-        gap:40px;
-        padding:70px 0;
-        } }
+      .hero-content,
       .about-grid,
       .info-grid,
       .two-grid {
-        grid-template-columns:1fr;
-        gap:20px;
+        grid-template-columns: 1fr;
       }
-      .footer-grid{
-        grid-template-columns:repeat(3,1fr);
-        gap:24px;
-      }
+
       .details-card {
         max-width: 620px;
       }
 
-      .logo-strip{
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        gap:18px;
-        flex-wrap:nowrap;
-        padding:14px 0;
+      .logo-strip {
+        min-height: auto;
+        gap: 16px;
       }
+
       .auw-logo {
         max-height: 96px;
       }
@@ -1007,293 +960,368 @@
       .gbm-logo {
         max-height: 102px;
       }
+
+      .section-heading h2 {
+        font-size: 32px;
+      }
+
+      .sponsor-track {
+        gap: 45px;
+      }
+
+      .sponsor-track img {
+        height: 56px;
+      }
     }
 
-    @media (max-width:640px){
-
-.container{
-    width:94%;
-}
-
-/* Logo */
-
-.logo-strip{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:12px;
-    flex-wrap:nowrap;
-    padding:10px 0;
-}
-
-.logo-box{
-    min-height:auto;
-}
-
-.auw-logo{
-    max-height:58px;
-}
-
-.program-logo{
-    max-height:72px;
-}
-
-.gbm-logo{
-    max-height:62px;
-}
-
-/* Navbar */
-
-.nav-content{
-    min-height:64px;
-}
-
-.brand h1{
-    font-size:20px;
-}
-
-.brand p{
-    font-size:11px;
-}
-
-.brand-icon,
-.brand-icon img{
-    width:46px;
-    height:46px;
-}
-
-.nav-links{
-    top:64px;
-    padding:18px 20px;
-    gap:18px;
-}
-
-.old-link{
-    width:100%;
-    justify-content:center;
-}
-
-/* Hero */
-
-.hero-content{
-    grid-template-columns:1fr;
-    gap:24px;
-    padding:42px 0;
-}
-
-.hero h2{
-    font-size:28px;
-    line-height:1.15;
-}
-
-.hero p{
-    font-size:14px;
-    line-height:1.7;
-}
-
-.hero-actions{
-    flex-direction:column;
-    width:100%;
-}
-
-.hero-actions .btn{
-    width:100%;
-}
-
-/* Cards */
-
-.details-card,
-.about-box,
-.info-card,
-.mini-card{
-    padding:18px;
-    border-radius:18px;
-}
-
-.details-card h3{
-    font-size:22px;
-}
-
-.info-card h2,
-.mini-card h2{
-    font-size:25px;
-}
-
-.card-logo-wrap{
-    width:110px;
-    height:110px;
-}
-
-.card-logo,
-.envs-card-logo,
-.gbm-card-logo{
-    width:110px;
-    height:110px;
-}
-
-/* Sections */
-
-.section-padding{
-    padding:50px 0;
-}
-
-.section-title h2,
-.gallery-title h2{
-    font-size:28px;
-}
-
-.about-box{
-    font-size:15px;
-}
-
-/* Dates */
-
-.date-row{
-    flex-direction:column;
-    gap:6px;
-}
-
-/* Gallery */
-
-.gallery-slider{
-    border-radius:18px;
-}
-
-.gallery-slide img{
-    height:210px;
-}
-
-.slide-caption{
-    left:16px;
-    right:16px;
-    bottom:28px;
-}
-
-.slide-caption h3{
-    font-size:20px;
-}
-
-.gallery-btn{
-    width:36px;
-    height:36px;
-}
-
-.gallery-btn.prev{
-    left:8px;
-}
-
-.gallery-btn.next{
-    right:8px;
-}
-
-/* Sponsors */
-
-.sponsors-section{
-    padding:18px 0;
-}
-
-.section-heading h2{
-    font-size:24px;
-}
-
-.sponsor-slider{
-    border-radius:14px;
-    padding:8px 0;
-}
-
-.sponsor-track{
-    gap:26px;
-}
-
-.sponsor-track img{
-    height:32px;
-    max-width:110px;
-    object-fit:contain;
-}
-
-.php-logo{
-    height:72px !important;
-}
-
-.care-logo{
-    height:34px !important;
-}
-
-.logofinal-logo{
-    height:38px !important;
-}
-
-/* Footer */
-
-.footer{
-    padding:42px 0 20px;
-}
-
-.footer-grid{
-    grid-template-columns:1fr;
-    gap:24px;
-}
-
-.footer h2{
-    font-size:24px;
-}
-
-.designer-credit{
-    text-align:center;
-    margin-top:22px;
-    font-size:12px;
-}
-
-@media (max-width:480px){
-
-.container{
-    width:95%;
-}
-
-.brand h1{
-    font-size:18px;
-}
-
-.hero h2{
-    font-size:24px;
-}
-
-.section-title h2,
-.gallery-title h2,
-.section-heading h2{
-    font-size:22px;
-}
-
-.gallery-slide img{
-    height:180px;
-}
-
-.details-card,
-.about-box,
-.info-card,
-.mini-card{
-    padding:16px;
-}
-
-.btn{
-    width:100%;
-}
-
-.logo-strip{
-    gap:8px;
-}
-
-.sponsor-track{
-    gap:18px;
-}
-
-.sponsor-track img{
-    height:28px;
-}
-
-}
-
-}
+    /* Mobile */
+    @media (max-width: 768px) {
+      .logo-strip {
+        padding: 14px 0 12px;
+        gap: 10px;
+      }
+
+      .logo-box {
+        min-height: 78px;
+      }
+
+      .auw-logo {
+        max-height: 68px;
+      }
+
+      .program-logo {
+        max-height: 78px;
+      }
+
+      .gbm-logo {
+        max-height: 72px;
+      }
+
+      .brand-icon,
+      .brand-icon img {
+        width: 52px;
+        height: 52px;
+      }
+
+      .card-logo-wrap {
+        width: 130px;
+        height: 130px;
+      }
+
+      .envs-card-logo,
+      .gbm-card-logo {
+        width: 130px;
+        height: 130px;
+      }
+
+      .nav-links {
+        top: 72px;
+      }
+
+      .hero-content {
+        padding: 72px 0;
+      }
+
+      .hero h2 {
+        font-size: 38px;
+      }
+
+      .section-padding {
+        padding: 64px 0;
+      }
+
+      .details-card,
+      .about-box,
+      .info-card,
+      .mini-card {
+        padding: 26px;
+        border-radius: 24px;
+      }
+
+      .date-row {
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .gallery-slider {
+        border-radius: 24px;
+      }
+
+      .gallery-slide img {
+        height: 330px;
+      }
+
+      .gallery-btn {
+        width: 40px;
+        height: 40px;
+      }
+
+      .gallery-btn.prev {
+        left: 12px;
+      }
+
+      .gallery-btn.next {
+        right: 12px;
+      }
+
+      .slide-caption {
+        left: 22px;
+        right: 22px;
+        bottom: 40px;
+      }
+
+      .slide-caption h3 {
+        font-size: 24px;
+      }
+
+      .designer-credit {
+        text-align: left;
+        font-size: 12px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1.2fr 1fr 1.2fr;
+      }
+
+      .sponsors-section {
+        padding: 20px 0 18px;
+      }
+
+      .section-heading {
+        margin-bottom: 12px;
+      }
+
+      .section-heading h2 {
+        font-size: 24px;
+        line-height: 1.2;
+      }
+
+      .sponsor-slider {
+        padding: 8px 0;
+        border-radius: 12px;
+      }
+
+      .sponsor-track {
+        gap: 24px;
+      }
+
+      .sponsor-track img {
+        height: 36px;
+        max-width: 120px;
+        object-fit: contain;
+      }
+
+      .php-logo {
+        height: 60px !important;
+      }
+
+      .care-logo {
+        height: 40px !important;
+      }
+
+      .logofinal-logo {
+        height: 45px !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .logo-strip {
+        padding: 12px 0 10px;
+        gap: 8px;
+      }
+
+      .logo-box {
+        min-height: 68px;
+      }
+
+      .auw-logo {
+        max-height: 58px;
+      }
+
+      .program-logo {
+        max-height: 68px;
+      }
+
+      .gbm-logo {
+        max-height: 62px;
+      }
+
+      .brand {
+        gap: 8px;
+      }
+
+      .brand h1 {
+        font-size: 20px;
+      }
+
+      .brand p {
+        font-size: 12px;
+      }
+
+      .nav-content {
+        min-height: 64px;
+      }
+
+      .container {
+        width: min(100%, 95%);
+      }
+
+      .hero h2 {
+        font-size: 32px;
+        line-height: 1.1;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero-actions {
+        gap: 12px;
+      }
+
+      .btn {
+        padding: 11px 18px;
+        font-size: 14px;
+      }
+
+      .details-card {
+        padding: 22px;
+        border-radius: 20px;
+      }
+
+      .section-padding {
+        padding: 48px 0;
+      }
+
+      .about-box,
+      .info-card,
+      .mini-card {
+        padding: 22px;
+        border-radius: 20px;
+      }
+
+      .info-card h2,
+      .mini-card h2 {
+        font-size: 24px;
+      }
+
+      .detail-item {
+        gap: 12px;
+      }
+
+      .icon-circle {
+        min-width: 40px;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+      }
+
+      .card-logo-wrap {
+        width: 100px;
+        height: 100px;
+      }
+
+      .envs-card-logo,
+      .gbm-card-logo {
+        width: 100px;
+        height: 100px;
+      }
+
+      .section-title h2 {
+        font-size: 28px;
+      }
+
+      .date-list {
+        gap: 12px;
+      }
+
+      .date-row {
+        padding-bottom: 12px;
+      }
+
+      .gallery-slider {
+        border-radius: 20px;
+      }
+
+      .gallery-slide img {
+        height: 280px;
+      }
+
+      .gallery-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+      }
+
+      .gallery-btn.prev {
+        left: 8px;
+      }
+
+      .gallery-btn.next {
+        right: 8px;
+      }
+
+      .slide-caption {
+        left: 16px;
+        right: 16px;
+        bottom: 32px;
+      }
+
+      .slide-caption h3 {
+        font-size: 18px;
+      }
+
+      .gallery-title h2 {
+        font-size: 26px;
+      }
+
+      .footer {
+        padding: 40px 0 20px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1.2fr 1fr 1.2fr;
+        gap: 24px;
+      }
+
+      .designer-credit {
+        margin-top: 24px;
+        padding-top: 14px;
+      }
+
+      .sponsors-section {
+        padding: 16px 0 14px;
+      }
+
+      .section-heading h2 {
+        font-size: 20px;
+      }
+
+      .sponsor-slider {
+        padding: 6px 0;
+        border-radius: 10px;
+      }
+
+      .sponsor-track {
+        gap: 18px;
+      }
+
+      .sponsor-track img {
+        height: 32px;
+      }
+
+      .php-logo {
+        height: 50px !important;
+      }
+
+      .care-logo {
+        height: 35px !important;
+      }
+
+      .logofinal-logo {
+        height: 38px !important;
+      }
+    }
   </style>
 </head>
 
@@ -1350,7 +1378,7 @@
       <div class="container hero-content">
         <div>
           <h2>2nd International Conference on Environment and Climate Action 2026</h2>
-          <p><strong>“Commoning our futures with climate Justice”</strong></p>
+          <p><strong>"Commoning our futures with climate Justice"</strong></p>
           <p>A refined academic platform for researchers, students, policymakers, activists, and industry leaders to share ideas for a sustainable and climate-resilient future.</p>
           <div class="hero-actions">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSebOHjvNcZJ55JIvAVAjX7d_ZvvV-C_O1zBdQGZsj65Q9Yx3w/viewform" target="_blank" class="btn btn-primary">
@@ -1432,7 +1460,7 @@
             <img src="images/gbm-logo.png" alt="Green Bangle Movement Logo" class="card-logo gbm-card-logo">
           </div>
           <h2>Green Bangle Movement</h2>
-          <p>The Green Bangle Project is a student-led environmental movement at Asian University for Women that empowers women through ecofeminism while protecting Bangladesh’s coastal ecosystems. Bringing together AUW students from 18 Asian countries and local women in Sitakunda Upazila, the initiative combats climate change through mangrove restoration, biodiversity conservation, and sustainable eco-enterprises. The “Green Bangle” symbolises the strength of women creating a protective green barrier for vulnerable coastal communities.</p>
+          <p>The Green Bangle Project is a student-led environmental movement at Asian University for Women that empowers women through ecofeminism while protecting Bangladesh's coastal ecosystems. Bringing together AUW students from 18 Asian countries and local women in Sitakunda Upazila, the initiative combats climate change through mangrove restoration, biodiversity conservation, and sustainable eco-enterprises. The "Green Bangle" symbolises the strength of women creating a protective green barrier for vulnerable coastal communities.</p>
         </div>
       </div>
     </section>
@@ -1534,56 +1562,45 @@
     </section>
   </main>
 
-  <!--================ Sponsors =================-->
-<section class="sponsors-section">
+  <!-- Sponsors Section -->
+  <section class="sponsors-section">
     <div class="container">
+      <div class="section-heading">
+        <span>Our Partners</span>
+        <h2>Sponsors</h2>
+      </div>
 
-        <div class="section-heading">
-            <span>Our Partners</span>
-            <h2>Sponsors</h2>
+      <div class="sponsor-slider">
+        <div class="sponsor-track" id="sponsorTrack">
+          <!-- First Set -->
+          <img src="images/sponsors/gbm-logo.png" alt="">
+          <img src="images/sponsors/sonapahar.png" alt="">
+          <img src="images/sponsors/ypsa.png" alt="">
+          <img src="images/sponsors/care.png" class="care-logo" alt="">
+          <img src="images/sponsors/change.png" alt="">
+          <img src="images/sponsors/mtb.png" alt="">
+          <img src="images/sponsors/kfl.png" alt="">
+          <img src="images/sponsors/logofinal.png" class="logofinal-logo" alt="">
+          <img src="images/sponsors/ecovalley.png" alt="">
+          <img src="images/sponsors/php.png" class="php-logo" alt="">
+          <img src="images/sponsors/savoy.png" alt="">
+
+          <!-- Duplicate for infinite loop -->
+          <img src="images/sponsors/gbm-logo.png" alt="">
+          <img src="images/sponsors/sonapahar.png" alt="">
+          <img src="images/sponsors/ypsa.png" alt="">
+          <img src="images/sponsors/care.png" class="care-logo" alt="">
+          <img src="images/sponsors/change.png" alt="">
+          <img src="images/sponsors/mtb.png" alt="">
+          <img src="images/sponsors/kfl.png" alt="">
+          <img src="images/sponsors/logofinal.png" class="logofinal-logo" alt="">
+          <img src="images/sponsors/ecovalley.png" alt="">
+          <img src="images/sponsors/php.png" class="php-logo" alt="">
+          <img src="images/sponsors/savoy.png" alt="">
         </div>
-
-        <div class="sponsor-slider">
-
-            <div class="sponsor-track" id="sponsorTrack">
-
-                <!-- First Set -->
-
-                <img src="images/sponsors/gbm-logo.png" alt="">
-                <img src="images/sponsors/sonapahar.png" alt="">
-                <img src="images/sponsors/ypsa.png" alt="">
-                <img src="images/sponsors/care.png" class="care-logo" alt="">
-                <img src="images/sponsors/change.png" alt="">
-                <img src="images/sponsors/mtb.png" alt="">
-                <img src="images/sponsors/kfl.png" alt="">
-                <img src="images/sponsors/logofinal.png" class="logofinal-logo" alt="">
-                <img src="images/sponsors/ecovalley.png" alt="">
-                <img src="images/sponsors/php.png" class="php-logo" alt="">
-          <!--  <img src="images/sponsors/aci.png" alt=""> -->
-                <img src="images/sponsors/savoy.png" alt="">
-
-                <!-- Duplicate for infinite loop -->
-
-                <img src="images/sponsors/gbm-logo.png" alt="">
-                <img src="images/sponsors/sonapahar.png" alt="">
-                <img src="images/sponsors/ypsa.png" alt="">
-                <img src="images/sponsors/care.png" class="care-logo" alt="">
-                <img src="images/sponsors/change.png" alt="">
-                <img src="images/sponsors/mtb.png" alt="">
-                <img src="images/sponsors/kfl.png" alt="">
-                <img src="images/sponsors/logofinal.png" class="logofinal-logo" alt="">
-                <img src="images/sponsors/ecovalley.png" alt="">
-                <img src="images/sponsors/php.png" class="php-logo" alt="">
-              <!--  <img src="images/sponsors/aci.png" alt=""> -->
-                <img src="images/sponsors/savoy.png" alt="">
-
-
-            </div>
-
-        </div>
-
+      </div>
     </div>
-</section>
+  </section>
 
   <footer class="footer" id="contact">
     <div class="container footer-grid">
@@ -1594,25 +1611,23 @@
 
       <div>
         <h3>Follow Us</h3>
-
-          <div class="footer-links">
-
+        <div class="footer-links">
           <a href="https://www.facebook.com/share/1BgH4tvhsf/" target="_blank">
             <i class="fa-brands fa-facebook-f"></i>
-              Facebook
+            Facebook
           </a>
 
           <a href="https://www.instagram.com/auw_iceca?igsh=bG10cjFzdWppeXYz" target="_blank">
             <i class="fa-brands fa-instagram"></i>
-              Instagram
+            Instagram
           </a>
 
           <a href="https://iceca.auw.edu.bd/" target="_blank">
             <i class="fa-solid fa-globe"></i>
-              ICECA 2025
-        </a>
-          </div>
-</div>
+            ICECA 2025
+          </a>
+        </div>
+      </div>
 
       <div>
         <h3>Contact</h3>
@@ -1620,9 +1635,9 @@
         <p>Asian University for Women</p>
       </div>
     </div>
-      <div class="container designer-credit">
-        Designed by Nazia Zarin Riti
-      </div>
+    <div class="container designer-credit">
+      Designed by Nazia Zarin Riti
+    </div>
   </footer>
 
   <script>
@@ -1726,27 +1741,21 @@
 
     let x = 0;
 
-    const speed = 1.2;   // increase for faster
+    const speed = 1.2;
 
-    function animateSponsors(){
+    function animateSponsors() {
+      x -= speed;
 
-    x -= speed;
-
-    if(Math.abs(x) >= track.scrollWidth/2)
-    {
-
+      if (Math.abs(x) >= track.scrollWidth / 2) {
         x = 0;
+      }
 
+      track.style.transform = `translateX(${x}px)`;
+
+      requestAnimationFrame(animateSponsors);
     }
 
-    track.style.transform = `translateX(${x}px)`;
-
-    requestAnimationFrame(animateSponsors);
-  }
-
-  animateSponsors();
+    animateSponsors();
   </script>
-
-
 </body>
 </html>
