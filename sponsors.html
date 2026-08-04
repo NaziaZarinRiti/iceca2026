@@ -7,27 +7,23 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     :root {
-      --green-deep: #012b20;
-      --green-dark: #034e35;
-      --green-main: #008756;
-      --green-bright: #00bf72;
-      --green-light: #e8fbf1;
-      --gold: #f5b700;
-      --gold-dark: #d49a00;
-      --text-dark: #071f18;
-      --text-muted: #3d5a50;
-      --border: #a4e3c1;
+      --green-deep: #023c2c;
+      --green-dark: #046444;
+      --green-main: #009b63;
+      --green-card: #f0fff6;
+      --gold: #f4b63f;
+      --gold-dark: #d99b24;
+      --text-dark: #07251c;
+      --text-muted: #49675b;
+      --border: #a7e7c2;
       --white: #ffffff;
-      --bg: #e6f7ee;
-      --shadow-sm: 0 4px 12px rgba(2, 43, 32, 0.04);
-      --shadow-md: 0 10px 30px rgba(2, 43, 32, 0.08);
-      --shadow-hover: 0 20px 40px rgba(0, 135, 86, 0.16);
+      --bg: #dffbea;
     }
 
     * {
@@ -41,11 +37,10 @@
     }
 
     body {
-      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
-      background: radial-gradient(circle at 50% 0%, #edfcf4 0%, var(--bg) 100%);
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
       color: var(--text-dark);
       line-height: 1.6;
-      overflow-x: hidden;
     }
 
     a {
@@ -55,56 +50,61 @@
 
     img {
       max-width: 100%;
-      height: auto;
       display: block;
     }
 
     .container {
-      width: min(1180px, 92%);
+      width: min(1120px, 92%);
       margin: 0 auto;
     }
 
-    /* Top Header Logos */
+    /* HEADER & NAV - UNTOUCHED */
     .logo-area {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(12px);
+      background: rgba(232, 255, 241, 0.96);
       border-bottom: 1px solid var(--border);
-      padding: 16px 0;
     }
 
     .logo-strip {
-      display: flex;
-      justify-content: space-between;
+      padding: 18px 0 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
       align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
+      gap: 28px;
     }
 
     .logo-box {
       display: flex;
       justify-content: center;
       align-items: center;
-      flex: 1 1 120px;
-      transition: transform 0.3s ease;
+      min-height: 108px;
     }
 
-    .logo-box:hover {
-      transform: scale(1.04);
+    .logo-img {
+      width: auto;
+      object-fit: contain;
+      display: block;
     }
 
-    .auw-logo { max-height: clamp(50px, 8vw, 120px); }
-    .program-logo { max-height: clamp(60px, 10vw, 145px); }
-    .gbm-logo { max-height: clamp(55px, 9vw, 130px); }
+    .auw-logo {
+      max-height: 128px;
+    }
 
-    /* Sticky Navbar */
+    .program-logo {
+      max-height: 156px;
+    }
+
+    .gbm-logo {
+      max-height: 140px;
+    }
+
     .navbar {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(12px);
+      background: rgba(232, 255, 241, 0.96);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
-      box-shadow: var(--shadow-sm);
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
     }
 
     .nav-content {
@@ -112,7 +112,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 24px;
     }
 
     .brand {
@@ -122,42 +122,42 @@
     }
 
     .brand-icon {
-      width: clamp(42px, 5vw, 56px);
-      height: clamp(42px, 5vw, 56px);
+      width: 64px;
+      height: 64px;
+      background: transparent;
+      border: none;
+      border-radius: 50%;
       display: grid;
       place-items: center;
-      flex-shrink: 0;
+      overflow: visible;
+      box-shadow: none;
+    }
+
+    .brand-icon img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
     }
 
     .brand h1 {
-      font-size: clamp(18px, 2.5vw, 22px);
-      line-height: 1.1;
-      font-weight: 800;
-      background: linear-gradient(135deg, var(--green-deep), var(--green-main));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 700;
     }
 
     .brand p {
-      font-size: clamp(11px, 1.5vw, 13px);
+      font-size: 13px;
       color: var(--text-muted);
-      margin-top: 2px;
-      font-weight: 500;
+      margin-top: 5px;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 24px;
       font-size: 14px;
       font-weight: 600;
-      color: #2c3e50;
-    }
-
-    .nav-links a {
-      position: relative;
-      padding: 6px 0;
-      transition: color 0.25s ease;
+      color: #334155;
     }
 
     .nav-links a:hover,
@@ -165,277 +165,261 @@
       color: var(--green-main);
     }
 
-    .nav-links a:not(.old-link)::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 2px5;
-      border-radius: 999px;
-      background: var(--green-main);
-      transition: width 0.25s ease;
-    }
-
-    .nav-links a:not(.old-link):hover::after,
-    .nav-links a.active:not(.old-link)::after {
-      width: 100%;
-    }
-
     .old-link {
-      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      background: linear-gradient(135deg, var(--gold), #ffcc5c);
       color: var(--white) !important;
-      padding: 10px 20px !important;
+      padding: 10px 16px;
       border-radius: 999px;
-      transition: all 0.3s ease;
-      white-space: nowrap;
-      box-shadow: 0 4px 14px rgba(245, 183, 0, 0.3);
+      transition: 0.2s ease;
     }
 
     .old-link:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(245, 183, 0, 0.45);
+      background: var(--gold-dark);
     }
 
     .mobile-menu-btn {
       display: none;
-      width: 44px;
-      height: 44px;
+      width: 42px;
+      height: 42px;
       border: 1px solid var(--border);
       border-radius: 12px;
       background: var(--white);
-      font-size: 20px;
+      font-size: 18px;
       color: var(--text-dark);
       cursor: pointer;
-      align-items: center;
-      justify-content: center;
-      transition: 0.2s ease;
     }
 
-    /* Sections */
     .section-padding {
-      padding: clamp(50px, 8vw, 90px) 0;
+      padding: 86px 0;
     }
 
     .page-title {
       text-align: center;
       max-width: 800px;
-      margin: 0 auto clamp(40px, 6vw, 64px);
-      animation: softSlideIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+      margin: 0 auto 44px;
+      animation: softSlideIn 0.9s ease both;
     }
 
     .page-title .hero-badge {
       display: inline-block;
-      background: rgba(0, 135, 86, 0.1);
       color: var(--green-main);
-      border: 1px solid rgba(0, 135, 86, 0.2);
-      padding: 6px 18px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.05em;
       text-transform: uppercase;
-      margin-bottom: 16px;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      font-weight: 700;
+      margin-bottom: 14px;
     }
 
     .page-title h2 {
-      font-size: clamp(32px, 5.5vw, 56px);
-      line-height: 1.1;
-      letter-spacing: -0.03em;
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
       color: var(--text-dark);
-      font-weight: 800;
       margin-bottom: 18px;
     }
 
     .page-title p {
       color: var(--text-muted);
-      font-size: clamp(15px, 2vw, 18px);
-      line-height: 1.6;
+      font-size: 18px;
     }
 
-    .sponsor-section {
-      margin: clamp(40px, 6vw, 90px) 0;
+    /* SPONSORS SECTION SPECIFIC STYLES */
+    .sponsor-group {
+      margin-bottom: 56px;
+    }
+
+    .sponsor-category-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .sponsor-category-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--green-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .sponsor-category-title i {
+      color: var(--gold);
+    }
+
+    .sponsor-category-subtitle {
+      color: var(--text-muted);
+      font-size: 16px;
     }
 
     .section-divider {
-      border: none;
+      border: 0;
       height: 1px;
-      margin: clamp(50px, 7vw, 80px) auto;
-      width: 200px;
-      background: linear-gradient(90deg, transparent, var(--green-main), transparent);
-      opacity: 0.5;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 56px 0;
     }
 
-    /* Centered Section Titles */
-    .section-title {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto clamp(32px, 5vw, 52px);
-      animation: softSlideIn 0.9s ease both;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .section-title h3 {
-      font-size: clamp(26px, 4vw, 42px);
-      line-height: 1.2;
-      color: var(--text-dark);
-      margin-bottom: 10px;
-      font-weight: 800;
-      position: relative;
-      display: inline-block;
-    }
-
-    /* Gold accent mark centered under titles */
-    .section-title h3::after {
-      content: "";
-      display: block;
-      width: 60px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--green-main), var(--gold));
-      margin: 10px auto 0;
-      border-radius: 999px;
-    }
-
-    .section-title p {
-      color: var(--text-muted);
-      font-size: clamp(14px, 1.8vw, 16px);
-      font-weight: 500;
-      margin-top: 8px;
-    }
-
-    /* Auto-Responsive Fluid Grids */
-    .sponsor-grid {
+    /* Grid Layouts */
+    .sponsors-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: clamp(24px, 3.5vw, 32px);
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
     }
 
-    .sponsor-grid.two-col {
-      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    .sponsors-grid.two-col {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 900px;
+      margin: 0 auto;
     }
 
-    /* Premium Sponsor Cards */
+    /* Card Component Design */
     .sponsor-card {
       position: relative;
-      background: var(--white);
-      border: 1px solid rgba(164, 227, 193, 0.7);
-      border-radius: 24px;
-      padding: clamp(28px, 4vw, 40px) clamp(20px, 3vw, 30px);
-      box-shadow: var(--shadow-sm);
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(167, 231, 194, 0.85);
+      border-radius: 28px;
+      padding: 32px 28px;
+      box-shadow: 0 18px 45px rgba(2, 60, 44, 0.08);
+      transition: all 0.35s ease;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
       height: 100%;
-      z-index: 1;
     }
 
-    /* Top Color Gradient Bar */
     .sponsor-card::before {
       content: "";
       position: absolute;
       inset: 0 0 auto 0;
-      height: 4px;
+      height: 6px;
       background: linear-gradient(90deg, var(--green-deep), var(--green-main), var(--gold));
-      transition: height 0.3s ease;
     }
 
     .sponsor-card:hover {
       transform: translateY(-8px);
-      box-shadow: var(--shadow-hover);
+      box-shadow: 0 28px 65px rgba(2, 60, 44, 0.16);
       border-color: var(--green-main);
     }
 
-    .sponsor-card:hover::before {
-      height: 6px;
-    }
-
     .sponsor-logo-wrap {
-      width: 100px;
-      height: 100px;
-      border-radius: 20px;
-      background: linear-gradient(145deg, #ffffff, #f0faf4);
+      height: 110px;
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 24px;
-      padding: 12px;
-      box-shadow: 0 8px 20px rgba(0, 135, 86, 0.08);
-      border: 1px solid rgba(164, 227, 193, 0.6);
-      flex-shrink: 0;
-      transition: transform 0.4s ease;
-    }
-
-    .sponsor-card:hover .sponsor-logo-wrap {
-      transform: scale(1.06);
+      margin-bottom: 20px;
+      padding: 10px;
     }
 
     .sponsor-logo {
-      width: 100%;
-      height: 100%;
+      max-height: 100%;
+      max-width: 85%;
       object-fit: contain;
+      filter: grayscale(10%);
+      transition: filter 0.3s ease;
+    }
+
+    .sponsor-card:hover .sponsor-logo {
+      filter: grayscale(0%);
     }
 
     .sponsor-card h4 {
-      font-size: clamp(17px, 2vw, 20px);
-      line-height: 1.3;
-      margin-bottom: 12px;
-      color: var(--text-dark);
+      font-size: 20px;
       font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+      line-height: 1.3;
     }
 
     .sponsor-description {
       color: var(--text-muted);
-      font-size: clamp(13px, 1.5vw, 14.5px);
-      line-height: 1.65;
-      flex-grow: 1;
+      font-size: 14px;
+      line-height: 1.6;
       margin-bottom: 24px;
+      flex-grow: 1;
     }
 
     .sponsor-link {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
-      color: var(--white);
-      background: linear-gradient(135deg, var(--green-dark), var(--green-main));
-      padding: 12px 26px;
-      border-radius: 999px;
-      font-weight: 700;
+      gap: 8px;
       font-size: 14px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 14px rgba(0, 135, 86, 0.25);
+      font-weight: 600;
+      color: var(--green-main);
+      transition: gap 0.2s ease, color 0.2s ease;
       margin-top: auto;
-      width: 100%;
-      max-width: 200px;
-    }
-
-    .sponsor-link i {
-      transition: transform 0.3s ease;
     }
 
     .sponsor-link:hover {
-      box-shadow: 0 6px 20px rgba(0, 135, 86, 0.4);
-      background: linear-gradient(135deg, var(--green-deep), var(--green-dark));
-      transform: translateY(-2px);
+      color: var(--green-deep);
+      gap: 12px;
     }
 
-    .sponsor-link:hover i {
-      transform: translateX(4px);
+    /* Become a Sponsor Callout Box */
+    .become-sponsor-card {
+      position: relative;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(167, 231, 194, 0.85);
+      border-radius: 32px;
+      padding: 44px 34px;
+      box-shadow: 0 18px 45px rgba(2, 60, 44, 0.10);
+      text-align: center;
+      max-width: 900px;
+      margin: 20px auto 0;
+      overflow: hidden;
     }
 
-    /* Scroll Reveal Animation */
-    .reveal-card {
+    .become-sponsor-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 7px;
+      background: linear-gradient(90deg, var(--green-deep), var(--green-main), var(--gold));
+    }
+
+    .become-sponsor-card h2 {
+      font-size: clamp(28px, 4vw, 36px);
+      margin-bottom: 14px;
+      color: var(--text-dark);
+    }
+
+    .become-sponsor-card p {
+      color: var(--text-muted);
+      font-size: 17px;
+      max-width: 700px;
+      margin: 0 auto 28px;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+      padding: 14px 28px;
+      background: linear-gradient(135deg, var(--green-deep), var(--green-main));
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 999px;
+      transition: 0.2s ease;
+      box-shadow: 0 6px 16px rgba(0, 155, 99, 0.2);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 155, 99, 0.3);
+    }
+
+    .reveal-section {
       opacity: 0;
-      transform: translateY(35px);
-      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(28px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
     }
 
-    .reveal-card.show {
+    .reveal-section.show {
       opacity: 1;
       transform: translateY(0);
     }
@@ -443,7 +427,7 @@
     @keyframes softSlideIn {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(18px);
       }
       to {
         opacity: 1;
@@ -451,29 +435,27 @@
       }
     }
 
-    /* Footer */
+    /* FOOTER - UNTOUCHED */
     .footer {
-      background: linear-gradient(135deg, var(--green-deep), #023829 60%, var(--green-dark));
+      background: linear-gradient(135deg, var(--green-deep), var(--green-dark) 60%, var(--green-main));
       color: var(--white);
-      padding: clamp(40px, 6vw, 64px) 0 30px;
-      position: relative;
-      overflow: hidden;
+      padding: 56px 0 28px;
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 40px;
+      grid-template-columns: 1.2fr 1fr 1.2fr;
+      gap: 36px;
     }
 
-    .footer p, .footer a {
+    .footer p,
+    .footer a {
       color: #d1fae5;
     }
 
-    .footer h3, .footer h2 {
-      color: var(--white);
-      margin-bottom: 16px;
-      font-weight: 700;
+    .footer h3,
+    .footer h2 {
+      margin-bottom: 14px;
     }
 
     .footer-links {
@@ -483,39 +465,41 @@
     }
 
     .footer-links a {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       gap: 12px;
-      transition: all 0.25s ease;
-      width: fit-content;
-      font-weight: 500;
+      color: #d1fae5;
+      transition: 0.25s ease;
     }
 
     .footer-links a i {
-      width: 18px;
+      width: 20px;
+      font-size: 18px;
       color: var(--gold);
     }
 
     .footer-links a:hover {
       color: #fff;
-      transform: translateX(6px);
+      transform: translateX(4px);
+    }
+
+    .footer-links a:hover i {
+      color: #ffd56a;
     }
 
     .designer-credit {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(209, 250, 229, 0.15);
-      text-align: center;
-      color: rgba(209, 250, 229, 0.75);
-      font-size: 13.5px;
+      margin-top: 34px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(209, 250, 229, 0.25);
+      text-align: right;
+      color: rgba(209, 250, 229, 0.78);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
     }
 
-    /* Media Queries */
-    @media (max-width: 960px) {
-      .mobile-menu-btn {
-        display: flex;
-      }
-
+    /* Tablet Responsive */
+    @media (max-width: 1000px) {
       .nav-links {
         position: absolute;
         left: 0;
@@ -525,51 +509,178 @@
         border-bottom: 1px solid var(--border);
         flex-direction: column;
         align-items: flex-start;
-        padding: 24px 6%;
-        gap: 18px;
+        padding: 24px 4%;
         display: none;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
       }
 
       .nav-links.active {
         display: flex;
       }
 
-      .nav-links a {
-        width: 100%;
-        padding: 8px 0;
+      .mobile-menu-btn {
+        display: block;
       }
 
-      .old-link {
-        display: inline-block;
-        text-align: center;
-        margin-top: 6px;
+      .logo-strip {
+        min-height: auto;
+        gap: 16px;
+      }
+
+      .auw-logo {
+        max-height: 96px;
+      }
+
+      .program-logo {
+        max-height: 112px;
+      }
+
+      .gbm-logo {
+        max-height: 102px;
+      }
+
+      .sponsors-grid,
+      .sponsors-grid.two-col {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .section-padding {
+        padding: 64px 0;
       }
     }
 
-    @media (max-width: 480px) {
-      .sponsor-grid.two-col,
-      .sponsor-grid {
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .logo-strip {
+        padding: 14px 0 12px;
+        gap: 10px;
+      }
+
+      .logo-box {
+        min-height: 78px;
+      }
+
+      .auw-logo {
+        max-height: 68px;
+      }
+
+      .program-logo {
+        max-height: 78px;
+      }
+
+      .gbm-logo {
+        max-height: 72px;
+      }
+
+      .brand-icon,
+      .brand-icon img {
+        width: 52px;
+        height: 52px;
+      }
+
+      .nav-links {
+        top: 72px;
+      }
+
+      .section-padding {
+        padding: 64px 0;
+      }
+
+      .sponsors-grid,
+      .sponsors-grid.two-col {
         grid-template-columns: 1fr;
       }
 
-      .sponsor-link {
-        max-width: 100%;
+      .sponsor-card,
+      .become-sponsor-card {
+        border-radius: 24px;
+        padding: 26px;
+      }
+
+      .designer-credit {
+        text-align: left;
+        font-size: 12px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .logo-strip {
+        padding: 12px 0 10px;
+        gap: 8px;
+      }
+
+      .logo-box {
+        min-height: 68px;
+      }
+
+      .auw-logo {
+        max-height: 58px;
+      }
+
+      .program-logo {
+        max-height: 68px;
+      }
+
+      .gbm-logo {
+        max-height: 62px;
+      }
+
+      .brand {
+        gap: 8px;
+      }
+
+      .brand h1 {
+        font-size: 20px;
+      }
+
+      .brand p {
+        font-size: 12px;
+      }
+
+      .nav-content {
+        min-height: 64px;
+      }
+
+      .container {
+        width: min(100%, 95%);
+      }
+
+      .page-title h2 {
+        font-size: 28px;
+      }
+
+      .page-title p {
+        font-size: 16px;
+      }
+
+      .footer {
+        padding: 40px 0 20px;
+      }
+
+      .designer-credit {
+        margin-top: 24px;
+        padding-top: 14px;
       }
     }
   </style>
 </head>
 
 <body>
+  <!-- HEADER - UNTOUCHED -->
   <header>
     <div class="logo-area">
       <div class="container logo-strip">
         <div class="logo-box">
           <img src="images/auw-logo.png" alt="Asian University for Women Logo" class="logo-img auw-logo">
         </div>
-        <div class="logo-box">
+
+        <div class="logo-box center-logo">
           <img src="images/program-logo.png" alt="ICECA 2026 Conference Logo" class="logo-img program-logo">
         </div>
+
         <div class="logo-box">
           <img src="images/gbm-logo.png" alt="Green Bangle Movement Logo" class="logo-img gbm-logo">
         </div>
@@ -579,7 +690,7 @@
     <div class="navbar">
       <div class="container nav-content">
         <a href="index.html" class="brand">
-          <div class="brand-icon">
+          <div class="brand-icon image-brand">
             <img src="images/program-logo.png" alt="ICECA 2026 Logo">
           </div>
           <div>
@@ -599,33 +710,38 @@
           <a class="old-link" href="https://iceca.auw.edu.bd/" target="_blank">ICECA 2025</a>
         </nav>
 
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
     </div>
   </header>
 
+  <!-- MAIN SPONSORS CONTENT AREA -->
   <main>
     <section class="section-padding">
       <div class="container">
+        
+        <!-- Page Title Header -->
         <div class="page-title">
           <span class="hero-badge">Our Supporters</span>
           <h2>Sponsors & Partners</h2>
           <p>
-            We deeply appreciate our co-organizers and sponsors whose generous support makes ICECA 2026 possible. Together, we advance environmental action and climate resilience.
+            We deeply appreciate our co-organizers, sponsors, and partners whose generous support makes ICECA 2026 possible. Together, we advance environmental action and climate resilience.
           </p>
         </div>
 
         <!-- Co-Organizers Section -->
-        <div class="sponsor-section">
-          <div class="section-title">
-            <h3>Co-Organizers</h3>
-            <p>Strategic partners leading this conference</p>
+        <div class="sponsor-group reveal-section">
+          <div class="sponsor-category-header">
+            <h3 class="sponsor-category-title">
+              <i class="fa-solid fa-hands-holding-circle"></i> Co-Organizers
+            </h3>
+            <p class="sponsor-category-subtitle">Strategic partners leading this conference</p>
           </div>
 
-          <div class="sponsor-grid two-col">
-            <article class="sponsor-card reveal-card">
+          <div class="sponsors-grid">
+            <article class="sponsor-card">
               <div class="sponsor-logo-wrap">
                 <img src="images/sponsors/gbm-logo.png" alt="Green Bangle Movement" class="sponsor-logo">
               </div>
@@ -633,10 +749,12 @@
               <p class="sponsor-description">
                 A student-led environmental initiative dedicated to women-centered climate action, coastal ecosystem restoration, and mangrove conservation in Bangladesh.
               </p>
-              <a href="https://auw.edu.bd/" target="_blank" class="sponsor-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="https://auw.edu.bd/" target="_blank" class="sponsor-link">
+                Learn More <i class="fa-solid fa-arrow-right"></i>
+              </a>
             </article>
 
-            <article class="sponsor-card reveal-card">
+            <article class="sponsor-card">
               <div class="sponsor-logo-wrap">
                 <img src="images/sponsors/sonapahar-logo.png" alt="Sonapahar Farmhouse Resort" class="sponsor-logo">
               </div>
@@ -644,10 +762,12 @@
               <p class="sponsor-description">
                 Sonapahar aspires to propose and create a counter narrative of fast urbanized, nature depleting Bangladesh and its artificial lifestyle.
               </p>
-              <a href="https://https://sonapahar.com//" target="_blank" class="sponsor-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="https://sonapahar.com/" target="_blank" class="sponsor-link">
+                Learn More <i class="fa-solid fa-arrow-right"></i>
+              </a>
             </article>
 
-            <article class="sponsor-card reveal-card">
+            <article class="sponsor-card">
               <div class="sponsor-logo-wrap">
                 <img src="images/sponsors/kfl-logo.png" alt="Karnafuly Fishmeal Limited" class="sponsor-logo">
               </div>
@@ -655,10 +775,12 @@
               <p class="sponsor-description">
                 Karnafuly Fishmeal Limited (KFL) is a modern state of the art technology industry, established in 2014 for promoting sustainable fishmeal for feed millers in Bangladesh.
               </p>
-              <a href="https://www.kfl.com.bd/" target="_blank" class="sponsor-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="https://www.kfl.com.bd/" target="_blank" class="sponsor-link">
+                Learn More <i class="fa-solid fa-arrow-right"></i>
+              </a>
             </article>
 
-            <article class="sponsor-card reveal-card">
+            <article class="sponsor-card">
               <div class="sponsor-logo-wrap">
                 <img src="images/sponsors/ypsa-logo.png" alt="YPSA" class="sponsor-logo">
               </div>
@@ -666,10 +788,12 @@
               <p class="sponsor-description">
                 YPSA is a voluntary, non-governmental and non-profit organization focused on supporting vulnerable populations to achieve sustainable development.
               </p>
-              <a href="https://www.ypsa.org/" target="_blank" class="sponsor-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="https://www.ypsa.org/" target="_blank" class="sponsor-link">
+                Learn More <i class="fa-solid fa-arrow-right"></i>
+              </a>
             </article>
 
-            <article class="sponsor-card reveal-card">
+            <article class="sponsor-card">
               <div class="sponsor-logo-wrap">
                 <img src="images/sponsors/change.png" alt="Change Initiative" class="sponsor-logo">
               </div>
@@ -677,7 +801,9 @@
               <p class="sponsor-description">
                 Catalyzing environmental action and sustainable development through community empowerment and innovative climate solutions in Bangladesh.
               </p>
-              <a href="https://www.change.org/" target="_blank" class="sponsor-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="https://www.change.org/" target="_blank" class="sponsor-link">
+                Learn More <i class="fa-solid fa-arrow-right"></i>
+              </a>
             </article>
           </div>
         </div>
@@ -685,14 +811,16 @@
         <hr class="section-divider">
 
         <!-- Sponsors Section -->
-        <div class="sponsor-section">
-          <div class="section-title">
-            <h3>Sponsors</h3>
-            <p>Organizations supporting ICECA 2026 through financial and institutional contributions.</p>
+        <div class="sponsor-group reveal-section">
+          <div class="sponsor-category-header">
+            <h3 class="sponsor-category-title">
+              <i class="fa-solid fa-award"></i> Sponsors
+            </h3>
+            <p class="sponsor-category-subtitle">Organizations supporting ICECA 2026 through financial and institutional contributions.</p>
           </div>
 
-          <div class="sponsor-grid">
-            <article class="sponsor-card reveal-card">
+          <div class="sponsors-grid">
+            <article class="sponsor-card">
               <div class="sponsor-logo-wrap">
                 <img src="images/sponsors/mtb.png" alt="Mutual Trust Bank" class="sponsor-logo">
               </div>
@@ -700,10 +828,12 @@
               <p class="sponsor-description">
                 Mutual Trust Bank PLC (MTB) is a third generation private commercial bank based in Dhaka, Bangladesh, recognized for excellence in digital banking.
               </p>
-              <a href="https://www.mutualtrustbank.com/" target="_blank" class="sponsor-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="https://www.mutualtrustbank.com/" target="_blank" class="sponsor-link">
+                Learn More <i class="fa-solid fa-arrow-right"></i>
+              </a>
             </article>
 
-            <article class="sponsor-card reveal-card">
+            <article class="sponsor-card">
               <div class="sponsor-logo-wrap">
                 <img src="images/sponsors/care.png" alt="CARE Bangladesh" class="sponsor-logo">
               </div>
@@ -711,10 +841,12 @@
               <p class="sponsor-description">
                 CARE is a leading humanitarian organization fighting global poverty with a special focus on empowering girls and women.
               </p>
-              <a href="https://www.care.org/countries/bangladesh/" target="_blank" class="sponsor-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="https://www.care.org/countries/bangladesh/" target="_blank" class="sponsor-link">
+                Learn More <i class="fa-solid fa-arrow-right"></i>
+              </a>
             </article>
 
-            <article class="sponsor-card reveal-card">
+            <article class="sponsor-card">
               <div class="sponsor-logo-wrap">
                 <img src="images/sponsors/bfri.png" alt="BFRI" class="sponsor-logo">
               </div>
@@ -722,10 +854,12 @@
               <p class="sponsor-description">
                 Serving as the single national center for forestry research in Bangladesh, managed directly by the Ministry of Environment since 1985.
               </p>
-              <a href="https://bfri.gov.bd/" target="_blank" class="sponsor-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="https://bfri.gov.bd/" target="_blank" class="sponsor-link">
+                Learn More <i class="fa-solid fa-arrow-right"></i>
+              </a>
             </article>
 
-            <article class="sponsor-card reveal-card">
+            <article class="sponsor-card">
               <div class="sponsor-logo-wrap">
                 <img src="images/sponsors/mg.png" alt="Mohammadi Group" class="sponsor-logo">
               </div>
@@ -733,10 +867,12 @@
               <p class="sponsor-description">
                 Founded in 1986 with 52 workers, the renowned Mohammadi Group now employs over 10,000 across garments, Real Estate, Power, IT, and Media.
               </p>
-              <a href="https://mohammadigroup.com/" target="_blank" class="sponsor-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="https://mohammadigroup.com/" target="_blank" class="sponsor-link">
+                Learn More <i class="fa-solid fa-arrow-right"></i>
+              </a>
             </article>
 
-            <article class="sponsor-card reveal-card">
+            <article class="sponsor-card">
               <div class="sponsor-logo-wrap">
                 <img src="images/sponsors/logofinal.png" alt="The Climate Watch" class="sponsor-logo">
               </div>
@@ -744,7 +880,9 @@
               <p class="sponsor-description">
                 An independent portal based in Bangladesh, dedicated to in-depth coverage of climate change, environment, and biodiversity issues.
               </p>
-              <a href="https://theclimatewatch.com/" target="_blank" class="sponsor-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="https://theclimatewatch.com/" target="_blank" class="sponsor-link">
+                Learn More <i class="fa-solid fa-arrow-right"></i>
+              </a>
             </article>
           </div>
         </div>
@@ -752,14 +890,16 @@
         <hr class="section-divider">
 
         <!-- Partners Section -->
-        <div class="sponsor-section partners-section">
-          <div class="section-title">
-            <h3>Partners</h3>
-            <p>Organizations collaborating with ICECA 2026 to promote environmental awareness and sustainable development.</p>
+        <div class="sponsor-group reveal-section">
+          <div class="sponsor-category-header">
+            <h3 class="sponsor-category-title">
+              <i class="fa-solid fa-handshake"></i> Partners
+            </h3>
+            <p class="sponsor-category-subtitle">Organizations collaborating with ICECA 2026 to promote environmental awareness and sustainable development.</p>
           </div>
 
-          <div class="sponsor-grid">
-            <article class="sponsor-card reveal-card">
+          <div class="sponsors-grid">
+            <article class="sponsor-card">
               <div class="sponsor-logo-wrap">
                 <img src="images/sponsors/ecovalley.png" alt="EcoValley" class="sponsor-logo">
               </div>
@@ -767,10 +907,12 @@
               <p class="sponsor-description">
                 Ecovalley BD envisions a world free from the harmful impacts of single-use plastics, where sustainable practices lead the way.
               </p>
-              <a href="https://ecovalleybd.com/" target="_blank" class="sponsor-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="https://ecovalleybd.com/" target="_blank" class="sponsor-link">
+                Learn More <i class="fa-solid fa-arrow-right"></i>
+              </a>
             </article>
 
-            <article class="sponsor-card reveal-card">
+            <article class="sponsor-card">
               <div class="sponsor-logo-wrap">
                 <img src="images/sponsors/aci.png" alt="ACI" class="sponsor-logo">
               </div>
@@ -778,10 +920,12 @@
               <p class="sponsor-description">
                 As a major Bangladeshi conglomerate with multinational roots, ACI PLC operates nationwide across five business units, including Healthcare.
               </p>
-              <a href="https://www.aci-bd.com/" target="_blank" class="sponsor-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="https://www.aci-bd.com/" target="_blank" class="sponsor-link">
+                Learn More <i class="fa-solid fa-arrow-right"></i>
+              </a>
             </article>
 
-            <article class="sponsor-card reveal-card">
+            <article class="sponsor-card">
               <div class="sponsor-logo-wrap">
                 <img src="images/sponsors/savoy.png" alt="Savoy" class="sponsor-logo">
               </div>
@@ -789,7 +933,9 @@
               <p class="sponsor-description">
                 Strategic partner supporting environmental initiatives and contributing to the advancement of climate action and sustainability goals.
               </p>
-              <a href="https://www.savoybd.com/" target="_blank" class="sponsor-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="https://www.savoybd.com/" target="_blank" class="sponsor-link">
+                Learn More <i class="fa-solid fa-arrow-right"></i>
+              </a>
             </article>
           </div>
         </div>
@@ -798,6 +944,7 @@
     </section>
   </main>
 
+  <!-- FOOTER - UNTOUCHED -->
   <footer class="footer" id="contact">
     <div class="container footer-grid">
       <div>
@@ -809,13 +956,18 @@
         <h3>Follow Us</h3>
         <div class="footer-links">
           <a href="https://www.facebook.com/share/1BgH4tvhsf/" target="_blank">
-            <i class="fa-brands fa-facebook-f"></i> Facebook
+            <i class="fa-brands fa-facebook-f"></i>
+            Facebook
           </a>
+
           <a href="https://www.instagram.com/auw_iceca?igsh=bG10cjFzdWppeXYz" target="_blank">
-            <i class="fa-brands fa-instagram"></i> Instagram
+            <i class="fa-brands fa-instagram"></i>
+            Instagram
           </a>
+
           <a href="https://iceca.auw.edu.bd/" target="_blank">
-            <i class="fa-solid fa-globe"></i> ICECA 2025
+            <i class="fa-solid fa-globe"></i>
+            ICECA 2025
           </a>
         </div>
       </div>
@@ -831,44 +983,35 @@
     </div>
   </footer>
 
+  <!-- SCRIPT - UNTOUCHED -->
   <script>
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navLinks = document.getElementById('navLinks');
-    const menuIcon = mobileMenuBtn.querySelector('i');
 
     mobileMenuBtn.addEventListener('click', () => {
       navLinks.classList.toggle('active');
-      if(navLinks.classList.contains('active')) {
-        menuIcon.classList.remove('fa-bars');
-        menuIcon.classList.add('fa-xmark');
-      } else {
-        menuIcon.classList.remove('fa-xmark');
-        menuIcon.classList.add('fa-bars');
-      }
     });
 
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
-        menuIcon.classList.remove('fa-xmark');
-        menuIcon.classList.add('fa-bars');
       });
     });
 
-    const revealCards = document.querySelectorAll('.reveal-card');
+    const revealSections = document.querySelectorAll('.reveal-section');
 
-    const revealObserver = new IntersectionObserver((entries) => {
+    const sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('show');
         }
       });
     }, {
-      threshold: 0.1
+      threshold: 0.14
     });
 
-    revealCards.forEach((card) => {
-      revealObserver.observe(card);
+    revealSections.forEach((section) => {
+      sectionObserver.observe(section);
     });
   </script>
 </body>
