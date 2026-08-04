@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Green Bangle Movement | About</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --green-deep: #023c2c;
+      --green-dark: #046444;
+      --green-main: #009b63;
+      --green-bright: #18c987;
+      --green-soft: #c8f6dd;
+      --green-pale: #e7fff1;
+      --green-card: #f0fff6;
+      --gold: #f4b63f;
+      --gold-dark: #d99b24;
+      --text-dark: #07251c;
+      --text-muted: #49675b;
+      --border: #a7e7c2;
+      --white: #ffffff;
+      --bg: #dffbea;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    /* HEADER STYLES - DO NOT CHANGE */
+    .logo-area {
+      background: var(--white);
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo-strip {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .logo-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 120px;
+    }
+
+    .logo-box.center-logo {
+      flex: 1.2;
+    }
+
+    .logo-img {
+      max-height: 128px;
+      object-fit: contain;
+    }
+
+    .auw-logo {
+      max-height: 156px;
+    }
+
+    .program-logo {
+      max-height: 140px;
+    }
+
+    .gbm-logo {
+      max-height: 128px;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(232, 255, 241, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+      padding: 16px 0;
+    }
+
+    .nav-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      width: 64px;
+      height: 64px;
+      background: transparent;
+      border: none;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      overflow: visible;
+      box-shadow: none;
+    }
+
+    .brand-icon img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+    }
+
+    .brand h1 {
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .brand p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .nav-links a {
+      position: relative;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--green-main);
+    }
+
+    .nav-links a:not(.old-link)::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--green-main);
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:not(.old-link):hover::after,
+    .nav-links a.active:not(.old-link)::after {
+      width: 100%;
+    }
+
+    .old-link {
+      background: linear-gradient(135deg, var(--gold), #ffcc5c);
+      color: var(--text-dark) !important;
+      padding: 8px 16px;
+      border-radius: 999px;
+      transition: 0.2s ease;
+      box-shadow: 0 4px 12px rgba(244, 182, 63, 0.15);
+    }
+
+    .old-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(244, 182, 63, 0.22);
+      background: linear-gradient(135deg, #ffcc5c, #ffd56a) !important;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+      font-size: 18px;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+
+    /* PAGE CONTENT STYLES */
+    .page-title {
+      text-align: center;
+      padding: 80px 0 60px;
+      background: linear-gradient(135deg, #d8ffe7 0%, #93e8b7 48%, #10a86b 100%);
+    }
+
+    .page-title h2 {
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      font-weight: 700;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--green-deep), var(--green-main), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .page-title p {
+      font-size: 18px;
+      color: #1e3a2f;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 500;
+    }
+
+    .section-padding {
+      padding: 86px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 54px;
+      animation: softSlideIn 0.9s ease both;
+    }
+
+    .section-title h2 {
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      color: var(--text-dark);
+      margin-bottom: 18px;
+      background: linear-gradient(135deg, var(--green-deep), var(--green-main), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+    }
+
+    .section-title p {
+      color: #666;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .founder-section {
+      background: linear-gradient(135deg, #c8f6dd 0%, #8fe8b5 55%, #35c987 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .founder-section::before {
+      content: "";
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      top: -100px;
+      left: -150px;
+      z-index: 0;
+    }
+
+    .founder-section::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      bottom: -50px;
+      right: -100px;
+      z-index: 0;
+    }
+
+    .founder-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .founder-image {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 28px 70px rgba(2, 60, 44, 0.22);
+      border: 3px solid rgba(255,255,255,0.6);
+      transition: all 0.4s ease;
+    }
+
+    .founder-image::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 155, 99, 0.1) 0%, rgba(244, 182, 63, 0.05) 100%);
+      z-index: 2;
+    }
+
+    .founder-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .founder-image:hover img {
+      transform: scale(1.05);
+    }
+
+    .founder-content h3 {
+      font-size: 16px;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, rgba(0, 155, 99, 0.8), rgba(244, 182, 63, 0.8));
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .founder-content h2 {
+      font-size: clamp(28px, 3.5vw, 42px);
+      line-height: 1.2;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .founder-role {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--green-deep);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .founder-content p {
+      font-size: 17px;
+      color: #1e3a2f;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      margin-top: 54px;
+    }
+
+    .value-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 2px solid rgba(167, 231, 194, 0.85);
+      border-radius: 24px;
+      padding: 34px;
+      text-align: center;
+      box-shadow: 0 12px 32px rgba(2, 60, 44, 0.08);
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .value-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--green-deep), var(--green-main), var(--gold), var(--green-main));
+      background-size: 200% 100%;
+      animation: gradientShift 3s ease infinite;
+    }
+
+    .value-card::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(0, 155, 99, 0.08), transparent);
+      border-radius: 50%;
+      transition: all 0.35s ease;
+    }
+
+    .value-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 24px 56px rgba(2, 60, 44, 0.16);
+      border-color: var(--green-main);
+    }
+
+    .value-card:hover::after {
+      top: 20%;
+      right: 10%;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .value-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #d9ffe9, #b9f2d0);
+      color: var(--green-dark);
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      margin: 0 auto 20px;
+      box-shadow: 0 8px 20px rgba(0, 155, 99, 0.15);
+      border: 2px solid rgba(167, 231, 194, 0.6);
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    .value-card:hover .value-icon {
+      transform: scale(1.15) rotateY(360deg);
+      background: linear-gradient(135deg, var(--green-main), var(--green-bright));
+      color: var(--white);
+      box-shadow: 0 12px 32px rgba(0, 155, 99, 0.25);
+    }
+
+    .value-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+
+    .value-card p {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .timeline {
+      position: relative;
+      padding: 40px 0;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--green-main), var(--gold), var(--green-main));
+    }
+
+    .timeline-item {
+      margin-bottom: 50px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: slideUp 0.75s ease forwards;
+      padding: 28px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      border-left: 5px solid var(--green-main);
+      box-shadow: 0 8px 24px rgba(2, 60, 44, 0.06);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .timeline-item:hover {
+      transform: translateY(0) translateX(8px);
+      box-shadow: 0 12px 36px rgba(2, 60, 44, 0.12);
+      border-left-color: var(--gold);
+    }
+
+    .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+    .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+    .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+    .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+    .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+    .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+    .timeline-item:nth-child(7) { animation-delay: 0.7s; }
+    .timeline-item:nth-child(8) { animation-delay: 0.8s; }
+
+    .timeline-item:nth-child(odd) {
+      margin-left: 0;
+      margin-right: 50%;
+      text-align: right;
+      padding-right: 60px;
+    }
+
+    .timeline-item:nth-child(even) {
+      margin-left: 50%;
+      margin-right: 0;
+      text-align: left;
+      padding-left: 60px;
+    }
+
+    .timeline-marker {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      background: var(--green-main);
+      border: 4px solid var(--white);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px var(--green-main);
+      top: 28px;
+    }
+
+    .timeline-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold), #ffcc5c);
+      color: var(--text-dark);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 12px rgba(244, 182, 63, 0.25);
+    }
+
+    .timeline-item h3 {
+      font-size: clamp(20px, 2.5vw, 28px);
+      color: var(--text-dark);
+      margin-bottom: 12px;
+      font-weight: 700;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--green-dark), var(--green-main));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .timeline-item p {
+      color: #374151;
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      max-width: 600px;
+      font-weight: 500;
+    }
+
+    .timeline-media {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .timeline-media img {
+      border-radius: 20px;
+      box-shadow: 0 12px 36px rgba(2, 60, 44, 0.15);
+      border: 2px solid rgba(167, 231, 194, 0.5);
+      transition: all 0.3s ease;
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .timeline-media img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 16px 48px rgba(2, 60, 44, 0.25);
+      border-color: var(--green-main);
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, var(--green-deep), var(--green-dark) 60%, var(--green-main));
+      color: var(--white);
+      padding: 80px 0;
+      text-align: center;
+      border-radius: 32px;
+      margin: 0 auto;
+      max-width: 1000px;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .cta-section p {
+      font-size: 18px;
+      margin-bottom: 32px;
+      color: #d1fae5;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold);
+      color: var(--text-dark);
+      padding: 14px 32px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 16px;
+      transition: 0.2s ease;
+      box-shadow: 0 8px 20px rgba(244, 182, 63, 0.25);
+    }
+
+    .cta-button:hover {
+      background: #ffcc5c;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(244, 182, 63, 0.35);
+    }
+
+    @keyframes softSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Tablet */
+    @media (max-width: 1000px) {
+      .nav-links {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 72px;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px 4%;
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .logo-strip {
+        min-height: auto;
+        gap: 16px;
+      }
+
+      .auw-logo {
+        max-height: 96px;
+      }
+
+      .program-logo {
+        max-height: 112px;
+      }
+
+      .gbm-logo {
+        max-height: 102px;
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .founder-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .timeline::before {
+        display: none;
+      }
+
+      .timeline-item:nth-child(odd),
+      .timeline-item:nth-child(even) {
+        margin: 0 0 30px 0;
+        padding: 20px;
+        text-align: left;
+      }
+
+      .timeline-marker {
+        position: relative;
+        transform: none;
+        display: none;
+      }
+
+      .page-title {
+        padding: 60px 0 50px;
+      }
+
+      .section-padding {
+        padding: 64px 0;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .logo-box {
+        min-height: 78px;
+      }
+
+      .auw-logo {
+        max-height: 68px;
+      }
+
+      .program-logo {
+        max-height: 78px;
+      }
+
+      .gbm-logo {
+        max-height: 72px;
+      }
+
+      .brand-icon img {
+        width: 52px;
+        height: 52px;
+      }
+
+      .brand h1 {
+        font-size: 20px;
+      }
+
+      .brand p {
+        font-size: 12px;
+      }
+
+      .nav-links {
+        top: 72px;
+      }
+
+      .page-title {
+        padding: 50px 0 40px;
+      }
+
+      .page-title h2 {
+        font-size: 32px;
+      }
+
+      .page-title p {
+        font-size: 16px;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .value-card {
+        padding: 26px;
+      }
+
+      .cta-section {
+        padding: 60px 28px;
+      }
+
+      .section-padding {
+        padding: 64px 0;
+      }
+
+      .timeline-media {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-media img {
+        height: 250px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100%, 95%);
+      }
+
+      .logo-box {
+        min-height: 68px;
+      }
+
+      .auw-logo {
+        max-height: 58px;
+      }
+
+      .program-logo {
+        max-height: 68px;
+      }
+
+      .gbm-logo {
+        max-height: 62px;
+      }
+
+      .page-title h2 {
+        font-size: 28px;
+      }
+
+      .section-title h2 {
+        font-size: 28px;
+      }
+
+      .timeline-media {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-button {
+        padding: 12px 24px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER - DO NOT CHANGE -->
+  <header>
+    <div class="logo-area">
+      <div class="container logo-strip">
+        <div class="logo-box">
+          <img src="images/auw-logo.png" alt="Asian University for Women Logo" class="logo-img auw-logo">
+        </div>
+        <div class="logo-box center-logo">
+          <img src="images/program-logo.png" alt="ICECA 2026 Conference Logo" class="logo-img program-logo">
+        </div>
+        <div class="logo-box">
+          <img src="images/gbm-logo.png" alt="Green Bangle Movement Logo" class="logo-img gbm-logo">
+        </div>
+      </div>
+    </div>
+    <div class="navbar">
+      <div class="container nav-content">
+        <a href="index.html" class="brand">
+          <div class="brand-icon image-brand">
+            <img src="images/program-logo.png" alt="ICECA 2026 Logo">
+          </div>
+          <div>
+            <h1>ICECA 2026</h1>
+            <p>Environment & Climate Action</p>
+          </div>
+        </a>
+        <nav class="nav-links" id="navLinks">
+          <a href="index.html">Home</a>
+          <a href="travel-stay.html">Travel & Stay</a>
+          <a href="themes.html">Themes & Schedule</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="speakers.html">Speakers</a>
+          <a href="committee.html">Committee</a>
+          <a href="sponsors.html">Sponsors</a>
+          <a href="contact.html">Contact</a>
+          <a class="old-link" href="https://iceca.auw.edu.bd/" target="_blank">ICECA 2025</a>
+        </nav>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN BODY CONTENT - ONLY THIS CHANGES -->
+  <main>
+    <!-- Page Title -->
+    <section class="page-title">
+      <div class="container">
+        <h2>Green Bangle Movement</h2>
+        <p>Women for a Green World – A student-led initiative bridging science, women's empowerment, and coastal ecosystem restoration</p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-title">
+          <h2>What is the Green Bangle Movement?</h2>
+          <p>Born from a simple question: what if coastal protection, women's work and climate education could be woven into the same circle?</p>
+        </div>
+
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+          <p style="font-size: 17px; color: var(--text-muted); line-height: 1.8; margin-bottom: 24px;">
+            Starting from a university campus and spreading into nearby coastal areas, GBM brings students, women and local leaders together around nurseries, mangroves and palmyra palms. The "bangle" in our name carries memory — of women's hands, shared labour and everyday strength.
+          </p>
+          <p style="font-size: 17px; color: var(--text-muted); line-height: 1.8;">
+            Our green bangles are living ones: rings of trees, shorelines of care, and networks of women who hold communities through uncertainty.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="founder-section section-padding">
+      <div class="container">
+        <div class="founder-grid">
+          <div class="founder-image">
+            <img src="images/founder.jpg" alt="Dr. P. Mosae Selvakumar - Founder" onerror="this.src='https://via.placeholder.com/400x500/d9ffe9/009b63?text=Dr.+Selvakumar'">
+          </div>
+
+          <div class="founder-content">
+            <h3>Meet Our Founder</h3>
+            <h2>Dr. P. Mosae Selvakumar</h2>
+            <p class="founder-role">
+              Founder & Lead Mentor, Green Bangle Movement<br>
+              Director of Environmental Sciences Program<br>
+              Asian University for Women
+            </p>
+
+            <p>
+              With a lifelong passion for sustainable development, traditional ecological knowledge, and community-centered innovation, Dr. Selvakumar envisioned the Green Bangle Movement as a bridge between science, women's empowerment, and ecological restoration.
+            </p>
+
+            <p>
+              His leadership has shaped GBM into a community-driven initiative rooted in hope, resilience, and hands-on environmental action. Through Dr. Selvakumar's vision, GBM continues to empower women, restore coastal ecosystems, and build climate-resilient communities across Bangladesh.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Core Values</h2>
+          <p>Principles that guide every action and initiative</p>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card" style="position: relative;">
+            <div class="value-icon">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+            <h3>Ecological Restoration</h3>
+            <p>Protecting and restoring coastal ecosystems, mangrove forests, and native species for long-term resilience.</p>
+          </div>
+
+          <div class="value-card" style="position: relative;">
+            <div class="value-icon">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <h3>Women's Leadership</h3>
+            <p>Empowering women through skills, knowledge, and economic opportunities in environmental stewardship.</p>
+          </div>
+
+          <div class="value-card" style="position: relative;">
+            <div class="value-icon">
+              <i class="fa-solid fa-book"></i>
+            </div>
+            <h3>Climate Education</h3>
+            <p>Building awareness and capacity through workshops, training, and hands-on learning experiences.</p>
+          </div>
+
+          <div class="value-card" style="position: relative;">
+            <div class="value-icon">
+              <i class="fa-solid fa-handshake"></i>
+            </div>
+            <h3>Community Engagement</h3>
+            <p>Collaborating with local communities, students, and organizations for grassroots environmental action.</p>
+          </div>
+
+          <div class="value-card" style="position: relative;">
+            <div class="value-icon">
+              <i class="fa-solid fa-sprout"></i>
+            </div>
+            <h3>Sustainable Livelihoods</h3>
+            <p>Creating economic opportunities through eco-enterprises and sustainable resource management.</p>
+          </div>
+
+          <div class="value-card" style="position: relative;">
+            <div class="value-icon">
+              <i class="fa-solid fa-earth-americas"></i>
+            </div>
+            <h3>Climate Resilience</h3>
+            <p>Building adaptive capacity and protecting vulnerable coastal communities from climate impacts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="section-padding" style="background: linear-gradient(135deg, #f0fff6 0%, #e0f8ed 100%);">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Journey</h2>
+          <p>Milestones of impact, growth, and community transformation</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <span class="timeline-marker"></span>
+            <div class="timeline-badge">Phase 1 · Awareness</div>
+            <h3>🌴 Palmyra Fruit Festival</h3>
+            <p>Celebrating local knowledge and green culture with students, faculty, and community members. A celebration of indigenous plants and biodiversity protection.</p>
+            <div class="timeline-media">
+              <img src="images/phases/phase1-palmyra.jpg" alt="Palmyra Fruit Festival" onerror="this.src='https://via.placeholder.com/400x300/d9ffe9/009b63?text=Phase+1:+Palmyra+Festival'">
+              <img src="images/phases/phase1-celebration.jpg" alt="Community Celebration" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Community+Bonding'">
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <span class="timeline-marker"></span>
+            <div class="timeline-badge">Phase 2 · Education</div>
+            <h3>📰 Environmental Journalism Workshop</h3>
+            <p>Empowering young women with storytelling skills to amplify green voices and climate advocacy in their communities.</p>
+            <div class="timeline-media">
+              <img src="images/phases/phase2-workshop.jpg" alt="Journalism Workshop" onerror="this.src='https://via.placeholder.com/400x300/d9ffe9/009b63?text=Phase+2:+Workshop'">
+              <img src="images/phases/phase2-training.jpg" alt="Training Session" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Women+Empowerment'">
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <span class="timeline-marker"></span>
+            <div class="timeline-badge">Phase 3 · Capacity Building</div>
+            <h3>🌱 Hands-on Nursery Training</h3>
+            <p>Women from local communities received training in sapling care, soil preparation, and nursery management, creating new livelihood opportunities.</p>
+            <div class="timeline-media">
+              <img src="images/phases/phase3-nursery.jpg" alt="Nursery Training" onerror="this.src='https://via.placeholder.com/400x300/d9ffe9/009b63?text=Phase+3:+Nursery'">
+              <img src="images/phases/phase3-women.jpg" alt="Women in Training" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Women+Leaders'">
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <span class="timeline-marker"></span>
+            <div class="timeline-badge">Phase 4 · Restoration</div>
+            <h3>🏞️ Mangrove Plantation at Guliakhali</h3>
+            <p>Students and volunteers planted mangroves at vulnerable coastal areas, supporting erosion control, biodiversity recovery, and climate resilience.</p>
+            <div class="timeline-media">
+              <img src="images/phases/phase4-mangrove.jpg" alt="Mangrove Plantation" onerror="this.src='https://via.placeholder.com/400x300/d9ffe9/009b63?text=Phase+4:+Mangroves'">
+              <img src="images/phases/phase4-coast.jpg" alt="Coastal Restoration" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Coastal+Protection'">
+              <img src="images/phases/phase4-volunteers.jpg" alt="Volunteer Action" onerror="this.src='https://via.placeholder.com/400x300/b9f2d0/009b63?text=Community+Action'">
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <span class="timeline-marker"></span>
+            <div class="timeline-badge">Phase 5 · Expansion</div>
+            <h3>🌳 Palmyra Sapling Plantation</h3>
+            <p>Planting climate-smart heritage trees known for heat resilience, deep roots, and cultural significance across the region.</p>
+            <div class="timeline-media">
+              <img src="images/phases/phase5-palmyra.jpg" alt="Palmyra Planting" onerror="this.src='https://via.placeholder.com/400x300/d9ffe9/009b63?text=Phase+5:+Palmyra'">
+              <img src="images/phases/phase5-saplings.jpg" alt="Sapling Planting" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Planting+Day'">
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <span class="timeline-marker"></span>
+            <div class="timeline-badge">Phase 6 · Youth</div>
+            <h3>👥 Green Leadership Through Action</h3>
+            <p>Young volunteers immersed in planting and soil work, building connection with the land and commitment to climate resilience.</p>
+            <div class="timeline-media">
+              <img src="images/phases/phase6-youth.jpg" alt="Youth Volunteers" onerror="this.src='https://via.placeholder.com/400x300/d9ffe9/009b63?text=Phase+6:+Youth'">
+              <img src="images/phases/phase6-leadership.jpg" alt="Youth Leadership" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Youth+Leaders'">
+              <img src="images/phases/phase6-planting.jpg" alt="Youth Planting" onerror="this.src='https://via.placeholder.com/400x300/b9f2d0/009b63?text=Hands+On+Action'">
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <span class="timeline-marker"></span>
+            <div class="timeline-badge">Phase 7 · Landscape</div>
+            <h3>⛰️ Planting in Hilly Terrains</h3>
+            <p>Native species planted across degraded landscapes, stabilizing slopes and restoring habitats in vulnerable regions.</p>
+            <div class="timeline-media">
+              <img src="images/phases/phase7-hillside.jpg" alt="Hillside Planting" onerror="this.src='https://via.placeholder.com/400x300/d9ffe9/009b63?text=Phase+7:+Terrain'">
+              <img src="images/phases/phase7-landscape.jpg" alt="Landscape Restoration" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Landscape+Restoration'">
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <span class="timeline-marker"></span>
+            <div class="timeline-badge">Phase 8 · Outreach</div>
+            <h3>🌍 Sapling Walks & Household Planting</h3>
+            <p>Volunteers spread green hope through communities, encouraging families to care for trees and build living bonds with nature.</p>
+            <div class="timeline-media">
+              <img src="images/phases/phase8-walk.jpg" alt="Sapling Walk" onerror="this.src='https://via.placeholder.com/400x300/d9ffe9/009b63?text=Phase+8:+Community'">
+              <img src="images/phases/phase8-household.jpg" alt="Household Planting" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Family+Planting'">
+              <img src="images/phases/phase8-impact.jpg" alt="Community Impact" onerror="this.src='https://via.placeholder.com/400x300/b9f2d0/009b63?text=Green+Hope'">
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="cta-section">
+          <h2>Join the Green Bangle Movement</h2>
+          <p>Be part of a community-driven initiative that empowers women, restores ecosystems, and builds climate resilience. Together, we can create lasting change.</p>
+          <a href="mailto:greenbangleproject@auw.edu.bd" class="cta-button">
+            Get Involved <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER - DO NOT CHANGE -->
+  <<footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <h2>ICECA 2026</h2>
+        <p>2nd International Conference on Environment and Climate Action 2026.</p>
+      </div>
+
+      <div>
+        <h3>Follow Us</h3>
+        <div class="footer-links">
+          <a href="https://www.facebook.com/share/1BgH4tvhsf/" target="_blank">
+            <i class="fa-brands fa-facebook-f"></i>
+            Facebook
+          </a>
+
+          <a href="https://www.instagram.com/auw_iceca?igsh=bG10cjFzdWppeXYz" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+            Instagram
+          </a>
+
+          <a href="https://iceca.auw.edu.bd/" target="_blank">
+            <i class="fa-solid fa-globe"></i>
+            ICECA 2025
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <p><i class="fa-solid fa-envelope"></i> ICECA@auw.edu.bd</p>
+        <p>Asian University for Women</p>
+      </div>
+    </div>
+    <div class="container designer-credit">
+      Designed by Nazia Zarin Riti
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
