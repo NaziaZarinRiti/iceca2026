@@ -280,20 +280,22 @@
       grid-template-columns: repeat(2, 1fr);
     }
 
-    .sponsor-card {
-      position: relative;
-      background: rgba(255, 255, 255, 0.95);
-      border: 1px solid rgba(167, 231, 194, 0.6);
-      border-radius: 22px;
-      padding: 36px 28px;
-      box-shadow: 0 8px 24px rgba(2, 60, 44, 0.06);
-      transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      min-height: 100%;
+    .sponsor-card{
+    position:relative;
+    background:rgba(255,255,255,.95);
+    border:1px solid rgba(167,231,194,.6);
+    border-radius:22px;
+    padding:36px 28px;
+    box-shadow:0 8px 24px rgba(2,60,44,.06);
+    transition:.35s cubic-bezier(.4,0,.2,1);
+    overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+
+    height:100%;
     }
 
     .sponsor-card::before {
@@ -370,37 +372,37 @@
       justify-content: center;
     }
 
-    .sponsor-description {
-      color: var(--text-muted);
-      font-size: 14px;
-      line-height: 1.7;
-      position: relative;
-      z-index: 1;
-      flex-grow: 1;
-      text-align: center;
+    .sponsor-description{
+    color:var(--text-muted);
+    font-size:14px;
+    line-height:1.7;
+    text-align:center;
+
+    flex:1;
+    margin-bottom:22px;
+    }
+    
+    .sponsor-link{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    margin-top:auto;
+
+    color:#fff;
+    background:linear-gradient(135deg,var(--green-dark),var(--green-main));
+    padding:10px 20px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:600;
+    transition:.25s ease;
+    box-shadow:0 4px 12px rgba(0,155,99,.15);
     }
 
-    .sponsor-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 18px;
-      color: var(--white);
-      background: linear-gradient(135deg, var(--green-dark), var(--green-main));
-      padding: 10px 20px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 14px;
-      transition: 0.2s ease;
-      position: relative;
-      z-index: 1;
-      box-shadow: 0 4px 12px rgba(0, 155, 99, 0.15);
-    }
-
-    .sponsor-link:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 155, 99, 0.22);
-      background: linear-gradient(135deg, var(--green-deep), var(--green-dark) 60%, var(--green-main));
+    .sponsor-link:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(0,155,99,.22);
     }
 
     .sponsor-link i {
