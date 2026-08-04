@@ -224,9 +224,55 @@
       text-align: center;
       padding: 80px 0 60px;
       background: linear-gradient(135deg, #d8ffe7 0%, #93e8b7 48%, #10a86b 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-title::before,
+    .page-title::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 10px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .page-title::before {
+      width: 220px;
+      height: 220px;
+      top: -90px;
+      left: -70px;
+    }
+
+    .page-title::after {
+      width: 160px;
+      height: 160px;
+      bottom: -80px;
+      right: -40px;
+      border-color: rgba(2, 60, 44, 0.12);
+    }
+
+    .page-eyebrow {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      color: var(--green-deep);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(6px);
     }
 
     .page-title h2 {
+      position: relative;
+      z-index: 1;
       font-size: clamp(36px, 5vw, 56px);
       line-height: 1.08;
       letter-spacing: -0.04em;
@@ -239,6 +285,8 @@
     }
 
     .page-title p {
+      position: relative;
+      z-index: 1;
       font-size: 18px;
       color: #1e3a2f;
       max-width: 600px;
@@ -255,6 +303,20 @@
       max-width: 800px;
       margin: 0 auto 54px;
       animation: softSlideIn 0.9s ease both;
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green-dark);
+      background: var(--green-pale);
+      border: 1px solid var(--border);
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 16px;
     }
 
     .section-title h2 {
@@ -274,6 +336,114 @@
       color: #666;
       font-size: 18px;
       font-weight: 500;
+    }
+
+    /* ABOUT SECTION */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .about-text p {
+      font-size: 17px;
+      color: var(--text-muted);
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+
+    .about-text p strong {
+      color: var(--text-dark);
+      font-weight: 700;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .highlight-chip {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 16px;
+      box-shadow: 0 8px 20px rgba(2, 60, 44, 0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .highlight-chip:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(2, 60, 44, 0.12);
+      border-color: var(--green-main);
+    }
+
+    .highlight-chip i {
+      width: 38px;
+      height: 38px;
+      min-width: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--green-soft), #b9f2d0);
+      color: var(--green-dark);
+      font-size: 15px;
+    }
+
+    .highlight-chip span {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.3;
+    }
+
+    /* Emblem / signature visual — refined, not literal cartoon rings */
+    .about-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bangle-emblem {
+      width: 100%;
+      max-width: 380px;
+      background: linear-gradient(160deg, var(--white) 0%, var(--green-card) 100%);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 40px 36px 32px;
+      box-shadow: 0 20px 50px rgba(2, 60, 44, 0.1);
+      text-align: center;
+    }
+
+    .bangle-emblem svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    .bangle-emblem-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 10px;
+    }
+
+    .bangle-emblem p {
+      font-size: 15px;
+      color: var(--text-muted);
+      font-weight: 500;
+      line-height: 1.7;
+      max-width: 280px;
+      margin: 0 auto;
     }
 
     .founder-section {
@@ -380,6 +550,19 @@
       margin-bottom: 16px;
     }
 
+    .founder-quote {
+      margin-top: 22px;
+      padding: 18px 22px;
+      background: rgba(255, 255, 255, 0.55);
+      border-left: 4px solid var(--gold);
+      border-radius: 12px;
+      font-style: italic;
+      font-weight: 600;
+      color: var(--green-deep);
+      font-size: 15px;
+      backdrop-filter: blur(4px);
+    }
+
     .values-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -475,134 +658,144 @@
       line-height: 1.7;
     }
 
-    .timeline {
+    /* PHASES — clean single-column numbered timeline */
+    .phases-list {
       position: relative;
-      padding: 40px 0;
+      max-width: 880px;
+      margin: 0 auto;
     }
 
-    .timeline::before {
+    .phases-list::before {
       content: "";
       position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 3px;
-      height: 100%;
-      background: linear-gradient(180deg, var(--green-main), var(--gold), var(--green-main));
+      left: 27px;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--green-main), var(--border) 55%, var(--gold));
     }
 
-    .timeline-item {
-      margin-bottom: 50px;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: slideUp 0.75s ease forwards;
-      padding: 28px;
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
-      border-left: 5px solid var(--green-main);
-      box-shadow: 0 8px 24px rgba(2, 60, 44, 0.06);
-      transition: all 0.3s ease;
+    .phase-item {
       position: relative;
+      display: flex;
+      gap: 26px;
+      margin-bottom: 34px;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: slideUp 0.7s ease forwards;
     }
 
-    .timeline-item:hover {
-      transform: translateY(0) translateX(8px);
-      box-shadow: 0 12px 36px rgba(2, 60, 44, 0.12);
-      border-left-color: var(--gold);
-    }
+    .phase-item:nth-child(1) { animation-delay: 0.05s; }
+    .phase-item:nth-child(2) { animation-delay: 0.1s; }
+    .phase-item:nth-child(3) { animation-delay: 0.15s; }
+    .phase-item:nth-child(4) { animation-delay: 0.2s; }
+    .phase-item:nth-child(5) { animation-delay: 0.25s; }
+    .phase-item:nth-child(6) { animation-delay: 0.3s; }
+    .phase-item:nth-child(7) { animation-delay: 0.35s; }
+    .phase-item:nth-child(8) { animation-delay: 0.4s; }
 
-    .timeline-item:nth-child(1) { animation-delay: 0.1s; }
-    .timeline-item:nth-child(2) { animation-delay: 0.2s; }
-    .timeline-item:nth-child(3) { animation-delay: 0.3s; }
-    .timeline-item:nth-child(4) { animation-delay: 0.4s; }
-    .timeline-item:nth-child(5) { animation-delay: 0.5s; }
-    .timeline-item:nth-child(6) { animation-delay: 0.6s; }
-    .timeline-item:nth-child(7) { animation-delay: 0.7s; }
-    .timeline-item:nth-child(8) { animation-delay: 0.8s; }
-
-    .timeline-item:nth-child(odd) {
-      margin-left: 0;
-      margin-right: 50%;
-      text-align: right;
-      padding-right: 60px;
-    }
-
-    .timeline-item:nth-child(even) {
-      margin-left: 50%;
-      margin-right: 0;
-      text-align: left;
-      padding-left: 60px;
-    }
-
-    .timeline-marker {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 20px;
-      height: 20px;
-      background: var(--green-main);
-      border: 4px solid var(--white);
+    .phase-marker {
+      position: relative;
+      z-index: 2;
+      flex: 0 0 56px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
-      box-shadow: 0 0 0 3px var(--green-main);
-      top: 28px;
+      background: var(--white);
+      border: 2px solid var(--green-main);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 6px 16px rgba(2, 60, 44, 0.1);
     }
 
-    .timeline-badge {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--gold), #ffcc5c);
-      color: var(--text-dark);
-      padding: 8px 16px;
-      border-radius: 999px;
+    .phase-number {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: var(--green-dark);
+    }
+
+    .phase-card {
+      flex: 1;
+      min-width: 0;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 26px 30px;
+      box-shadow: 0 8px 24px rgba(2, 60, 44, 0.06);
+      transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .phase-item:hover .phase-card {
+      transform: translateX(6px);
+      box-shadow: 0 14px 36px rgba(2, 60, 44, 0.12);
+      border-color: var(--green-main);
+    }
+
+    .phase-card-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .phase-icon {
+      flex: 0 0 44px;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--green-soft), #b9f2d0);
+      color: var(--green-dark);
+      display: grid;
+      place-items: center;
+      font-size: 17px;
+    }
+
+    .phase-tag {
+      display: block;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin-bottom: 12px;
-      box-shadow: 0 4px 12px rgba(244, 182, 63, 0.25);
+      color: var(--gold-dark);
+      margin-bottom: 4px;
     }
 
-    .timeline-item h3 {
-      font-size: clamp(20px, 2.5vw, 28px);
-      color: var(--text-dark);
-      margin-bottom: 12px;
+    .phase-card h3 {
+      font-size: clamp(18px, 2.2vw, 22px);
       font-weight: 700;
-      line-height: 1.2;
-      background: linear-gradient(135deg, var(--green-dark), var(--green-main));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--text-dark);
+      line-height: 1.25;
     }
 
-    .timeline-item p {
-      color: #374151;
-      font-size: 16px;
-      line-height: 1.8;
-      margin-bottom: 20px;
-      max-width: 600px;
+    .phase-card p {
+      color: #435a50;
+      font-size: 15.5px;
+      line-height: 1.75;
       font-weight: 500;
+      margin-bottom: 18px;
     }
 
-    .timeline-media {
+    .phase-media {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 16px;
-      margin-top: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
     }
 
-    .timeline-media img {
-      border-radius: 20px;
-      box-shadow: 0 12px 36px rgba(2, 60, 44, 0.15);
-      border: 2px solid rgba(167, 231, 194, 0.5);
-      transition: all 0.3s ease;
+    .phase-media img {
       width: 100%;
-      height: 300px;
+      height: 190px;
       object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 20px rgba(2, 60, 44, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
     }
 
-    .timeline-media img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 16px 48px rgba(2, 60, 44, 0.25);
-      border-color: var(--green-main);
+    .phase-media img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 30px rgba(2, 60, 44, 0.18);
     }
 
     .cta-section {
@@ -613,15 +806,43 @@
       border-radius: 32px;
       margin: 0 auto;
       max-width: 1000px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      border: 10px solid rgba(255, 255, 255, 0.12);
+      top: -100px;
+      right: -60px;
+    }
+
+    .cta-section::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 8px solid rgba(244, 182, 63, 0.18);
+      bottom: -70px;
+      left: -40px;
     }
 
     .cta-section h2 {
+      position: relative;
+      z-index: 1;
       font-size: clamp(28px, 4vw, 44px);
       margin-bottom: 20px;
       font-weight: 700;
     }
 
     .cta-section p {
+      position: relative;
+      z-index: 1;
       font-size: 18px;
       margin-bottom: 32px;
       color: #d1fae5;
@@ -631,6 +852,8 @@
     }
 
     .cta-button {
+      position: relative;
+      z-index: 1;
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -648,6 +871,69 @@
       background: #ffcc5c;
       transform: translateY(-2px);
       box-shadow: 0 12px 28px rgba(244, 182, 63, 0.35);
+    }
+
+    /* FOOTER STYLES - restored exactly from reference, DO NOT CHANGE */
+    .footer {
+      background: linear-gradient(135deg, var(--green-deep), var(--green-dark) 60%, var(--green-main));
+      color: var(--white);
+      padding: 56px 0 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1.2fr;
+      gap: 36px;
+    }
+
+    .footer p,
+    .footer a {
+      color: #d1fae5;
+    }
+
+    .footer h3,
+    .footer h2 {
+      margin-bottom: 14px;
+    }
+
+    .footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    }
+    .footer-links a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    color:#d1fae5;
+
+    transition:.25s ease;
+    }
+
+    .footer-links a i{
+    width:20px;
+    font-size:18px;
+    color:var(--gold);
+    }
+
+    .footer-links a:hover{
+    color:#fff;
+    transform:translateX(4px);
+    }
+
+    .footer-links a:hover i{
+    color:#ffd56a;
+    }
+    .designer-credit {
+      margin-top: 34px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(209, 250, 229, 0.25);
+      text-align: right;
+      color: rgba(209, 250, 229, 0.78);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
     }
 
     @keyframes softSlideIn {
@@ -712,6 +998,20 @@
         max-height: 102px;
       }
 
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 44px;
+      }
+
+      .about-visual {
+        order: -1;
+      }
+
+      .bangle-emblem {
+        max-width: 320px;
+        margin: 0 auto;
+      }
+
       .values-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -721,29 +1021,16 @@
         gap: 40px;
       }
 
-      .timeline::before {
-        display: none;
-      }
-
-      .timeline-item:nth-child(odd),
-      .timeline-item:nth-child(even) {
-        margin: 0 0 30px 0;
-        padding: 20px;
-        text-align: left;
-      }
-
-      .timeline-marker {
-        position: relative;
-        transform: none;
-        display: none;
-      }
-
       .page-title {
         padding: 60px 0 50px;
       }
 
       .section-padding {
         padding: 64px 0;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -794,12 +1081,30 @@
         font-size: 16px;
       }
 
+      .about-highlights {
+        grid-template-columns: 1fr;
+      }
+
       .values-grid {
         grid-template-columns: 1fr;
       }
 
       .value-card {
         padding: 26px;
+      }
+
+      .phases-list::before {
+        left: 21px;
+      }
+
+      .phase-marker {
+        flex: 0 0 44px;
+        width: 44px;
+        height: 44px;
+      }
+
+      .phase-card {
+        padding: 20px 20px;
       }
 
       .cta-section {
@@ -810,12 +1115,12 @@
         padding: 64px 0;
       }
 
-      .timeline-media {
+      .phase-media {
         grid-template-columns: 1fr;
       }
 
-      .timeline-media img {
-        height: 250px;
+      .phase-media img {
+        height: 210px;
       }
     }
 
@@ -848,13 +1153,18 @@
         font-size: 28px;
       }
 
-      .timeline-media {
-        grid-template-columns: 1fr;
+      .phase-card-head {
+        flex-wrap: wrap;
       }
 
       .cta-button {
         padding: 12px 24px;
         font-size: 14px;
+      }
+
+      .designer-credit {
+        text-align: left;
+        font-size: 12px;
       }
     }
   </style>
@@ -909,8 +1219,9 @@
     <!-- Page Title -->
     <section class="page-title">
       <div class="container">
+        <span class="page-eyebrow"><i class="fa-solid fa-seedling"></i> A student-led initiative of AUW</span>
         <h2>Green Bangle Movement</h2>
-        <p>Women for a Green World – A student-led initiative bridging science, women's empowerment, and coastal ecosystem restoration</p>
+        <p>Women for a Green World — bridging science, women's empowerment, and coastal ecosystem restoration.</p>
       </div>
     </section>
 
@@ -918,17 +1229,61 @@
     <section class="section-padding">
       <div class="container">
         <div class="section-title">
+          <span class="section-eyebrow">Our Story</span>
           <h2>What is the Green Bangle Movement?</h2>
           <p>Born from a simple question: what if coastal protection, women's work and climate education could be woven into the same circle?</p>
         </div>
 
-        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-          <p style="font-size: 17px; color: var(--text-muted); line-height: 1.8; margin-bottom: 24px;">
-            Starting from a university campus and spreading into nearby coastal areas, GBM brings students, women and local leaders together around nurseries, mangroves and palmyra palms. The "bangle" in our name carries memory — of women's hands, shared labour and everyday strength.
-          </p>
-          <p style="font-size: 17px; color: var(--text-muted); line-height: 1.8;">
-            Our green bangles are living ones: rings of trees, shorelines of care, and networks of women who hold communities through uncertainty.
-          </p>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              Starting from a university campus and spreading into nearby coastal areas, GBM brings <strong>students, women and local leaders</strong> together around nurseries, mangroves and palmyra palms. The "bangle" in our name carries memory — of women's hands, shared labour and everyday strength.
+            </p>
+            <p>
+              Our green bangles are living ones: <strong>rings of trees</strong>, shorelines of care, and networks of women who hold communities through uncertainty.
+            </p>
+
+            <div class="about-highlights">
+              <div class="highlight-chip">
+                <i class="fa-solid fa-water"></i>
+                <span>Mangrove &amp; coastal restoration</span>
+              </div>
+              <div class="highlight-chip">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+                <span>Women-led nurseries</span>
+              </div>
+              <div class="highlight-chip">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Campus-to-coast learning</span>
+              </div>
+              <div class="highlight-chip">
+                <i class="fa-solid fa-tree"></i>
+                <span>Heritage palmyra planting</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-visual">
+            <div class="bangle-emblem">
+              <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="ringGreen" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#009b63"/>
+                    <stop offset="100%" stop-color="#046444"/>
+                  </linearGradient>
+                  <linearGradient id="ringGold" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#f4b63f"/>
+                    <stop offset="100%" stop-color="#d99b24"/>
+                  </linearGradient>
+                </defs>
+                <ellipse cx="160" cy="70" rx="118" ry="46" fill="none" stroke="url(#ringGreen)" stroke-width="3.5"/>
+                <ellipse cx="160" cy="108" rx="104" ry="40" fill="none" stroke="url(#ringGold)" stroke-width="3"/>
+                <ellipse cx="160" cy="144" rx="90" ry="34" fill="none" stroke="#023c2c" stroke-width="2.5" opacity="0.55"/>
+              </svg>
+              <span class="bangle-emblem-label">Our Emblem</span>
+              <p>Rings of women, trees, and shoreline — woven into one circle of care.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -938,7 +1293,7 @@
       <div class="container">
         <div class="founder-grid">
           <div class="founder-image">
-            <img src="images/founder.jpg" alt="Dr. P. Mosae Selvakumar - Founder" onerror="this.src='https://via.placeholder.com/400x500/d9ffe9/009b63?text=Dr.+Selvakumar'">
+            <img src="images/founder.jpeg" alt="Dr. P. Mosae Selvakumar - Founder" onerror="this.src='https://via.placeholder.com/400x500/d9ffe9/009b63?text=Dr.+Selvakumar'">
           </div>
 
           <div class="founder-content">
@@ -946,7 +1301,7 @@
             <h2>Dr. P. Mosae Selvakumar</h2>
             <p class="founder-role">
               Founder & Lead Mentor, Green Bangle Movement<br>
-              Director of Environmental Sciences Program<br>
+              Director of Environmental Sciences and Biological Sciences<br>
               Asian University for Women
             </p>
 
@@ -957,6 +1312,10 @@
             <p>
               His leadership has shaped GBM into a community-driven initiative rooted in hope, resilience, and hands-on environmental action. Through Dr. Selvakumar's vision, GBM continues to empower women, restore coastal ecosystems, and build climate-resilient communities across Bangladesh.
             </p>
+
+            <div class="founder-quote">
+              "A bangle is never a single strand — it is many hands, closing a circle of care around the land."
+            </div>
           </div>
         </div>
       </div>
@@ -966,12 +1325,13 @@
     <section class="section-padding">
       <div class="container">
         <div class="section-title">
+          <span class="section-eyebrow">What Guides Us</span>
           <h2>Our Core Values</h2>
           <p>Principles that guide every action and initiative</p>
         </div>
 
         <div class="values-grid">
-          <div class="value-card" style="position: relative;">
+          <div class="value-card">
             <div class="value-icon">
               <i class="fa-solid fa-leaf"></i>
             </div>
@@ -979,7 +1339,7 @@
             <p>Protecting and restoring coastal ecosystems, mangrove forests, and native species for long-term resilience.</p>
           </div>
 
-          <div class="value-card" style="position: relative;">
+          <div class="value-card">
             <div class="value-icon">
               <i class="fa-solid fa-users"></i>
             </div>
@@ -987,7 +1347,7 @@
             <p>Empowering women through skills, knowledge, and economic opportunities in environmental stewardship.</p>
           </div>
 
-          <div class="value-card" style="position: relative;">
+          <div class="value-card">
             <div class="value-icon">
               <i class="fa-solid fa-book"></i>
             </div>
@@ -995,7 +1355,7 @@
             <p>Building awareness and capacity through workshops, training, and hands-on learning experiences.</p>
           </div>
 
-          <div class="value-card" style="position: relative;">
+          <div class="value-card">
             <div class="value-icon">
               <i class="fa-solid fa-handshake"></i>
             </div>
@@ -1003,7 +1363,7 @@
             <p>Collaborating with local communities, students, and organizations for grassroots environmental action.</p>
           </div>
 
-          <div class="value-card" style="position: relative;">
+          <div class="value-card">
             <div class="value-icon">
               <i class="fa-solid fa-sprout"></i>
             </div>
@@ -1011,7 +1371,7 @@
             <p>Creating economic opportunities through eco-enterprises and sustainable resource management.</p>
           </div>
 
-          <div class="value-card" style="position: relative;">
+          <div class="value-card">
             <div class="value-icon">
               <i class="fa-solid fa-earth-americas"></i>
             </div>
@@ -1022,125 +1382,170 @@
       </div>
     </section>
 
-    <!-- Timeline Section -->
+    <!-- Phases / Journey Section -->
     <section class="section-padding" style="background: linear-gradient(135deg, #f0fff6 0%, #e0f8ed 100%);">
       <div class="container">
         <div class="section-title">
-          <h2>Our Journey</h2>
-          <p>Milestones of impact, growth, and community transformation</p>
+          <span class="section-eyebrow">Our Journey</span>
+          <h2>Milestones</h2>
+          <p>Moments of impact, growth, and community transformation</p>
         </div>
 
-        <div class="timeline">
-          <article class="timeline-item">
-            <span class="timeline-marker"></span>
-            <div class="timeline-badge">Phase 1 · Awareness</div>
-            <h3>🌴 Palmyra Fruit Festival</h3>
-            <p>Celebrating local knowledge and green culture with students, faculty, and community members. A celebration of indigenous plants and biodiversity protection.</p>
-            <div class="timeline-media">
-              <img src="images/phases/phase1-palmyra.jpg" alt="Palmyra Fruit Festival" onerror="this.src='https://via.placeholder.com/400x300/d9ffe9/009b63?text=Phase+1:+Palmyra+Festival'">
-              <img src="images/phases/phase1-celebration.jpg" alt="Community Celebration" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Community+Bonding'">
+        <div class="phases-list">
+          <article class="phase-item">
+            <div class="phase-marker"><span class="phase-number">01</span></div>
+            <div class="phase-card">
+              <div class="phase-card-head">
+                <span class="phase-icon"><i class="fa-solid fa-seedling"></i></span>
+                <div>
+                  <span class="phase-tag">Awareness</span>
+                  <h3>Palmyra Fruit Festival</h3>
+                </div>
+              </div>
+              <p>Celebrating local knowledge and green culture with students, faculty, and community members. A celebration of indigenous plants and biodiversity protection.</p>
+              <div class="phase-media">
+                <img src="images/phases/phase1-palmyra.jpg" alt="Palmyra Fruit Festival" onerror="this.src='https://via.placeholder.com/400x300/d9ffe9/009b63?text=Phase+1:+Palmyra+Festival'">
+                <img src="images/phases/phase1-celebration.jpg" alt="Community Celebration" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Community+Bonding'">
+                <img src="images/phases/phase1-performance.jpg" alt="Community Celebration" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Community+Bonding'">
+              </div>
             </div>
           </article>
 
-          <article class="timeline-item">
-            <span class="timeline-marker"></span>
-            <div class="timeline-badge">Phase 2 · Education</div>
-            <h3>📰 Environmental Journalism Workshop</h3>
-            <p>Empowering young women with storytelling skills to amplify green voices and climate advocacy in their communities.</p>
-            <div class="timeline-media">
-              <img src="images/phases/phase2-workshop.jpg" alt="Journalism Workshop" onerror="this.src='https://via.placeholder.com/400x300/d9ffe9/009b63?text=Phase+2:+Workshop'">
-              <img src="images/phases/phase2-training.jpg" alt="Training Session" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Women+Empowerment'">
+          <article class="phase-item">
+            <div class="phase-marker"><span class="phase-number">02</span></div>
+            <div class="phase-card">
+              <div class="phase-card-head">
+                <span class="phase-icon"><i class="fa-solid fa-newspaper"></i></span>
+                <div>
+                  <span class="phase-tag">Education</span>
+                  <h3>Environmental Journalism Workshop</h3>
+                </div>
+              </div>
+              <p>Empowering young women with storytelling skills to amplify green voices and climate advocacy in their communities.</p>
+              <div class="phase-media">
+                <img src="images/phases/phase2-workshop.jpg" alt="Journalism Workshop" onerror="this.src='https://via.placeholder.com/400x300/d9ffe9/009b63?text=Phase+2:+Workshop'">
+                <img src="images/phases/phase2-training.jpg" alt="Training Session" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Women+Empowerment'">
+                <img src="images/phases/phase2-ino.jpg" alt="Training Session" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Women+Empowerment'">
+              </div>
             </div>
           </article>
 
-          <article class="timeline-item">
-            <span class="timeline-marker"></span>
-            <div class="timeline-badge">Phase 3 · Capacity Building</div>
-            <h3>🌱 Hands-on Nursery Training</h3>
-            <p>Women from local communities received training in sapling care, soil preparation, and nursery management, creating new livelihood opportunities.</p>
-            <div class="timeline-media">
-              <img src="images/phases/phase3-nursery.jpg" alt="Nursery Training" onerror="this.src='https://via.placeholder.com/400x300/d9ffe9/009b63?text=Phase+3:+Nursery'">
-              <img src="images/phases/phase3-women.jpg" alt="Women in Training" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Women+Leaders'">
+          <article class="phase-item">
+            <div class="phase-marker"><span class="phase-number">03</span></div>
+            <div class="phase-card">
+              <div class="phase-card-head">
+                <span class="phase-icon"><i class="fa-solid fa-leaf"></i></span>
+                <div>
+                  <span class="phase-tag">Capacity Building</span>
+                  <h3>Hands-on Nursery Training</h3>
+                </div>
+              </div>
+              <p>Women from local communities received training in sapling care, soil preparation, and nursery management, creating new livelihood opportunities.</p>
+              <div class="phase-media">
+                <img src="images/phases/phase3-nursery.jpg" alt="Nursery Training" onerror="this.src='https://via.placeholder.com/400x300/d9ffe9/009b63?text=Phase+3:+Nursery'">
+                <img src="images/phases/phase3-women.jpg" alt="Women in Training" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Women+Leaders'">
+              </div>
             </div>
           </article>
 
-          <article class="timeline-item">
-            <span class="timeline-marker"></span>
-            <div class="timeline-badge">Phase 4 · Restoration</div>
-            <h3>🏞️ Mangrove Plantation at Guliakhali</h3>
-            <p>Students and volunteers planted mangroves at vulnerable coastal areas, supporting erosion control, biodiversity recovery, and climate resilience.</p>
-            <div class="timeline-media">
-              <img src="images/phases/phase4-mangrove.jpg" alt="Mangrove Plantation" onerror="this.src='https://via.placeholder.com/400x300/d9ffe9/009b63?text=Phase+4:+Mangroves'">
-              <img src="images/phases/phase4-coast.jpg" alt="Coastal Restoration" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Coastal+Protection'">
-              <img src="images/phases/phase4-volunteers.jpg" alt="Volunteer Action" onerror="this.src='https://via.placeholder.com/400x300/b9f2d0/009b63?text=Community+Action'">
+          <article class="phase-item">
+            <div class="phase-marker"><span class="phase-number">04</span></div>
+            <div class="phase-card">
+              <div class="phase-card-head">
+                <span class="phase-icon"><i class="fa-solid fa-water"></i></span>
+                <div>
+                  <span class="phase-tag">Restoration</span>
+                  <h3>Mangrove Plantation at Guliakhali</h3>
+                </div>
+              </div>
+              <p>Students and volunteers planted mangroves at vulnerable coastal areas, supporting erosion control, biodiversity recovery, and climate resilience.</p>
+              <div class="phase-media">
+                <img src="images/phases/phase4-mangrove.jpg" alt="Mangrove Plantation" onerror="this.src='https://via.placeholder.com/400x300/d9ffe9/009b63?text=Phase+4:+Mangroves'">
+                <img src="images/phases/phase4-coast.jpg" alt="Coastal Restoration" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Coastal+Protection'">
+                <img src="images/phases/phase4-volunteers.jpg" alt="Volunteer Action" onerror="this.src='https://via.placeholder.com/400x300/b9f2d0/009b63?text=Community+Action'">
+              </div>
             </div>
           </article>
 
-          <article class="timeline-item">
-            <span class="timeline-marker"></span>
-            <div class="timeline-badge">Phase 5 · Expansion</div>
-            <h3>🌳 Palmyra Sapling Plantation</h3>
-            <p>Planting climate-smart heritage trees known for heat resilience, deep roots, and cultural significance across the region.</p>
-            <div class="timeline-media">
-              <img src="images/phases/phase5-palmyra.jpg" alt="Palmyra Planting" onerror="this.src='https://via.placeholder.com/400x300/d9ffe9/009b63?text=Phase+5:+Palmyra'">
-              <img src="images/phases/phase5-saplings.jpg" alt="Sapling Planting" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Planting+Day'">
+          <article class="phase-item">
+            <div class="phase-marker"><span class="phase-number">05</span></div>
+            <div class="phase-card">
+              <div class="phase-card-head">
+                <span class="phase-icon"><i class="fa-solid fa-tree"></i></span>
+                <div>
+                  <span class="phase-tag">Expansion</span>
+                  <h3>Palmyra Sapling Plantation</h3>
+                </div>
+              </div>
+              <p>Planting climate-smart heritage trees known for heat resilience, deep roots, and cultural significance across the region.</p>
+              <div class="phase-media">
+                <img src="images/phases/phase5-palmyra.jpg" alt="Palmyra Planting" onerror="this.src='https://via.placeholder.com/400x300/d9ffe9/009b63?text=Phase+5:+Palmyra'">
+                <img src="images/phases/phase5-saplings.jpg" alt="Sapling Planting" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Planting+Day'">
+              </div>
             </div>
           </article>
 
-          <article class="timeline-item">
-            <span class="timeline-marker"></span>
-            <div class="timeline-badge">Phase 6 · Youth</div>
-            <h3>👥 Green Leadership Through Action</h3>
-            <p>Young volunteers immersed in planting and soil work, building connection with the land and commitment to climate resilience.</p>
-            <div class="timeline-media">
-              <img src="images/phases/phase6-youth.jpg" alt="Youth Volunteers" onerror="this.src='https://via.placeholder.com/400x300/d9ffe9/009b63?text=Phase+6:+Youth'">
-              <img src="images/phases/phase6-leadership.jpg" alt="Youth Leadership" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Youth+Leaders'">
-              <img src="images/phases/phase6-planting.jpg" alt="Youth Planting" onerror="this.src='https://via.placeholder.com/400x300/b9f2d0/009b63?text=Hands+On+Action'">
+          <article class="phase-item">
+            <div class="phase-marker"><span class="phase-number">06</span></div>
+            <div class="phase-card">
+              <div class="phase-card-head">
+                <span class="phase-icon"><i class="fa-solid fa-people-group"></i></span>
+                <div>
+                  <span class="phase-tag">Youth</span>
+                  <h3>Green Leadership Through Action</h3>
+                </div>
+              </div>
+              <p>Young volunteers immersed in planting and soil work, building connection with the land and commitment to climate resilience.</p>
+              <div class="phase-media">
+                <img src="images/phases/phase6-youth.jpg" alt="Youth Volunteers" onerror="this.src='https://via.placeholder.com/400x300/d9ffe9/009b63?text=Phase+6:+Youth'">
+                <img src="images/phases/phase6-planting.jpg" alt="Youth Planting" onerror="this.src='https://via.placeholder.com/400x300/b9f2d0/009b63?text=Hands+On+Action'">
+              </div>
             </div>
           </article>
 
-          <article class="timeline-item">
-            <span class="timeline-marker"></span>
-            <div class="timeline-badge">Phase 7 · Landscape</div>
-            <h3>⛰️ Planting in Hilly Terrains</h3>
-            <p>Native species planted across degraded landscapes, stabilizing slopes and restoring habitats in vulnerable regions.</p>
-            <div class="timeline-media">
-              <img src="images/phases/phase7-hillside.jpg" alt="Hillside Planting" onerror="this.src='https://via.placeholder.com/400x300/d9ffe9/009b63?text=Phase+7:+Terrain'">
-              <img src="images/phases/phase7-landscape.jpg" alt="Landscape Restoration" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Landscape+Restoration'">
+          <article class="phase-item">
+            <div class="phase-marker"><span class="phase-number">07</span></div>
+            <div class="phase-card">
+              <div class="phase-card-head">
+                <span class="phase-icon"><i class="fa-solid fa-mountain"></i></span>
+                <div>
+                  <span class="phase-tag">Landscape</span>
+                  <h3>Planting in Hilly Terrains</h3>
+                </div>
+              </div>
+              <p>Native species planted across degraded landscapes, stabilizing slopes and restoring habitats in vulnerable regions.</p>
+              <div class="phase-media">
+                <img src="images/phases/phase7-hillside.jpg" alt="Hillside Planting" onerror="this.src='https://via.placeholder.com/400x300/d9ffe9/009b63?text=Phase+7:+Terrain'">
+                <img src="images/phases/phase7-landscape.jpg" alt="Landscape Restoration" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Landscape+Restoration'">
+              </div>
             </div>
           </article>
 
-          <article class="timeline-item">
-            <span class="timeline-marker"></span>
-            <div class="timeline-badge">Phase 8 · Outreach</div>
-            <h3>🌍 Sapling Walks & Household Planting</h3>
-            <p>Volunteers spread green hope through communities, encouraging families to care for trees and build living bonds with nature.</p>
-            <div class="timeline-media">
-              <img src="images/phases/phase8-walk.jpg" alt="Sapling Walk" onerror="this.src='https://via.placeholder.com/400x300/d9ffe9/009b63?text=Phase+8:+Community'">
-              <img src="images/phases/phase8-household.jpg" alt="Household Planting" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Family+Planting'">
-              <img src="images/phases/phase8-impact.jpg" alt="Community Impact" onerror="this.src='https://via.placeholder.com/400x300/b9f2d0/009b63?text=Green+Hope'">
+          <article class="phase-item">
+            <div class="phase-marker"><span class="phase-number">08</span></div>
+            <div class="phase-card">
+              <div class="phase-card-head">
+                <span class="phase-icon"><i class="fa-solid fa-route"></i></span>
+                <div>
+                  <span class="phase-tag">Outreach</span>
+                  <h3>Sapling Walks &amp; Household Planting</h3>
+                </div>
+              </div>
+              <p>Volunteers spread green hope through communities, encouraging families to care for trees and build living bonds with nature.</p>
+              <div class="phase-media">
+                <img src="images/phases/phase8-walk.jpg" alt="Sapling Walk" onerror="this.src='https://via.placeholder.com/400x300/d9ffe9/009b63?text=Phase+8:+Community'">
+                <img src="images/phases/phase8-household.jpg" alt="Household Planting" onerror="this.src='https://via.placeholder.com/400x300/c8f6dd/009b63?text=Family+Planting'">
+                <img src="images/phases/phase8-impact.jpg" alt="Community Impact" onerror="this.src='https://via.placeholder.com/400x300/b9f2d0/009b63?text=Green+Hope'">
+              </div>
             </div>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="section-padding">
-      <div class="container">
-        <div class="cta-section">
-          <h2>Join the Green Bangle Movement</h2>
-          <p>Be part of a community-driven initiative that empowers women, restores ecosystems, and builds climate resilience. Together, we can create lasting change.</p>
-          <a href="mailto:greenbangleproject@auw.edu.bd" class="cta-button">
-            Get Involved <i class="fa-solid fa-arrow-right"></i>
-          </a>
         </div>
       </div>
     </section>
   </main>
 
   <!-- FOOTER - DO NOT CHANGE -->
-  <<footer class="footer" id="contact">
+  <footer class="footer" id="contact">
     <div class="container footer-grid">
       <div>
         <h2>ICECA 2026</h2>
