@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sponsors & Partners | ICECA 2026</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --green-deep: #023c2c;
+      --green-dark: #046444;
+      --green-main: #009b63;
+      --green-card: #f0fff6;
+      --gold: #f4b63f;
+      --gold-dark: #d99b24;
+      --text-dark: #07251c;
+      --text-muted: #49675b;
+      --border: #a7e7c2;
+      --white: #ffffff;
+      --bg: #dffbea;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    .logo-area {
+      background: rgba(232, 255, 241, 0.96);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo-strip {
+      padding: 18px 0 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .logo-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 108px;
+    }
+
+    .logo-img {
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .auw-logo {
+      max-height: 128px;
+    }
+
+    .program-logo {
+      max-height: 156px;
+    }
+
+    .gbm-logo {
+      max-height: 140px;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(232, 255, 241, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+    }
+
+    .nav-content {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      width: 64px;
+      height: 64px;
+      background: transparent;
+      border: none;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      overflow: visible;
+      box-shadow: none;
+    }
+
+    .brand-icon img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+    }
+
+    .brand h1 {
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .brand p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .nav-links a {
+      position: relative;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--green-main);
+    }
+
+    .nav-links a:not(.old-link)::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--green-main);
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:not(.old-link):hover::after,
+    .nav-links a.active:not(.old-link)::after {
+      width: 100%;
+    }
+
+    .old-link {
+      background: linear-gradient(135deg, var(--gold), #ffcc5c);
+      color: var(--white) !important;
+      padding: 10px 16px;
+      border-radius: 999px;
+      transition: 0.2s ease;
+    }
+
+    .old-link:hover {
+      background: var(--gold-dark);
+      transform: translateY(-2px);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+      font-size: 18px;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+
+    .section-padding {
+      padding: 86px 0;
+    }
+
+    .page-title {
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto 54px;
+      animation: softSlideIn 0.9s ease both;
+    }
+
+    .page-title .label {
+      color: var(--green-main);
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .page-title h2 {
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      color: var(--text-dark);
+      margin-bottom: 18px;
+    }
+
+    .page-title p {
+      color: var(--text-muted);
+      font-size: 18px;
+    }
+
+    .sponsor-section {
+      margin-bottom: 80px;
+    }
+
+    .section-title {
+      border-left: 5px solid var(--green-main);
+      padding: 14px 0 14px 26px;
+      margin-bottom: 42px;
+      animation: softSlideIn 0.9s ease both;
+    }
+
+    .section-title h3 {
+      font-size: clamp(28px, 3.5vw, 40px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 16px;
+      margin-left: 0;
+      font-weight: 500;
+    }
+
+    .sponsor-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .sponsor-grid.two-col {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sponsor-card {
+      position: relative;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(167, 231, 194, 0.6);
+      border-radius: 22px;
+      padding: 36px 28px;
+      box-shadow: 0 8px 24px rgba(2, 60, 44, 0.06);
+      transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      min-height: 100%;
+    }
+
+    .sponsor-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green-deep), var(--green-main), var(--gold));
+    }
+
+    .sponsor-card::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: rgba(0, 155, 99, 0.03);
+      right: -30px;
+      bottom: -40px;
+      transition: 0.35s ease;
+    }
+
+    .sponsor-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(2, 60, 44, 0.10);
+      border-color: rgba(167, 231, 194, 0.9);
+    }
+
+    .sponsor-card:hover::after {
+      transform: scale(1.15);
+      background: rgba(244, 182, 63, 0.06);
+    }
+
+    .sponsor-logo-wrap {
+      width: 100px;
+      height: 100px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #f8fffb 0%, #e9fff2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 6px 20px rgba(0, 155, 99, 0.08);
+      border: 1px solid rgba(167, 231, 194, 0.5);
+      transition: 0.3s ease;
+    }
+
+    .sponsor-card:hover .sponsor-logo-wrap {
+      box-shadow: 0 10px 28px rgba(0, 155, 99, 0.12);
+      border-color: rgba(167, 231, 194, 0.8);
+    }
+
+    .sponsor-logo {
+      width: 90%;
+      height: 90%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .sponsor-card h4 {
+      font-size: 17px;
+      line-height: 1.35;
+      margin-bottom: 12px;
+      color: var(--text-dark);
+      letter-spacing: -0.01em;
+      position: relative;
+      z-index: 1;
+      font-weight: 700;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sponsor-description {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    .sponsor-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--green-dark), var(--green-main));
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: 0.2s ease;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 4px 12px rgba(0, 155, 99, 0.15);
+    }
+
+    .sponsor-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 155, 99, 0.22);
+      background: linear-gradient(135deg, var(--green-deep), var(--green-dark) 60%, var(--green-main));
+    }
+
+    .sponsor-link i {
+      font-size: 12px;
+    }
+
+    .reveal-card {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+
+    .reveal-card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes softSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .footer {
+      background: linear-gradient(135deg, var(--green-deep), var(--green-dark) 60%, var(--green-main));
+      color: var(--white);
+      padding: 56px 0 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1.2fr;
+      gap: 36px;
+    }
+
+    .footer p,
+    .footer a {
+      color: #d1fae5;
+    }
+
+    .footer h3,
+    .footer h2 {
+      margin-bottom: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .footer-links a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #d1fae5;
+      transition: 0.25s ease;
+    }
+
+    .footer-links a i {
+      width: 20px;
+      font-size: 18px;
+      color: var(--gold);
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+      transform: translateX(4px);
+    }
+
+    .footer-links a:hover i {
+      color: #ffd56a;
+    }
+
+    .designer-credit {
+      margin-top: 34px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(209, 250, 229, 0.25);
+      text-align: right;
+      color: rgba(209, 250, 229, 0.78);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    /* Tablet */
+    @media (max-width: 1000px) {
+      .nav-links {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 72px;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px 4%;
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .logo-strip {
+        min-height: auto;
+        gap: 16px;
+      }
+
+      .auw-logo {
+        max-height: 96px;
+      }
+
+      .program-logo {
+        max-height: 112px;
+      }
+
+      .gbm-logo {
+        max-height: 102px;
+      }
+
+      .sponsor-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .sponsor-grid.two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .section-padding {
+        padding: 64px 0;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .logo-strip {
+        padding: 14px 0 12px;
+        gap: 10px;
+      }
+
+      .logo-box {
+        min-height: 78px;
+      }
+
+      .auw-logo {
+        max-height: 68px;
+      }
+
+      .program-logo {
+        max-height: 78px;
+      }
+
+      .gbm-logo {
+        max-height: 72px;
+      }
+
+      .brand-icon,
+      .brand-icon img {
+        width: 52px;
+        height: 52px;
+      }
+
+      .nav-links {
+        top: 72px;
+      }
+
+      .section-padding {
+        padding: 64px 0;
+      }
+
+      .sponsor-card {
+        border-radius: 20px;
+        padding: 28px 22px;
+      }
+
+      .sponsor-logo-wrap {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 20px;
+      }
+
+      .sponsor-card h4 {
+        font-size: 16px;
+        min-height: 38px;
+      }
+
+      .sponsor-description {
+        font-size: 13px;
+      }
+
+      .sponsor-link {
+        font-size: 13px;
+        padding: 9px 16px;
+        margin-top: 16px;
+      }
+
+      .sponsor-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .designer-credit {
+        text-align: left;
+        font-size: 12px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sponsor-section {
+        margin-bottom: 60px;
+      }
+
+      .section-title {
+        padding: 10px 0 10px 20px;
+        margin-bottom: 28px;
+      }
+
+      .section-title h3 {
+        font-size: 24px;
+      }
+
+      .sponsor-link {
+        font-size: 13px;
+        padding: 9px 16px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .logo-strip {
+        padding: 12px 0 10px;
+        gap: 8px;
+      }
+
+      .logo-box {
+        min-height: 68px;
+      }
+
+      .auw-logo {
+        max-height: 58px;
+      }
+
+      .program-logo {
+        max-height: 68px;
+      }
+
+      .gbm-logo {
+        max-height: 62px;
+      }
+
+      .brand {
+        gap: 8px;
+      }
+
+      .brand h1 {
+        font-size: 20px;
+      }
+
+      .brand p {
+        font-size: 12px;
+      }
+
+      .nav-content {
+        min-height: 64px;
+      }
+
+      .container {
+        width: min(100%, 95%);
+      }
+
+      .page-title h2 {
+        font-size: 28px;
+      }
+
+      .page-title p {
+        font-size: 16px;
+      }
+
+      .section-title h3 {
+        font-size: 22px;
+      }
+
+      .sponsor-logo-wrap {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 20px;
+      }
+
+      .sponsor-card h4 {
+        font-size: 16px;
+      }
+
+      .sponsor-description {
+        font-size: 13px;
+      }
+
+      .sponsor-link {
+        font-size: 12px;
+        padding: 8px 14px;
+        margin-top: 14px;
+      }
+
+      .footer {
+        padding: 40px 0 20px;
+      }
+
+      .designer-credit {
+        margin-top: 24px;
+        padding-top: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo-area">
+      <div class="container logo-strip">
+        <div class="logo-box">
+          <img src="images/auw-logo.png" alt="Asian University for Women Logo" class="logo-img auw-logo">
+        </div>
+
+        <div class="logo-box center-logo">
+          <img src="images/program-logo.png" alt="ICECA 2026 Conference Logo" class="logo-img program-logo">
+        </div>
+
+        <div class="logo-box">
+          <img src="images/gbm-logo.png" alt="Green Bangle Movement Logo" class="logo-img gbm-logo">
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar">
+      <div class="container nav-content">
+        <a href="index.html" class="brand">
+          <div class="brand-icon image-brand">
+            <img src="images/program-logo.png" alt="ICECA 2026 Logo">
+          </div>
+          <div>
+            <h1>ICECA 2026</h1>
+            <p>Environment & Climate Action</p>
+          </div>
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+          <a href="index.html">Home</a>
+          <a href="travel-stay.html">Travel & Stay</a>
+          <a href="themes.html">Themes & Schedule</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="speakers.html">Speakers</a>
+          <a href="committee.html">Committee</a>
+          <a href="sponsors.html" class="active">Sponsors</a>
+          <a class="old-link" href="https://iceca.auw.edu.bd/" target="_blank">ICECA 2025</a>
+        </nav>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-padding">
+      <div class="container">
+        <div class="page-title">
+          <h2>Sponsors & Partners</h2>
+          <p>
+            We deeply appreciate our co-organizers and sponsors whose generous support makes ICECA 2026 possible. Together, we advance environmental action and climate resilience.
+          </p>
+        </div>
+
+        <!-- Co-Organizers Section -->
+        <div class="sponsor-section">
+          <div class="section-title">
+            <h3>Co-Organizers</h3>
+            <p>Strategic partners leading this conference</p>
+          </div>
+
+          <div class="sponsor-grid two-col">
+            <article class="sponsor-card reveal-card">
+              <div class="sponsor-logo-wrap">
+                <img src="images/sponsors/gbm-logo.png" alt="Green Bangle Movement" class="sponsor-logo">
+              </div>
+              <h4>Green Bangle Movement</h4>
+              <p class="sponsor-description">
+                A student-led environmental initiative dedicated to women-centered climate action, coastal ecosystem restoration, and mangrove conservation in Bangladesh.
+              </p>
+              <a href="https://auw.edu.bd/" target="_blank" class="sponsor-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="sponsor-card reveal-card">
+              <div class="sponsor-logo-wrap">
+                <img src="images/program-logo.png" alt="Environmental Sciences Program" class="sponsor-logo">
+              </div>
+              <h4>Environmental Sciences Program</h4>
+              <p class="sponsor-description">
+                Academic leader in environmental education and research at Asian University for Women, fostering sustainable solutions and climate-conscious leaders.
+              </p>
+              <a href="https://auw.edu.bd/" target="_blank" class="sponsor-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+          </div>
+        </div>
+
+        <!-- Main Sponsors Section -->
+        <div class="sponsor-section">
+          <div class="section-title">
+            <h3>Sponsors & Partners</h3>
+            <p>Organizations advancing environmental action and climate solutions alongside ICECA 2026</p>
+          </div>
+
+          <div class="sponsor-grid">
+            <article class="sponsor-card reveal-card">
+              <div class="sponsor-logo-wrap">
+                <img src="images/sponsors/sonapahar.png" alt="Sonapahar Farmhouse Resort" class="sponsor-logo">
+              </div>
+              <h4>Sonapahar Farmhouse Resort</h4>
+              <p class="sponsor-description">
+                Sonapahar aspires to propose and create a counter narrative of fast urbanized, nature depleting Bangladesh and its artificial lifestyle.
+              </p>
+              <a href="https://www.sonapaharbeachresort.com/" target="_blank" class="sponsor-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="sponsor-card reveal-card">
+              <div class="sponsor-logo-wrap">
+                <img src="images/sponsors/ypsa.png" alt="YPSA" class="sponsor-logo">
+              </div>
+              <h4>YPSA</h4>
+              <p class="sponsor-description">
+                YPSA is a voluntary, nongovernmental and nonprofit organization. It exists to participate with the poor and vulnerable population with all commitment to bring about their own and society’s sustainable development.
+              </p>
+              <a href="https://www.ypsa.org/" target="_blank" class="sponsor-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="sponsor-card reveal-card">
+              <div class="sponsor-logo-wrap">
+                <img src="images/sponsors/care.png" alt="CARE Bangladesh" class="sponsor-logo">
+              </div>
+              <h4>CARE Bangladesh</h4>
+              <p class="sponsor-description">
+                CARE is a leading humanitarian organization fighting global poverty with special focus on working with girls and women. 
+              </p>
+              <a href="https://www.care.org/countries/bangladesh/" target="_blank" class="sponsor-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="sponsor-card reveal-card">
+              <div class="sponsor-logo-wrap">
+                <img src="images/sponsors/change.png" alt="Change Initiative" class="sponsor-logo">
+              </div>
+              <h4>Change Initiative</h4>
+              <p class="sponsor-description">
+                Catalyzing environmental action and sustainable development through community empowerment and innovative climate solutions in Bangladesh.
+              </p>
+              <a href="https://www.change.org/" target="_blank" class="sponsor-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="sponsor-card reveal-card">
+              <div class="sponsor-logo-wrap">
+                <img src="images/sponsors/mtb.png" alt="Mangrove Tree Builders" class="sponsor-logo">
+              </div>
+              <h4>Mautual Trust Bank</h4>
+              <p class="sponsor-description">
+                Mutual Trust Bank PLC (MTB) is a third generation private commercial bank, based in Dhaka, Bangladesh and has been recognized as the Bank of the Year 2024 by the Global Excellence Chronicle Magazine and also awarded as the Bangladesh’s Best Digital Bank for the second year is a row at the Euromoney Awards for Excellence 2025.
+              </p>
+              <a href="https://www.mutualtrustbank.com/" target="_blank" class="sponsor-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="sponsor-card reveal-card">
+              <div class="sponsor-logo-wrap">
+                <img src="images/sponsors/kfl.png" alt="Knowledge for Life" class="sponsor-logo">
+              </div>
+              <h4>Karnafuly Fishmeal Limited (KFL)</h4>
+              <p class="sponsor-description">
+                Karnafuly Fishmeal Limited (KFL) is a modern state of the art of technology industry, established in 2014 for promoting sustainable fishmeal for feed millers of Bangladesh.
+              </p>
+              <a href="https://www.kfl.com.bd/" target="_blank" class="sponsor-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="sponsor-card reveal-card">
+              <div class="sponsor-logo-wrap">
+                <img src="images/sponsors/logofinal.png" alt="Partner Organization" class="sponsor-logo">
+              </div>
+              <h4>The Climate Watch</h4>
+              <p class="sponsor-description">
+                The Climate Watch is an independent portal based in Bangladesh, dedicated to providing in-depth coverage of climate change, environment, biodiversity, wildlife, nature conservation, and sustainability issues, with a laser focus on South Asia.
+              </p>
+              <a href="https://theclimatewatch.com/" target="_blank" class="sponsor-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="sponsor-card reveal-card">
+              <div class="sponsor-logo-wrap">
+                <img src="images/sponsors/ecovalley.png" alt="EcoValley" class="sponsor-logo">
+              </div>
+              <h4>EcoValley</h4>
+              <p class="sponsor-description">
+                Ecovalley BD envissions a worldfreefrom the harmful impacts of single-use plastics, where sustainable  practices and innovative solutions lead the way in creating a cleaner, greener, and more environmentally responsible future. By fostering a culture of environmental consciousness.
+              </p>
+              <a href="https://ecovalleybd.com/" target="_blank" class="sponsor-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+
+            <article class="sponsor-card reveal-card">
+              <div class="sponsor-logo-wrap">
+                <img src="images/sponsors/savoy.png" alt="Savoy Partners" class="sponsor-logo">
+              </div>
+              <h4>Savoy Partners</h4>
+              <p class="sponsor-description">
+                Strategic partner supporting environmental initiatives and contributing to the advancement of climate action and sustainability goals.
+              </p>
+              <a href="https://www.savoybd.com/" target="_blank" class="sponsor-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <h2>ICECA 2026</h2>
+        <p>2nd International Conference on Environment and Climate Action 2026.</p>
+      </div>
+
+      <div>
+        <h3>Follow Us</h3>
+        <div class="footer-links">
+          <a href="https://www.facebook.com/share/1BgH4tvhsf/" target="_blank">
+            <i class="fa-brands fa-facebook-f"></i>
+            Facebook
+          </a>
+
+          <a href="https://www.instagram.com/auw_iceca?igsh=bG10cjFzdWppeXYz" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+            Instagram
+          </a>
+
+          <a href="https://iceca.auw.edu.bd/" target="_blank">
+            <i class="fa-solid fa-globe"></i>
+            ICECA 2025
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <p><i class="fa-solid fa-envelope"></i> ICECA@auw.edu.bd</p>
+        <p>Asian University for Women</p>
+      </div>
+    </div>
+    <div class="container designer-credit">
+      Designed by Nazia Zarin Riti
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+
+    const revealCards = document.querySelectorAll('.reveal-card');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    revealCards.forEach((card) => {
+      revealObserver.observe(card);
+    });
+  </script>
+</body>
+</html>
